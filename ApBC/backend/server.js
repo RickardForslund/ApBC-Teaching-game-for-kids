@@ -35,6 +35,21 @@ app.get("/api/bok", (req, res, next) => {
       });
 });
 
+app.get("/api/questions", (req, res, next) => {
+    var sql = "select * from questions"
+    var params = []
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+        res.json({
+            "message":"success",
+            "questions":rows
+        })
+      });
+});
+
 
 app.get("/api/bok/:id", (req, res, next) => {
     var sql = "select * from bok where bokId = ?"

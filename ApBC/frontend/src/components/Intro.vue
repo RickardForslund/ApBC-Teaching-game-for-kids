@@ -4,9 +4,9 @@
         <p>
             Hej du lille vän!<br/>
             Jag heter Po.<br/>
-            Kan du hjälpa mig att lära bokstäver och alfabetet?
+            Kan du hjälpa mig och min kompis Leo <br/> att lära oss bokstäver och alfabetet?
         </p>
-        <div class="img_intro"><img alt="ApBC" src="../assets/pointro.png" /></div>
+        <div class="img_intro"><img alt="Hej från Po" src="../assets/intropo.png" /></div>
             <div class="button"><img alt="Next" src="../assets/go.png" /></div>
 </div></div>
 </template>
@@ -31,9 +31,9 @@
         }
 
         p {
-            font-family: "Sitka Text";
+            font-family: 'Patua One';
             font-size: 30px;
-            color: darkorange;
+            color: darkgreen;
             padding: 10px;
             text-align: center;
         }

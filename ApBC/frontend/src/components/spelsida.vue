@@ -17,7 +17,7 @@
               <div class="quest1">
                 <h1>{{question}}</h1><br>
                 <div class="animalid">
-                  <img alt="ApBC" :src="require('@/assets/' + imageUrl )" />
+                  <img id="imgUrl" alt="ApBC" :src="require('@/assets/' + imageUrl )" />
 
                 <!-- 
                   ../assets/valp.jpg -->
@@ -56,7 +56,39 @@ export default {
     }
   }
 };
+
+
+//--------------------------------------//
+
+function createNode(element) {
+    return document.createElement(element);
+}
+
+function append(parent, el) {
+    return parent.appendChild(el);
+}
+
+const ul = document.getElementById('imgUrl');
+const url = 'http://127.0.0.1:3000/api/questions/';
+fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        let questions = data.questions;
+        return questions.map(function(questions) {
+            let li = createNode('li');
+            li.innerHTML = "animal=" + questions.animal + "<br>sound=" + questions.sound + "<br>image=" + questions.image + "<br><br>";
+            append(ul, li);
+        })
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
+
 </script>
+
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

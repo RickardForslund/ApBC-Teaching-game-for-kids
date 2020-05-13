@@ -1,22 +1,31 @@
 <template>
   <div class="start">
-    <h1>ApBC</h1>
+    <div class="menu">
+      <ul id="head-menu" class="nav">
+        <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
+      <li id="logo" class="logo"><img alt="ApBC" src="../assets/apbc.png" /></li>
+      <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
+      </ul>
+    </div>
     <div class="container">
       <div class="box">
           <div class="box-wrapper">
 
             <div class="questions">
               <div class="quest1">
-                <h1>Question???</h1><br>
-                <h4>what kind of animal is this?</h4>
+                <h1>Vilket djur är det?</h1><br>
+                <div class="animalid"><img alt="ApBC" src="../assets/valp.jpg" />
+
+                </div>
+                <!--<h4>what kind of animal is this?</h4>-->
               </div>
             </div>
           
             <div class="buttons">
-              <div class="button1">b1</div>
-              <div class="button2">b2</div>
-              <div class="button3">b3</div>
-              <div class="button4">b4</div>
+              <div class="button1">HUND</div>
+              <div class="button2">KATT</div>
+              <!--<div class="button3">b3</div>
+              <div class="button4">b4</div>-->
             </div>
 
           </div>
@@ -38,15 +47,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .start{
-  background-color: rgb(77, 77, 77);
+  background-color: white;
   background-size: 100% 100%;
   color: white;
   padding: 5px;
   box-shadow:inset 0 0 10px #000000;
   font-size: 20px;
-
 }
-
+.home{
+}
+.sound{
+  margin-right: auto;
+}
+ .nav {
+   border-bottom: none;
+   border-top: none;
+   clear: both;
+   padding: 0;
+}
+li{
+  margin-bottom: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  display: inline;
+  text-align: left;
+}
 .container{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -103,9 +128,11 @@ export default {
   background-color: rgb(255, 83, 204);
   border-radius: 15px;
   text-align: center;
-  height: 50px;
+  height: 100px;
   margin: 10px;
   opacity: 0.9;
+    font-size: 50px;
+    font-family: "Sitka Text";
   }
 
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{

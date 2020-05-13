@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/"><img alt="Home" src="home.png" /></router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/rickard">Rickard</router-link>|
+      <router-link to="/spel">Spel</router-link>|
       <router-link to="/difficulty">Välj Svårighet</router-link>
     </div>
     <router-view />

@@ -1,18 +1,18 @@
 <template>
-  <div class="rickard">
+  <div class="spel">
 <!-- header stuff here -->
-    <rickardo></rickardo>
+    <spelsida></spelsida>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import rickardo from "@/components/rickardo.vue";
+import spelsida from "@/components/spelsida.vue";
 
 export default {
-  name: "rickard",
+  name: "spel",
   components: {
-    rickardo
+    spelsida
   }
 };
 </script>

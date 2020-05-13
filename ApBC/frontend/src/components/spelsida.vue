@@ -12,12 +12,16 @@
 
       <div class="gameScreen">
           <div class="box-wrapper">
-
-            <questions>
+                            <ul id="apbc"></ul>
+                <h1 id="apbc"></h1>
+            <section>
               <div class="quest1">
-                <h1>{{question}}</h1>
+                <h1>{{question123}}</h1>
+
+
+                
                 <div class="animalid">
-                  <img id="imgUrl" alt="ApBC" :src="require('@/assets/' + imageUrl )" />
+                  <img id="imgUrl" :src="require('@/assets/' + imageUrl )">
 
                 <!-- 
                   ../assets/valp.jpg -->
@@ -25,20 +29,23 @@
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
               </div>
-            </questions>
+            </section>
           
-            <buttons>
+            <button>
               <div class="button1">HUND</div>
               <div class="button2">KATT</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
-            </buttons>
+            </button>
 
           </div>
 
     </div>
   </div>
 </template>
+
+<script src="../store/fetch-apbc.js"></script>
+
 
 <script>
 
@@ -48,9 +55,11 @@ export default {
         imageUrl: String,
         logoUrl: String
     },
+    template: '\
+        <button :class="`dice_${this.value} `" v-on:click="$emit(\'select\')"></button>',
     data: function() {
     return {
-      question: 'Vad heter djuret?'
+      question123: 'Vad heter djuret?'
     }
   }
 };
@@ -58,29 +67,7 @@ export default {
 
 //--------------------------------------//
 
-function createNode(element) {
-    return document.createElement(element);
-}
 
-function append(parent, el) {
-    return parent.appendChild(el);
-}
-
-const ul = document.getElementById('imgUrl');
-const url = 'http://127.0.0.1:3000/api/questions/';
-fetch(url)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        let questions = data.questions;
-        return questions.map(function(questions) {
-            let li = createNode('li');
-            li.innerHTML = "animal=" + questions.animal + "<br>sound=" + questions.sound + "<br>image=" + questions.image + "<br><br>";
-            append(ul, li);
-        })
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
 
 
 </script>
@@ -129,6 +116,7 @@ menu{
   background-size: cover;
   border-radius: 10px;
 
+  min-height: 700px;
 }
 
 .box-wrapper{

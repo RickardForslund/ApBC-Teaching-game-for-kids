@@ -1,6 +1,6 @@
 <template>
   <div class="start">
-    <div class="menu">
+    <menu>
       <ul id="head-menu" class="nav">
         <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
       <li id="logo" class="logo">
@@ -8,14 +8,14 @@
         </li>
       <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
       </ul>
-    </div>
-    <div class="container">
-      <div class="box">
+    </menu>
+
+      <div class="gameScreen">
           <div class="box-wrapper">
 
-            <div class="questions">
+            <questions>
               <div class="quest1">
-                <h1>{{question}}</h1><br>
+                <h1>{{question}}</h1>
                 <div class="animalid">
                   <img id="imgUrl" alt="ApBC" :src="require('@/assets/' + imageUrl )" />
 
@@ -25,19 +25,17 @@
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
               </div>
-            </div>
+            </questions>
           
-            <div class="buttons">
+            <buttons>
               <div class="button1">HUND</div>
               <div class="button2">KATT</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
-            </div>
+            </buttons>
 
           </div>
 
-
-      </div>
     </div>
   </div>
 </template>
@@ -52,7 +50,7 @@ export default {
     },
     data: function() {
     return {
-      question: 'Vilket djur är det?'
+      question: 'Vad heter djuret?'
     }
   }
 };
@@ -94,93 +92,83 @@ fetch(url)
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
+section{
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:"menu" "questions" "buttons";
+  grid-gap: 10px;
+
+}
+
 .start{
   background-color: white;
-  background-size: 100% 100%;
   color: white;
   padding: 5px;
-  box-shadow:inset 0 0 10px #000000;
   font-size: 20px;
 }
-.home{
-}
-.sound{
-  margin-right: auto;
-}
- .nav {
-   border-bottom: none;
-   border-top: none;
-   clear: both;
-   padding: 0;
-}
-li{
-  margin-bottom: 500px;
-  margin-right: auto;
-  margin-left: auto;
-  display: inline;
-  text-align: left;
-}
-.container{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
 
+menu{
+  margin-bottom: 0px;
+  padding-left: 0px;
 }
 
-.box {
-  grid-column: 1 / 6;
-  grid-row: 1 / 8;
+.nav{
+  padding-left: 0px;
+}
+
+.gameScreen {
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow:inset 0 0 10px #000000;
   font-family: 'Patua One';
-  
-
   background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
-  background-color: #cccccc; 
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
+  border-radius: 10px;
+
 }
 
 .box-wrapper{
+
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:"questions" "buttons";
   grid-gap: 10px;
-  grid-auto-rows: minmax(50px, auto);
-  
-  
+
 }
 
 
-.questions{
-  padding: 20px;
+questions{
+
+  margin-top: 10%;
   color: rgb(54, 54, 54);
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   border-radius: 30px;
-  grid-column: 2/10;
-  grid-row-start: 2;
-  grid-row-end: 6;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px 5% 2%;
 
 }
 
-.quest1{
-  color: #b97992;
+questions img{
+  border-radius: 30px;
+  width: 60%;
 }
 
-.questions h1{
+questions h1{
   color: darkgreen;
+  margin: 20px 0px 10px;
 }
-
-.question>h1{
-  text-align: center;
-
-}
-.buttons{
-  grid-column: 2 /10;
-  grid-row: 7;
-
+buttons{
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 

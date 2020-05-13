@@ -2,7 +2,7 @@
   <div class="spel">
 <!-- header stuff here -->
     <spelsida 
-    imageUrl = "valp.jpg"
+    imageUrl = "valp2.jpg"
     logoUrl = "apbcb.png"
     />
 

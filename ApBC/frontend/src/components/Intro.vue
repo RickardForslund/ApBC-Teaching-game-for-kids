@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <div class="container">
+        <div class="gameScreen">
         <p>
             Hej du lille vän!<br/>
             Jag heter Po.<br/>
@@ -24,7 +24,7 @@
 
 <style scoped>
     /*@media only screen and (max-width: 870px) {*/
-        .container {
+        .gameScreen {
             display: grid;
             grid-gap: 10px;
             grid-auto-rows: minmax(100px, auto);

@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: "rickardo",
+  name: "spelsida",
   props: {
   }
 };
@@ -83,7 +83,7 @@ li{
 .box {
   grid-column: 1 / 6;
   grid-row: 1 / 8;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow:inset 0 0 10px #000000;
   
 
@@ -107,25 +107,36 @@ li{
 .questions{
   padding: 20px;
   color: rgb(54, 54, 54);
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   border-radius: 30px;
-  grid-column: 2 /10;
-  grid-row: 2 / 4;
-  opacity: 0.8;
+  grid-column: 2/10;
+  grid-row-start: 2;
+  grid-row-end: 6;
+
+}
+
+.quest1{
+  color: #b97992;
+}
+
+.questions h1{
+  color: darkgreen;
 }
 
 .question>h1{
   text-align: center;
+
 }
 .buttons{
   grid-column: 2 /10;
   grid-row: 7;
+
 }
 
 
   .button1,.button2,.button3,.button4{
-  background-color: rgb(255, 83, 204);
+  background-color:  darkgreen;
   border-radius: 15px;
   text-align: center;
   height: 100px;
@@ -133,10 +144,12 @@ li{
   opacity: 0.9;
     font-size: 50px;
     font-family: "Sitka Text";
+    line-height: 100px;
+    color: white;
   }
 
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
-      background-color: rgb(255, 113, 224);
+      background-color: #003e0d;
     }
 
 

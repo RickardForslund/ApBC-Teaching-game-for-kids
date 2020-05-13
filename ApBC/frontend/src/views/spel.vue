@@ -3,7 +3,7 @@
 <!-- header stuff here -->
     <spelsida 
     imageUrl = "valp.jpg"
-    logoUrl = "apbc.png"
+    logoUrl = "apbcb.png"
     />
 
   </div>

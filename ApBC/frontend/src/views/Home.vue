@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="ApBC" src="../assets/apbc.png" />
+    <img alt="ApBC" src="../assets/apbcb.png" />
     <Intro msg="Hej på dig, min lille vän!" />
   </div>
 </template>

@@ -7,20 +7,12 @@
             Kan du hjälpa mig <br/> och min kompis Leo <br/> att lära oss bokstäver <br/> och alfabetet?
         </p>-->
         <div class="img_intro"><img alt="Hej från Po" src="../assets/intro.png" class="intro"/></div>
-        <!--<div class="button"><img alt="Next" src="../assets/go.png" /></div>-->
-            <router-link to="/difficulty"><img alt="Next" src="../assets/go.png" /></router-link>
+        <div class="button"><router-link to="/difficulty"><img alt="Next" src="../assets/go.png" class="intro"/></router-link></div>
 </div></div>
 </template>
 
 <script>
-    // import HelloWorld from "@/components/HelloWorld.vue";
-    //
-    // export default {
-    //     name: "QuizPlay2",
-    //     components: {
-    //         HelloWorld
-    //     }
-    // }
+
 </script>
 
 <style scoped>
@@ -63,7 +55,6 @@
         }
 
         .button:hover {
-
         }
 
         .button {

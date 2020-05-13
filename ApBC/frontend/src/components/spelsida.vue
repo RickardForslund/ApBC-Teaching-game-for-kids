@@ -52,7 +52,7 @@ export default {
     },
     data: function() {
     return {
-      question: 'vilket djur är det?'
+      question: 'Vilket djur är det?'
     }
   }
 };
@@ -92,6 +92,8 @@ fetch(url)
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
 .start{
   background-color: white;
   background-size: 100% 100%;
@@ -131,6 +133,7 @@ li{
   grid-row: 1 / 8;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow:inset 0 0 10px #000000;
+  font-family: 'Patua One';
   
 
   background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
@@ -189,7 +192,7 @@ li{
   margin: 10px;
   opacity: 0.9;
     font-size: 50px;
-    font-family: "Sitka Text";
+    font-family: 'Patua One';
     line-height: 100px;
     color: white;
   }

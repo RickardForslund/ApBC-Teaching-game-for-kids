@@ -1,10 +1,17 @@
 <template>
-    $END$
+    <div class="difficulty">
+        <difficultyPage></difficultyPage>
+    </div>
 </template>
 
 <script>
+    import difficultyPage from "@/components/difficultyPage.vue";
+
     export default {
-        name: "difficulty"
+        name: "difficulty",
+        components: {
+            difficultyPage
+        }
     }
 </script>
 

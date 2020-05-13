@@ -3,7 +3,9 @@
     <div class="menu">
       <ul id="head-menu" class="nav">
         <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
-      <li id="logo" class="logo"><img alt="ApBC" src="../assets/apbc.png" /></li>
+      <li id="logo" class="logo">
+        <img alt="ApBC" :src="require('@/assets/' + logoUrl )" />
+        </li>
       <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
       </ul>
     </div>
@@ -13,8 +15,12 @@
 
             <div class="questions">
               <div class="quest1">
-                <h1>Vilket djur är det?</h1><br>
-                <div class="animalid"><img alt="ApBC" src="../assets/valp.jpg" />
+                <h1>{{question}}</h1><br>
+                <div class="animalid">
+                  <img alt="ApBC" :src="require('@/assets/' + imageUrl )" />
+
+                <!-- 
+                  ../assets/valp.jpg -->
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -37,9 +43,17 @@
 </template>
 
 <script>
+
 export default {
-  name: "rickardo",
+  name: "spelsida",
   props: {
+        imageUrl: String,
+        logoUrl: String
+    },
+    data: function() {
+    return {
+      question: 'vilket djur är det?'
+    }
   }
 };
 </script>

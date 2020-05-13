@@ -1,7 +1,11 @@
 <template>
   <div class="spel">
 <!-- header stuff here -->
-    <spelsida></spelsida>
+    <spelsida 
+    imageUrl = "valp.jpg"
+    logoUrl = "apbc.png"
+    />
+
   </div>
 </template>
 

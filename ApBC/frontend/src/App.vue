@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/"><img alt="Home" src="home.png" /></router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/rickard">Rickard</router-link>|
       <router-link to="/difficulty">Välj Svårighet</router-link>
@@ -22,8 +22,8 @@
 }
 
 #nav {
-  padding: 30px;
-
+  padding: 0px;
+  text-align: left;
   a {
     font-weight: bold;
     color: #2c3e50;

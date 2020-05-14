@@ -31,8 +31,8 @@
             </section>
           
             <button>
-              <div class="button1">HUND</div>
-              <div class="button2">KATT</div>
+              <div @click="btn1()" class="button1">HUND</div>
+              <div @click="btn2()" class="button2">KATT</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </button>
@@ -58,7 +58,9 @@ export default {
     return {
       question123: 'Vad heter djuret?',
       books: [],
-      url: ''
+      url: '',
+      currentID: null
+    
     }
   },
       mounted(){
@@ -74,7 +76,21 @@ export default {
                     console.log(data.apbc[0].image);
                     this.url = data.apbc[0].image;
                     console.log("url is: " + this.url);
+
+                    console.log(data.apbc[0].id);
+                    this.currentID = data.apbc[0].id;
+                    
                 });
+        },
+        methods: {
+          btn1: function testing() {
+            console.log("in btn1 function");
+
+          },
+          btn2: function testing() {
+            console.log("in btn2 function");
+
+          }
         }
 
   }

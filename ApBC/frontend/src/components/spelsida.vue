@@ -33,8 +33,8 @@
             </section>
           
             <button>
-              <div @click="getNewobject(); getNewRandomNumber();" class="button1">HUND</div>
-              <div @click="btn2()" class="button2">KATT</div>
+              <div @click="validate();" class="button1">{{bt1}}</div>
+              <div @click="validate();" class="button2">{{bt2}}</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </button>
@@ -61,12 +61,18 @@ export default {
       question123: 'Vad heter djuret?',
       books: [],
       url: 'apa.png',
-      currentID: null
+      animalName: '',
+      currentID: null,
+      bt1: '',
+      bt2: ''
     
     }
   },
       mounted(){
 
+        this.animalName = 'apa'
+        this.bt1 = 'apa'
+        this.bt2 = 'fisk'
 // get a random number on start
 
 
@@ -121,6 +127,7 @@ export default {
                 .then((data) => {
 
                   this.url = data.apbc.image;
+                  this.animalName = data.apbc.name;
 
 /*
                     this.url = data.apbc[this.currentID].image;
@@ -129,11 +136,29 @@ export default {
                     console.log("current url is: " + this.url);
                     console.log("current id is: " + this.currentID);
                     */
-                    
-                    
-                });
-            
-          }
+               });
+             },
+
+             validate: function () {
+
+
+
+               if (this.animalName == this.bt1) {
+                 console.log("correct answer");
+                 this.getNewRandomNumber(); 
+                 this.getNewobject();
+                 
+               }else if(this.animalName == this.bt2){
+                console.log("correct answer");
+                this.getNewRandomNumber(); 
+                this.getNewobject();
+               }else {
+                 console.log("wrong answer, try again!");
+                 
+               }
+                
+               
+             }
 
 
 

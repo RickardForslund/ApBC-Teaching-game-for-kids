@@ -73,35 +73,7 @@ export default {
         this.animalName = 'apa'
         this.bt1 = 'apa'
         this.bt2 = 'fisk'
-// get a random number on start
 
-
-
-
-        console.log("in mounted");
-
-        /*
-            fetch('http://127.0.0.1:3000/api/apbc/')
-                .then((resp) => resp.json())
-                .then((data) => {
-                    
-                    console.log(data.apbc);
-                    this.books = data.apbc;
-
-                    console.log(data.apbc[0].image);
-                    this.url = data.apbc[0].image;
-                    console.log("url is: " + this.url);
-
-                    this.currentID = data.apbc[0].id;
-                    
-                    this.url = data.apbc[this.currentID].image;
-                    this.currentID = data.apbc[this.currentID].id;
-
-                    console.log("current url is: " + this.url);
-                    console.log("current id is: " + this.currentID);
-
-                });
-                */
         },
         methods: {
           btn1: function testing() {
@@ -235,7 +207,7 @@ menu{
 }
 
 
-questions{
+section{
 
   margin-top: 10%;
   color: rgb(54, 54, 54);
@@ -248,16 +220,16 @@ questions{
 
 }
 
-questions img{
+section img{
   border-radius: 30px;
   width: 60%;
 }
 
-questions h1{
+section h1{
   color: darkgreen;
   margin: 20px 0px 10px;
 }
-buttons{
+section{
   margin-left: 20%;
   margin-right: 20%;
 }

@@ -4,7 +4,7 @@
       <ul id="head-menu" class="nav">
         <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
       <li id="logo" class="logo">
-        <img alt="ApBC" :src="require('@/assets/' + logoUrl )" />
+        <img alt="ApBC" :src="require('@/assets/' + logoUrl)" />
         </li>
       <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
       </ul>
@@ -12,8 +12,10 @@
 
       <div class="gameScreen">
           <div class="box-wrapper">
-                            <ul id="apbc"></ul>
+                 <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
+
+               
             <section>
               <div class="quest1">
                 <h1>{{question123}}</h1>
@@ -21,10 +23,7 @@
 
                 
                 <div class="animalid">
-                  <img id="imgUrl" :src="require('@/assets/' + imageUrl )">
-
-                <!-- 
-                  ../assets/valp.jpg -->
+                  <img :src="require('@/assets/' + url)" />
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -43,9 +42,9 @@
     </div>
   </div>
 </template>
-
+<!--
 <script src="../store/fetch-apbc.js"></script>
-
+-->
 
 <script>
 
@@ -55,14 +54,31 @@ export default {
         imageUrl: String,
         logoUrl: String
     },
-    template: '\
-        <button :class="`dice_${this.value} `" v-on:click="$emit(\'select\')"></button>',
     data: function() {
     return {
-      question123: 'Vad heter djuret?'
+      question123: 'Vad heter djuret?',
+      books: [],
+      url: ''
     }
+  },
+      mounted(){
+        console.log("in mounted");
+        
+            fetch('http://127.0.0.1:3000/api/apbc/')
+                .then((resp) => resp.json())
+                .then((data) => {
+                    
+                    console.log(data.apbc);
+                    this.books = data.apbc;
+
+                    console.log(data.apbc[0].image);
+                    this.url = data.apbc[0].image;
+                    console.log("url is: " + this.url);
+                });
+        }
+
   }
-};
+
 
 
 //--------------------------------------//

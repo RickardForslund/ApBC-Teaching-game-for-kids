@@ -23,7 +23,9 @@
 
                 
                 <div class="animalid">
-                  <img :src="require('@/assets/' + url)" />
+
+                  <img :src="require('@/assets/animals/' + url)" />
+
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -31,7 +33,7 @@
             </section>
           
             <button>
-              <div @click="btn1()" class="button1">HUND</div>
+              <div @click="getNewobject(); getNewRandomNumber();" class="button1">HUND</div>
               <div @click="btn2()" class="button2">KATT</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
@@ -58,14 +60,21 @@ export default {
     return {
       question123: 'Vad heter djuret?',
       books: [],
-      url: '',
+      url: 'apa.png',
       currentID: null
     
     }
   },
       mounted(){
+
+// get a random number on start
+
+
+
+
         console.log("in mounted");
-        
+
+        /*
             fetch('http://127.0.0.1:3000/api/apbc/')
                 .then((resp) => resp.json())
                 .then((data) => {
@@ -77,10 +86,16 @@ export default {
                     this.url = data.apbc[0].image;
                     console.log("url is: " + this.url);
 
-                    console.log(data.apbc[0].id);
                     this.currentID = data.apbc[0].id;
                     
+                    this.url = data.apbc[this.currentID].image;
+                    this.currentID = data.apbc[this.currentID].id;
+
+                    console.log("current url is: " + this.url);
+                    console.log("current id is: " + this.currentID);
+
                 });
+                */
         },
         methods: {
           btn1: function testing() {
@@ -90,7 +105,38 @@ export default {
           btn2: function testing() {
             console.log("in btn2 function");
 
+          },
+
+          getNewRandomNumber: function () {
+            this.currentID = Math.floor((Math.random() * 10) + 1);
+            console.log(this.currentID);
+            
+          },
+
+          getNewobject: function () {
+            console.log("inside getImageUrl");
+            
+                fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
+                .then((resp) => resp.json())
+                .then((data) => {
+
+                  this.url = data.apbc.image;
+
+/*
+                    this.url = data.apbc[this.currentID].image;
+                    this.currentID = data.apbc[this.currentID].id;
+
+                    console.log("current url is: " + this.url);
+                    console.log("current id is: " + this.currentID);
+                    */
+                    
+                    
+                });
+            
           }
+
+
+
         }
 
   }

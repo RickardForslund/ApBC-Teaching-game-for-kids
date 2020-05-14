@@ -20,6 +20,39 @@ app.listen(port, () => {
 
 
 
+
+app.get("/api/apbc", (req, res, next) => {
+    var sql = "select * from apbc"
+    var params = []
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+        res.json({
+            "message":"success",
+            "apbc":rows
+        })
+      });
+});
+
+
+app.get("/api/apbc/:id", (req, res, next) => {
+    var sql = "select * from apbc where id = ?"
+    var params = [req.params.id]
+    db.get(sql, params, (err, row) => {
+        if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+        res.json({
+            "message":"success",
+            "apbc":row
+        })
+      });
+});
+
+
 app.get("/api/bok", (req, res, next) => {
     var sql = "select * from bok"
     var params = []
@@ -35,20 +68,10 @@ app.get("/api/bok", (req, res, next) => {
       });
 });
 
-app.get("/api/questions", (req, res, next) => {
-    var sql = "select * from questions"
-    var params = []
-    db.all(sql, params, (err, rows) => {
-        if (err) {
-          res.status(400).json({"error":err.message});
-          return;
-        }
-        res.json({
-            "message":"success",
-            "questions":rows
-        })
-      });
-});
+
+
+/*
+
 
 
 app.get("/api/bok/:id", (req, res, next) => {
@@ -65,6 +88,8 @@ app.get("/api/bok/:id", (req, res, next) => {
         })
       });
 });
+
+
 
 
 app.post("/api/bok/", (req, res, next) => {
@@ -132,4 +157,4 @@ app.delete("/api/bok/:id", (req, res, next) => {
 app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
-
+*/

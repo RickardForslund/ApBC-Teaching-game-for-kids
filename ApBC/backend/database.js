@@ -26,21 +26,40 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         }
     })  
 
-    console.log('Connected to Questions table.')
-        db.run(`CREATE TABLE questions (
-            questionId INTEGER PRIMARY KEY,
-            question TEXT,
-            answer TEXT
+    console.log('Connected to ApBC table.')
+        db.run(`CREATE TABLE apbc (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            image TEXT,
+            sound TEXT
             )`,(err) => {
         if (err) {
             // Table already created
         }else{
             // Table just created, creating some rows
-            var insert = 'INSERT INTO questions (question, answer) VALUES (?,?)'
+            var insert = 'INSERT INTO apbc (name, image, sound) VALUES (?,?,?)'
+            
+let img1 = 'fisk.jpg'
+let img2 = 'apa.png'
+let img3 = 'gris.png'
+let img4 = 'fjäril.png'
+let img5 = 'ko.png'
+let img6 = 'fågel.jpg'
+let img7 = 'häst.jpg'
+let img8 = 'panda.jpg'
+let img9 = 'myra.jpg'
+let img10 = 'zebra.jpg'
 
-            for (i = 1; i <= 10; i++) {
-                db.run(insert, ["question" + i, "answer" + i])
-              }
+            let names = ['fisk', 'apa', 'gris', 'fjäril', 'ko', 'fågel', 'häst', 'panda', 'myra', 'zebra' ]
+            let images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 ]
+            let sounds = ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null' ]
+
+            for (let i = 0; i < names.length; i++) {
+                db.run(insert, [names[i],images[i],sounds[i]])
+            }         
+
+            
+
         }
     })  
     }

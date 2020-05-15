@@ -60,7 +60,7 @@ export default {
     return {
       question123: 'Vad heter djuret?',
       books: [],
-      url: 'apa.png',
+      url: 'anka.png',
       animalName: '',
       currentID: null,
       bt1: '',
@@ -70,8 +70,8 @@ export default {
   },
       mounted(){
 
-        this.animalName = 'apa'
-        this.bt1 = 'apa'
+        this.animalName = 'tiger'
+        this.bt1 = 'tiger'
         this.bt2 = 'fisk'
 
         },
@@ -86,7 +86,7 @@ export default {
           },
 
           getNewRandomNumber: function () {
-            this.currentID = Math.floor((Math.random() * 10) + 1);
+            this.currentID = Math.floor((Math.random() * 12) + 1);
             console.log(this.currentID);
             
           },
@@ -221,7 +221,7 @@ section{
 }
 
 section img{
-  border-radius: 30px;
+  border-radius: 0px;
   width: 60%;
 }
 

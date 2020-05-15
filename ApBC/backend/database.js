@@ -39,20 +39,22 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             // Table just created, creating some rows
             var insert = 'INSERT INTO apbc (name, image, sound) VALUES (?,?,?)'
             
-let img1 = 'fisk.jpg'
-let img2 = 'apa.png'
+let img1 = 'anka.png'
+let img2 = 'geting.png'
 let img3 = 'gris.png'
-let img4 = 'fjäril.png'
-let img5 = 'ko.png'
-let img6 = 'fågel.jpg'
-let img7 = 'häst.jpg'
-let img8 = 'panda.jpg'
-let img9 = 'myra.jpg'
-let img10 = 'zebra.jpg'
+let img4 = 'groda.png'
+let img5 = 'hund.png'
+let img6 = 'katt.png'
+let img7 = 'ko.png'
+let img8 = 'lamm.png'
+let img9 = 'orm.png'
+let img10 = 'panda.png'
+let img11 = 'tiger.png'
+let img12 = 'zebra.png'
 
-            let names = ['fisk', 'apa', 'gris', 'fjäril', 'ko', 'fågel', 'häst', 'panda', 'myra', 'zebra' ]
-            let images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 ]
-            let sounds = ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null' ]
+            let names = ['anka', 'geting', 'gris', 'groda', 'hund', 'katt', 'ko', 'lamm', 'orm', 'panda', 'tiger', 'zebra' ]
+            let images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12 ]
+            let sounds = ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null' ]
 
             for (let i = 0; i < names.length; i++) {
                 db.run(insert, [names[i],images[i],sounds[i]])

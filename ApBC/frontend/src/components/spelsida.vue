@@ -70,8 +70,8 @@ export default {
   },
       mounted(){
 
-        this.animalName = 'tiger'
-        this.bt1 = 'tiger'
+        this.animalName = 'anka'
+        this.bt1 = 'anka'
         this.bt2 = 'fisk'
 
         },

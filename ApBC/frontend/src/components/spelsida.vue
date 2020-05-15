@@ -10,8 +10,8 @@
       </ul>
     </menu>
 
-      <div class="gameScreen">
-          <div class="box-wrapper">
+
+          <div class="game-screen">
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
 
@@ -32,16 +32,16 @@
               </div>
             </section>
           
-            <button>
+            <div class="buttons">
               <div @click="validate();" class="button1">{{bt1}}</div>
               <div @click="validate();" class="button2">{{bt2}}</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
-            </button>
+            </div>
 
           </div>
 
-    </div>
+
   </div>
 </template>
 <!--
@@ -181,30 +181,30 @@ menu{
   padding-left: 0px;
 }
 
-.gameScreen {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-family: 'Patua One';
-  background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
-  background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
 
-  min-height: 700px;
-}
+  .game-screen{
 
-.box-wrapper{
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Patua One';
+    background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
 
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
-  grid-template-areas:"questions" "buttons";
-  grid-gap: 10px;
+    min-height: 700px;
 
-}
+
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:"questions" "buttons";
+    grid-gap: 10px;
+
+  }
 
 
 section{

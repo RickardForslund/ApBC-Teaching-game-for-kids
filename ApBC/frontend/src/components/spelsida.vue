@@ -12,6 +12,13 @@
 
 
           <div class="game-screen">
+            <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
+
+              <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
+              <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="ChangeColorRed();" />
+
+            </div>
+
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
 
@@ -61,18 +68,25 @@ export default {
       question123: 'Vad heter djuret?',
       books: [],
       url: 'anka.png',
+      settings_url: 'settings.png',
+      music_url: 'music.png',
       animalName: '',
       currentID: null,
       bt1: '',
-      bt2: ''
+      bt2: '',
+      musicMuted: false
     
     }
+  },
+  created(){
+document.body.style.overflowX = "hidden";
   },
       mounted(){
 
         this.animalName = 'anka'
         this.bt1 = 'anka'
         this.bt2 = 'fisk'
+
 
         },
         methods: {
@@ -130,7 +144,32 @@ export default {
                }
                 
                
-             }
+             },
+            openNav: function () {
+              console.log("openNav");
+              document.getElementById('settingsPanel').style.right="0px"
+              
+            },
+            closeNav: function () {
+              console.log("closeNav");
+              document.getElementById('settingsPanel').style.right="-170px";
+              
+            },
+
+            ChangeColorRed: function () {
+
+              if (this.musicMuted == true) {
+                document.getElementById('music_logo').style.backgroundColor="#3a8bb1";
+                this.musicMuted = false 
+              }else{
+                document.getElementById('music_logo').style.backgroundColor="red";
+                this.musicMuted = true
+              }
+
+
+              
+              
+            }
 
 
 
@@ -206,6 +245,27 @@ menu{
 
   }
 
+.settingsPanel{
+  position: absolute;
+  right: -170px;
+  transition: 0.5s;
+  padding: 15px;
+  display: flex;
+  opacity: 0.9;
+
+}
+
+#settings{
+  height: 100px;
+  margin-top: 10px;
+
+}
+
+#music_logo{
+  margin: 39.5px 0 0 0;
+  height: 41px;
+  background-color: #3a8bb1;
+}
 
 section{
 
@@ -251,6 +311,7 @@ section{
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
       background-color: #003e0d;
     }
+
 
 
 </style>

@@ -186,7 +186,7 @@ menu{
 
     background-color: rgba(255, 255, 255, 0.8);
     font-family: 'Patua One';
-    background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
+    background-image: url("../assets/background.jpg");
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;

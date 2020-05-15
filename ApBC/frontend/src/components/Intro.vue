@@ -2,10 +2,10 @@
     <div class="hello">
         <div class="gameScreen">
         <!--<p>
-            Hej vännen!<br/>
+            Hur gammal <br/> är du ?</p>
             Jag heter Po.<br/>
             Kan du hjälpa mig <br/> och min kompis Leo <br/> att lära oss bokstäver <br/> och alfabetet?
-        </p>-->
+        -->
         <div class="img_intro"><img alt="Hej från Po" src="../assets/intro.png" class="intro"/></div>
         <div class="button"><router-link to="/difficulty"><img alt="Next" src="../assets/go.png" class="intro"/></router-link></div>
 </div></div>
@@ -28,7 +28,7 @@
 
         p {
             font-family: 'Patua One';
-            font-size: 30px;
+            font-size: 40px;
             color: darkgreen;
             padding: 10px;
             text-align: center;
@@ -52,9 +52,6 @@
 
         .img_intro:hover {
             background-color: white;
-        }
-
-        .button:hover {
         }
 
         .button {

@@ -1,5 +1,6 @@
 <template>
     <div class="difficulty">
+        <img alt="ApBC" src="../assets/apbcb.png" />
         <difficultyPage></difficultyPage>
     </div>
 </template>

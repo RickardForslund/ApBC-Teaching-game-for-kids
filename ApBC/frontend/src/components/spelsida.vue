@@ -10,29 +10,22 @@
       </ul>
     </menu>
 
-
           <div class="game-screen">
             <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
-
               <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
               <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="ChangeColorRed();" />
-
             </div>
 
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
-
                
             <section>
               <div class="quest1">
                 <h1>{{question123}}</h1>
-
-
                 
                 <div class="animalid">
 
                   <img :src="require('@/assets/animals/' + url)" />
-
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -45,10 +38,7 @@
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </div>
-
           </div>
-
-
   </div>
 </template>
 <!--
@@ -75,48 +65,40 @@ export default {
       bt1: '',
       bt2: '',
       musicMuted: false
-    
     }
   },
+
   created(){
 document.body.style.overflowX = "hidden";
   },
       mounted(){
-
         this.animalName = 'anka'
         this.bt1 = 'anka'
         this.bt2 = 'fisk'
-
-
         },
+
         methods: {
           btn1: function testing() {
             console.log("in btn1 function");
-
           },
           btn2: function testing() {
             console.log("in btn2 function");
-
           },
 
           getNewRandomNumber: function () {
             this.currentID = Math.floor((Math.random() * 12) + 1);
             console.log(this.currentID);
-            
           },
 
           getNewobject: function () {
             console.log("inside getImageUrl");
-            
                 fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
                 .then((resp) => resp.json())
                 .then((data) => {
-
                   this.url = data.apbc.image;
                   this.animalName = data.apbc.name;
 
-/*
-                    this.url = data.apbc[this.currentID].image;
+/*                  this.url = data.apbc[this.currentID].image;
                     this.currentID = data.apbc[this.currentID].id;
 
                     console.log("current url is: " + this.url);
@@ -126,38 +108,30 @@ document.body.style.overflowX = "hidden";
              },
 
              validate: function () {
-
-
-
                if (this.animalName == this.bt1) {
                  console.log("correct answer");
                  this.getNewRandomNumber(); 
                  this.getNewobject();
-                 
                }else if(this.animalName == this.bt2){
                 console.log("correct answer");
                 this.getNewRandomNumber(); 
                 this.getNewobject();
                }else {
                  console.log("wrong answer, try again!");
-                 
                }
-                
-               
              },
+
             openNav: function () {
               console.log("openNav");
               document.getElementById('settingsPanel').style.right="0px"
-              
             },
+
             closeNav: function () {
               console.log("closeNav");
               document.getElementById('settingsPanel').style.right="-170px";
-              
             },
 
             ChangeColorRed: function () {
-
               if (this.musicMuted == true) {
                 document.getElementById('music_logo').style.backgroundColor="#3a8bb1";
                 this.musicMuted = false 
@@ -165,25 +139,10 @@ document.body.style.overflowX = "hidden";
                 document.getElementById('music_logo').style.backgroundColor="red";
                 this.musicMuted = true
               }
-
-
-              
-              
             }
-
-
-
         }
-
   }
-
-
-
 //--------------------------------------//
-
-
-
-
 </script>
 
 

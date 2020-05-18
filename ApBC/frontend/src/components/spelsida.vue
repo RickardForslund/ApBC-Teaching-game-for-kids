@@ -10,22 +10,22 @@
       </ul>
     </menu>
 
-
           <div class="game-screen">
+            <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
+              <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
+              <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="ChangeColorRed();" />
+            </div>
+
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
-
                
             <section>
               <div class="quest1">
                 <h1>{{question123}}</h1>
-
-
                 
                 <div class="animalid">
 
                   <img :src="require('@/assets/animals/' + url)" />
-
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -38,10 +38,7 @@
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </div>
-
           </div>
-
-
   </div>
 </template>
 <!--
@@ -60,33 +57,37 @@ export default {
     return {
       question123: 'Vad heter djuret?',
       books: [],
-      url: 'apa.png',
+      url: 'anka.png',
+      settings_url: 'settings.png',
+      music_url: 'music.png',
       animalName: '',
       otherAnimalName: '',
       currentID: null,
       otherAnswerID: null,
       bt1: '',
-      bt2: ''
-    
+      bt2: '',
+      musicMuted: false
     }
   },
+
+  created(){
+document.body.style.overflowX = "hidden";
+  },
       mounted(){
-
-        this.animalName = 'apa'
-        this.bt1 = 'apa'
+        this.animalName = 'anka'
+        this.bt1 = 'anka'
         this.bt2 = 'fisk'
-
         },
+
         methods: {
           btn1: function testing() {
             console.log("in btn1 function");
-
           },
           btn2: function testing() {
             console.log("in btn2 function");
-
           },
 
+<<<<<<< HEAD
           generateNumber: function(){
             this.currentID = Math.floor((Math.random() * 10) + 1);
             console.log(this.currentID);
@@ -96,7 +97,7 @@ export default {
             do {
               this.generateNumber();
             } while (this.currentID==this.otherAnswerID);
-            
+
           },
 
           getNewobject: function () {
@@ -108,11 +109,10 @@ export default {
                       this.otherAnimalName = data.apbc.name;
                       console.log("other animal name is: " + this.otherAnimalName)
                     });
-            
+
                 fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
                 .then((resp) => resp.json())
                 .then((data) => {
-
                   this.url = data.apbc.image;
                   this.animalName = data.apbc.name;
 
@@ -128,6 +128,9 @@ export default {
 
 /*
                     this.url = data.apbc[this.currentID].image;
+=======
+/*                  this.url = data.apbc[this.currentID].image;
+>>>>>>> 54cc7422a75410be69542758dc41f41c36a62556
                     this.currentID = data.apbc[this.currentID].id;
 
                     console.log("current url is: " + this.url);
@@ -137,39 +140,41 @@ export default {
              },
 
              validate: function () {
-
-
-
                if (this.animalName == this.bt1) {
                  console.log("correct answer");
                  this.getNewRandomNumber(); 
                  this.getNewobject();
-                 
                }else if(this.animalName == this.bt2){
                 console.log("correct answer");
                 this.getNewRandomNumber(); 
                 this.getNewobject();
                }else {
                  console.log("wrong answer, try again!");
-                 
                }
-                
-               
-             }
+             },
 
+            openNav: function () {
+              console.log("openNav");
+              document.getElementById('settingsPanel').style.right="0px"
+            },
 
+            closeNav: function () {
+              console.log("closeNav");
+              document.getElementById('settingsPanel').style.right="-170px";
+            },
 
-        }
+            ChangeColorRed: function () {
+              if (this.musicMuted == true) {
+                document.getElementById('music_logo').style.backgroundColor="#3a8bb1";
+                this.musicMuted = false 
+              }else{
+                document.getElementById('music_logo').style.backgroundColor="red";
+                this.musicMuted = true
+              }
+            }
 
   }
-
-
-
 //--------------------------------------//
-
-
-
-
 </script>
 
 
@@ -211,7 +216,7 @@ menu{
 
     background-color: rgba(255, 255, 255, 0.8);
     font-family: 'Patua One';
-    background-image: url("https://i.pinimg.com/originals/17/c1/45/17c1456cc20762a21966dd584498e7e5.jpg");
+    background-image: url("../assets/background.jpg");
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
@@ -231,6 +236,27 @@ menu{
 
   }
 
+.settingsPanel{
+  position: absolute;
+  right: -170px;
+  transition: 0.5s;
+  padding: 15px;
+  display: flex;
+  opacity: 0.9;
+
+}
+
+#settings{
+  height: 100px;
+  margin-top: 10px;
+
+}
+
+#music_logo{
+  margin: 39.5px 0 0 0;
+  height: 41px;
+  background-color: #3a8bb1;
+}
 
 section{
 
@@ -246,7 +272,7 @@ section{
 }
 
 section img{
-  border-radius: 30px;
+  border-radius: 0px;
   width: 60%;
 }
 
@@ -276,6 +302,7 @@ section{
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
       background-color: #003e0d;
     }
+
 
 
 </style>

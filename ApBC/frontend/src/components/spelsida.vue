@@ -13,19 +13,19 @@
           <div class="game-screen">
             <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
               <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
-              <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="ChangeColorRed();" />
+              <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
             </div>
 
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
                
-            <section>
+            <section id="section">
               <div class="quest1">
                 <h1>{{question123}}</h1>
                 
                 <div class="animalid">
 
-                  <img :src="require('@/assets/animals/' + url)" />
+                  <img id="animal_image" :src="require('@/assets/animals/' + url)" />
 
                 </div>
                 <!--<h4>what kind of animal is this?</h4>-->
@@ -33,8 +33,8 @@
             </section>
           
             <div class="buttons">
-              <div @click="validate();" class="button1">{{bt1}}</div>
-              <div @click="validate();" class="button2">{{bt2}}</div>
+              <div @click="validate(1);" class="button1">{{bt1}}</div>
+              <div @click="validate(2);" class="button2">{{bt2}}</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </div>
@@ -66,7 +66,8 @@ export default {
       otherAnswerID: null,
       bt1: '',
       bt2: '',
-      musicMuted: false
+      musicMuted: false,
+      lastID: null
     }
   },
 
@@ -74,9 +75,12 @@ export default {
     document.body.style.overflowX = "hidden";
   },
   mounted() {
-    this.animalName = 'anka'
-    this.bt1 = 'anka'
-    this.bt2 = 'fisk'
+    
+    this.currentID = 1;
+    this.animalName = 'anka';
+    this.bt1 = 'anka';
+    this.bt2 = 'fisk';
+    
   },
 
   methods: {
@@ -89,13 +93,16 @@ export default {
 
     generateNumber: function () {
       this.currentID = Math.floor((Math.random() * 10) + 1);
+      this.otherAnswerID = Math.floor((Math.random() * 10) + 1);
       console.log(this.currentID);
     },
 
     getNewRandomNumber: function () {
+      this.lastID = this.currentID;
+
       do {
         this.generateNumber();
-      } while (this.currentID == this.otherAnswerID);
+      } while (this.currentID == this.otherAnswerID || this.currentID == this.lastID);
 
     },
 
@@ -115,6 +122,8 @@ export default {
                 this.url = data.apbc.image;
                 this.animalName = data.apbc.name;
 
+
+              // random correct answer
                 let randomNumber = Math.floor(Math.random() * 2 + 1);
                 if (randomNumber == 1) {
                   this.bt1 = this.animalName;
@@ -124,31 +133,42 @@ export default {
                   this.bt1 = this.otherAnimalName;
                 }
 
-                /*
-                    this.url = data.apbc[this.currentID].image;
-=======
-/*                  this.url = data.apbc[this.currentID].image;
->>>>>>> 54cc7422a75410be69542758dc41f41c36a62556
-                    this.currentID = data.apbc[this.currentID].id;
 
-                    console.log("current url is: " + this.url);
-                    console.log("current id is: " + this.currentID);
-                    */
               });
     },
 
-    validate: function () {
-      if (this.animalName == this.bt1) {
-        console.log("correct answer");
-        this.getNewRandomNumber();
+    greeting: function () {
+      console.log("grattis");
+         //   document.getElementById('section').style.backgroundcolor = "black";
+     //    this.url = 'fisk.png';
+         this.question123 = 'Grattis!'   
+    },
+
+    validate: function (nr) {
+      if (nr == 1 & this.animalName == this.bt1) {
+        this.greeting();
+        setTimeout(() => {
+          this.resetSettings();
+          this.getNewRandomNumber();
+          this.getNewobject();
+
+        }, 2000);
+
+      } else if (nr == 2 & this.animalName == this.bt2) {
+        this.greeting();
+        setTimeout(() => {
+          this.resetSettings();
+          this.getNewRandomNumber();
         this.getNewobject();
-      } else if (this.animalName == this.bt2) {
-        console.log("correct answer");
-        this.getNewRandomNumber();
-        this.getNewobject();
+
+        }, 2000);
       } else {
         console.log("wrong answer, try again!");
       }
+    },
+    resetSettings: function () {
+      this.question123 = 'Vad heter djuret?'
+      document.getElementById('section').style.backgroundcolor = "";
     },
 
     openNav: function () {
@@ -161,13 +181,15 @@ export default {
       document.getElementById('settingsPanel').style.right = "-170px";
     },
 
-    ChangeColorRed: function () {
+    muteSound: function () {
       if (this.musicMuted == true) {
         document.getElementById('music_logo').style.backgroundColor = "#3a8bb1";
         this.musicMuted = false
+
       } else {
         document.getElementById('music_logo').style.backgroundColor = "red";
         this.musicMuted = true
+
       }
     }
   }
@@ -241,7 +263,7 @@ menu{
   transition: 0.5s;
   padding: 15px;
   display: flex;
-  opacity: 0.9;
+  opacity: 1;
 
 }
 

@@ -62,7 +62,9 @@ export default {
       books: [],
       url: 'apa.png',
       animalName: '',
+      otherAnimalName: '',
       currentID: null,
+      otherAnswerID: null,
       bt1: '',
       bt2: ''
     
@@ -85,14 +87,27 @@ export default {
 
           },
 
-          getNewRandomNumber: function () {
+          generateNumber: function(){
             this.currentID = Math.floor((Math.random() * 10) + 1);
             console.log(this.currentID);
+},
+
+          getNewRandomNumber: function () {
+            do {
+              this.generateNumber();
+            } while (this.currentID==this.otherAnswerID);
             
           },
 
           getNewobject: function () {
             console.log("inside getImageUrl");
+
+            fetch('http://127.0.0.1:3000/api/apbc/' + this.otherAnswerID)
+                    .then((resp) => resp.json())
+                    .then((data) => {
+                      this.otherAnimalName = data.apbc.name;
+                      console.log("other animal name is: " + this.otherAnimalName)
+                    });
             
                 fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
                 .then((resp) => resp.json())
@@ -100,6 +115,16 @@ export default {
 
                   this.url = data.apbc.image;
                   this.animalName = data.apbc.name;
+
+                  let randomNumber = Math.floor(Math.random()*2+1);
+                  if (randomNumber==1){
+                    this.bt1 = this.animalName;
+                    this.bt2 = this.otherAnimalName;
+                  }
+                  else{
+                    this.bt2 = this.animalName;
+                    this.bt1 = this.otherAnimalName;
+                  }
 
 /*
                     this.url = data.apbc[this.currentID].image;

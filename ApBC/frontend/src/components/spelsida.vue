@@ -125,7 +125,6 @@ export default {
                 this.url = data.apbc.image;
                 this.animalName = data.apbc.name;
 
-
               // random correct answer
                 let randomNumber = Math.floor(Math.random() * 2 + 1);
                 if (randomNumber == 1) {
@@ -143,6 +142,12 @@ export default {
     greeting: function () {
       console.log("grattis");
 
+    if (this.musicMuted == false) {
+          const sound = ( new Audio( require('@/assets/sounds/cheer2.mp3')));
+    sound.play();
+    }
+
+
     this.url = 'grattis.gif'
      this.question123 = 'Grattis!'   
      this.bt1 = ''
@@ -158,7 +163,7 @@ export default {
           this.getNewRandomNumber();
           this.getNewobject();
 
-        }, 2300);
+        }, 5000);
 
       } else if (nr == 2 & this.animalName == this.bt2) {
         this.greeting();
@@ -167,7 +172,7 @@ export default {
           this.getNewRandomNumber();
         this.getNewobject();
 
-        }, 2300);
+        }, 5000);
       } else {
         console.log("wrong answer, try again!");
         document.getElementById(nr).style.backgroundColor = "red";

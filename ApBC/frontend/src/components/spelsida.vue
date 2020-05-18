@@ -56,7 +56,6 @@ export default {
   data: function () {
     return {
       question123: 'Vad heter djuret?',
-      books: [],
       url: 'anka.png',
       settings_url: 'settings.png',
       music_url: 'music.png',
@@ -157,7 +156,7 @@ export default {
           this.getNewRandomNumber();
           this.getNewobject();
 
-        }, 2000);
+        }, 2300);
 
       } else if (nr == 2 & this.animalName == this.bt2) {
         this.greeting();
@@ -166,7 +165,7 @@ export default {
           this.getNewRandomNumber();
         this.getNewobject();
 
-        }, 2000);
+        }, 2300);
       } else {
         console.log("wrong answer, try again!");
         document.getElementById(nr).style.backgroundColor = "red";

@@ -1,3 +1,4 @@
+// Imports
 const express = require("express")
 const app = express()
 const cors = require('cors')
@@ -5,13 +6,13 @@ const db = require("./database.js")
 const bodyParser = require("body-parser");
 const port = 3000
 
-// imports
+// uses
 app.use(
   cors(),
-  express.static('public'),
   bodyParser.urlencoded({ extended: false }),
   bodyParser.json()
   )
+
 
 // Start server
 app.listen(port, () => {
@@ -20,7 +21,7 @@ app.listen(port, () => {
 
 
 
-
+// Get all
 app.get("/api/apbc", (req, res, next) => {
     var sql = "select * from apbc"
     var params = []
@@ -36,7 +37,7 @@ app.get("/api/apbc", (req, res, next) => {
       });
 });
 
-
+// Get by id
 app.get("/api/apbc/:id", (req, res, next) => {
     var sql = "select * from apbc where id = ?"
     var params = [req.params.id]
@@ -51,110 +52,3 @@ app.get("/api/apbc/:id", (req, res, next) => {
         })
       });
 });
-
-
-app.get("/api/bok", (req, res, next) => {
-    var sql = "select * from bok"
-    var params = []
-    db.all(sql, params, (err, rows) => {
-        if (err) {
-          res.status(400).json({"error":err.message});
-          return;
-        }
-        res.json({
-            "message":"success",
-            "bok":rows
-        })
-      });
-});
-
-
-
-/*
-
-
-
-app.get("/api/bok/:id", (req, res, next) => {
-    var sql = "select * from bok where bokId = ?"
-    var params = [req.params.id]
-    db.get(sql, params, (err, row) => {
-        if (err) {
-          res.status(400).json({"error":err.message});
-          return;
-        }
-        res.json({
-            "message":"success",
-            "bok":row
-        })
-      });
-});
-
-
-
-
-app.post("/api/bok/", (req, res, next) => {
-    var errors=[]
-    if (!req.body.bokIsbn){
-        errors.push("Inget ISBN");
-    }
-    var data = {
-        bokTitel: req.body.bokTitel,
-        bokForfattare: req.body.bokForfattare,
-        bokIsbn: req.body.bokIsbn,
-        bokPris: req.body.bokPris
-    }
-    var sql ='INSERT INTO bok (bokTitel, bokForfattare, bokIsbn, bokPris) VALUES (?,?,?,?)'
-    var params =[data.bokTitel, data.bokForfattare, data.bokIsbn, data.bokPris]
-    db.run(sql, params, function (err, result) {
-        if (err){
-            res.status(400).json({"error": err.message})
-            return;
-        }
-        res.json({
-            "message": "success",
-            "bok": data,
-            "id" : this.lastID
-        })
-    });
-})
-
-app.put("/api/bok/:id", (req, res, next) => {
-    var data = {
-        bokTitel: req.body.bokTitel,
-        bokForfattare: req.body.bokForfattare,
-        bokIsbn: req.body.bokIsbn,
-        bokPris: req.body.bokPris
-    }
-    var sql ='UPDATE bok SET bokTitel = ?, bokForfattare = ?, bokIsbn = ?, bokPris = ? WHERE bokId = ?'
-    var params =[data.bokTitel, data.bokForfattare, data.bokIsbn, data.bokPris, req.params.id]
-    db.run(sql, params, function (err, result) {
-        if (err){
-            res.status(400).json({"error": err.message})
-            return;
-        }
-        res.json({
-            "message": "success",
-            "bok": data,
-            "id" : this.lastID
-        })
-    });
-})
-
-app.delete("/api/bok/:id", (req, res, next) => {
-    db.run(
-        'DELETE FROM bok WHERE bokId = ?',
-        req.params.id,
-        function (err, result) {
-            if (err){
-                res.status(400).json({"error": res.message})
-                return;
-            }
-            res.json({"message":"deleted", rows: this.changes})
-    });
-})
-
-// Root path
-app.get("/", (req, res, next) => {
-    res.json({"message":"Ok"})
-});
-*/

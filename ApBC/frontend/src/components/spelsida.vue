@@ -32,7 +32,7 @@
               </div>
             </section>
           
-            <div class="buttons">
+            <div id="buttons" class="buttons">
               <div id="1" @click="validate(1);" class="button1">{{bt1}}</div>
               <div id="2" @click="validate(2);" class="button2">{{bt2}}</div>
               <!--<div class="button3">b3</div>
@@ -144,8 +144,10 @@ export default {
       console.log("grattis");
 
     this.url = 'grattis.gif'
-
      this.question123 = 'Grattis!'   
+     this.bt1 = ''
+     this.bt2 = ''
+     document.getElementById("buttons").style.opacity = 0;
     },
 
     validate: function (nr) {
@@ -174,8 +176,13 @@ export default {
     },
     resetSettings: function () {
       this.question123 = 'Vad heter djuret?'
+      document.getElementById("buttons").style.transition = "0.5s ease-in-out 0s";
+
+
+
       document.getElementById('1').style.backgroundColor = "darkgreen";
       document.getElementById('2').style.backgroundColor = "darkgreen";
+      document.getElementById("buttons").style.opacity = 1;
     },
 
     openNav: function () {

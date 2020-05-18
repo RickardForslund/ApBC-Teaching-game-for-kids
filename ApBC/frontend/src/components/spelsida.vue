@@ -50,10 +50,10 @@
 export default {
   name: "spelsida",
   props: {
-        imageUrl: String,
-        logoUrl: String
-    },
-    data: function() {
+    imageUrl: String,
+    logoUrl: String
+  },
+  data: function () {
     return {
       question123: 'Vad heter djuret?',
       books: [],
@@ -70,63 +70,61 @@ export default {
     }
   },
 
-  created(){
-document.body.style.overflowX = "hidden";
+  created() {
+    document.body.style.overflowX = "hidden";
   },
-      mounted(){
-        this.animalName = 'anka'
-        this.bt1 = 'anka'
-        this.bt2 = 'fisk'
-        },
+  mounted() {
+    this.animalName = 'anka'
+    this.bt1 = 'anka'
+    this.bt2 = 'fisk'
+  },
 
-        methods: {
-          btn1: function testing() {
-            console.log("in btn1 function");
-          },
-          btn2: function testing() {
-            console.log("in btn2 function");
-          },
+  methods: {
+    btn1: function testing() {
+      console.log("in btn1 function");
+    },
+    btn2: function testing() {
+      console.log("in btn2 function");
+    },
 
-<<<<<<< HEAD
-          generateNumber: function(){
-            this.currentID = Math.floor((Math.random() * 10) + 1);
-            console.log(this.currentID);
-},
+    generateNumber: function () {
+      this.currentID = Math.floor((Math.random() * 10) + 1);
+      console.log(this.currentID);
+    },
 
-          getNewRandomNumber: function () {
-            do {
-              this.generateNumber();
-            } while (this.currentID==this.otherAnswerID);
+    getNewRandomNumber: function () {
+      do {
+        this.generateNumber();
+      } while (this.currentID == this.otherAnswerID);
 
-          },
+    },
 
-          getNewobject: function () {
-            console.log("inside getImageUrl");
+    getNewobject: function () {
+      console.log("inside getImageUrl");
 
-            fetch('http://127.0.0.1:3000/api/apbc/' + this.otherAnswerID)
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                      this.otherAnimalName = data.apbc.name;
-                      console.log("other animal name is: " + this.otherAnimalName)
-                    });
+      fetch('http://127.0.0.1:3000/api/apbc/' + this.otherAnswerID)
+              .then((resp) => resp.json())
+              .then((data) => {
+                this.otherAnimalName = data.apbc.name;
+                console.log("other animal name is: " + this.otherAnimalName)
+              });
 
-                fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
-                .then((resp) => resp.json())
-                .then((data) => {
-                  this.url = data.apbc.image;
-                  this.animalName = data.apbc.name;
+      fetch('http://127.0.0.1:3000/api/apbc/' + this.currentID)
+              .then((resp) => resp.json())
+              .then((data) => {
+                this.url = data.apbc.image;
+                this.animalName = data.apbc.name;
 
-                  let randomNumber = Math.floor(Math.random()*2+1);
-                  if (randomNumber==1){
-                    this.bt1 = this.animalName;
-                    this.bt2 = this.otherAnimalName;
-                  }
-                  else{
-                    this.bt2 = this.animalName;
-                    this.bt1 = this.otherAnimalName;
-                  }
+                let randomNumber = Math.floor(Math.random() * 2 + 1);
+                if (randomNumber == 1) {
+                  this.bt1 = this.animalName;
+                  this.bt2 = this.otherAnimalName;
+                } else {
+                  this.bt2 = this.animalName;
+                  this.bt1 = this.otherAnimalName;
+                }
 
-/*
+                /*
                     this.url = data.apbc[this.currentID].image;
 =======
 /*                  this.url = data.apbc[this.currentID].image;
@@ -136,45 +134,46 @@ document.body.style.overflowX = "hidden";
                     console.log("current url is: " + this.url);
                     console.log("current id is: " + this.currentID);
                     */
-               });
-             },
+              });
+    },
 
-             validate: function () {
-               if (this.animalName == this.bt1) {
-                 console.log("correct answer");
-                 this.getNewRandomNumber(); 
-                 this.getNewobject();
-               }else if(this.animalName == this.bt2){
-                console.log("correct answer");
-                this.getNewRandomNumber(); 
-                this.getNewobject();
-               }else {
-                 console.log("wrong answer, try again!");
-               }
-             },
+    validate: function () {
+      if (this.animalName == this.bt1) {
+        console.log("correct answer");
+        this.getNewRandomNumber();
+        this.getNewobject();
+      } else if (this.animalName == this.bt2) {
+        console.log("correct answer");
+        this.getNewRandomNumber();
+        this.getNewobject();
+      } else {
+        console.log("wrong answer, try again!");
+      }
+    },
 
-            openNav: function () {
-              console.log("openNav");
-              document.getElementById('settingsPanel').style.right="0px"
-            },
+    openNav: function () {
+      console.log("openNav");
+      document.getElementById('settingsPanel').style.right = "0px"
+    },
 
-            closeNav: function () {
-              console.log("closeNav");
-              document.getElementById('settingsPanel').style.right="-170px";
-            },
+    closeNav: function () {
+      console.log("closeNav");
+      document.getElementById('settingsPanel').style.right = "-170px";
+    },
 
-            ChangeColorRed: function () {
-              if (this.musicMuted == true) {
-                document.getElementById('music_logo').style.backgroundColor="#3a8bb1";
-                this.musicMuted = false 
-              }else{
-                document.getElementById('music_logo').style.backgroundColor="red";
-                this.musicMuted = true
-              }
-            }
-
+    ChangeColorRed: function () {
+      if (this.musicMuted == true) {
+        document.getElementById('music_logo').style.backgroundColor = "#3a8bb1";
+        this.musicMuted = false
+      } else {
+        document.getElementById('music_logo').style.backgroundColor = "red";
+        this.musicMuted = true
+      }
+    }
   }
-//--------------------------------------//
+}
+
+
 </script>
 
 

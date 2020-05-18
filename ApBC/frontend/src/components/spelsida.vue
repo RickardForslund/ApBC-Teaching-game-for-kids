@@ -67,7 +67,8 @@ export default {
       bt1: '',
       bt2: '',
       musicMuted: false,
-      lastID: null
+      lastID: null,
+      otherlastID: null
     }
   },
 
@@ -99,11 +100,14 @@ export default {
 
     getNewRandomNumber: function () {
       this.lastID = this.currentID;
+      this.otherlastID = this.otherAnswerID;
 
       do {
         this.generateNumber();
-      } while (this.currentID == this.otherAnswerID || this.currentID == this.lastID);
-
+      } while (
+      this.currentID == this.otherAnswerID || 
+      this.currentID == this.lastID || 
+      this.otherAnswerID == this.otherlastID);
     },
 
     getNewobject: function () {

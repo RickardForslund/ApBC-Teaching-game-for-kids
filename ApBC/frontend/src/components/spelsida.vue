@@ -33,8 +33,8 @@
             </section>
           
             <div class="buttons">
-              <div @click="validate(1);" class="button1">{{bt1}}</div>
-              <div @click="validate(2);" class="button2">{{bt2}}</div>
+              <div id="1" @click="validate(1);" class="button1">{{bt1}}</div>
+              <div id="2" @click="validate(2);" class="button2">{{bt2}}</div>
               <!--<div class="button3">b3</div>
               <div class="button4">b4</div>-->
             </div>
@@ -143,9 +143,10 @@ export default {
 
     greeting: function () {
       console.log("grattis");
-         //   document.getElementById('section').style.backgroundcolor = "black";
-     //    this.url = 'fisk.png';
-         this.question123 = 'Grattis!'   
+
+    this.url = 'grattis.gif'
+
+     this.question123 = 'Grattis!'   
     },
 
     validate: function (nr) {
@@ -168,11 +169,14 @@ export default {
         }, 2000);
       } else {
         console.log("wrong answer, try again!");
+        document.getElementById(nr).style.backgroundColor = "red";
+        
       }
     },
     resetSettings: function () {
       this.question123 = 'Vad heter djuret?'
-      document.getElementById('section').style.backgroundcolor = "";
+      document.getElementById('1').style.backgroundColor = "darkgreen";
+      document.getElementById('2').style.backgroundColor = "darkgreen";
     },
 
     openNav: function () {

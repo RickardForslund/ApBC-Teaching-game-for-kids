@@ -1,11 +1,7 @@
 <template>
     <div class="hello">
         <div class="gameScreen">
-        <!--<p>
-            Hur gammal <br/> är du ?</p>
-            Jag heter Po.<br/>
-            Kan du hjälpa mig <br/> och min kompis Leo <br/> att lära oss bokstäver <br/> och alfabetet?
-        -->
+
         <div class="img_intro"><img alt="Hej från Po" src="../assets/intro.png" class="intro"/></div>
         <div class="button"><router-link to="/difficulty"><img alt="Next" src="../assets/go.png" class="intro"/></router-link></div>
 </div></div>

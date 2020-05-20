@@ -18,10 +18,13 @@
 
                  <ul id="apbc"></ul>
                 <h1 id="apbc"></h1>
+            <div class="questionText">
+              <h1>{{question123}}</h1>
+            </div>
                
             <section id="section">
               <div class="quest1">
-                <h1>{{question123}}</h1>
+
                 
                 <div class="animalid">
 
@@ -92,21 +95,27 @@ export default {
     },
 
     generateNumber: function () {
+      console.log("Generating IDs")
       this.currentID = Math.floor((Math.random() * 10) + 1);
       this.otherAnswerID = Math.floor((Math.random() * 10) + 1);
-      console.log(this.currentID);
+      console.log("Current ID generated is: " + this.currentID);
+      console.log("Other ID generated is: " + this.otherAnswerID);
     },
 
     getNewRandomNumber: function () {
       this.lastID = this.currentID;
       this.otherlastID = this.otherAnswerID;
+      console.log("Last correct answer is: " + this.lastID);
+      console.log("Last other answer is: " + this.otherlastID);
 
       do {
         this.generateNumber();
       } while (
       this.currentID == this.otherAnswerID || 
       this.currentID == this.lastID || 
-      this.otherAnswerID == this.otherlastID);
+      this.otherAnswerID == this.otherlastID||
+      this.otherAnswerID == this.lastID||
+      this.currentID == this.otherlastID);
     },
 
     getNewobject: function () {
@@ -142,6 +151,7 @@ export default {
     greeting: function () {
       console.log("grattis");
 
+
     if (this.musicMuted == false) {
           const sound = ( new Audio( require('@/assets/sounds/cheer2.mp3')));
     sound.play();
@@ -153,10 +163,17 @@ export default {
      this.bt1 = ''
      this.bt2 = ''
      document.getElementById("buttons").style.opacity = 0;
+
+
     },
 
     validate: function (nr) {
       if (nr == 1 & this.animalName == this.bt1) {
+        //COMMENTED OUT FOR TESTING PURPOSES. Replace below code with commented out code for proper build
+        this.resetSettings();
+        this.getNewRandomNumber();
+        this.getNewobject();
+        /*
         this.greeting();
         setTimeout(() => {
           this.resetSettings();
@@ -165,14 +182,23 @@ export default {
 
         }, 5000);
 
+         */
+
       } else if (nr == 2 & this.animalName == this.bt2) {
+        //COMMENTED OUT FOR TESTING PURPOSES. Replace below code with commented out code for proper build
+        this.resetSettings();
+        this.getNewRandomNumber();
+        this.getNewobject();
+        /*
         this.greeting();
         setTimeout(() => {
           this.resetSettings();
           this.getNewRandomNumber();
-        this.getNewobject();
+          this.getNewobject();
 
         }, 5000);
+
+         */
       } else {
         console.log("wrong answer, try again!");
         document.getElementById(nr).style.backgroundColor = "red";
@@ -300,14 +326,14 @@ menu{
 
 section{
 
-  margin-top: 10%;
+  margin-top: 0%;
   color: rgb(54, 54, 54);
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   border-radius: 30px;
   margin-left: 10%;
   margin-right: 10%;
-  padding: 0px 5% 2%;
+  padding: 5% 5% 2%;
 
 }
 
@@ -316,7 +342,7 @@ section img{
   width: 60%;
 }
 
-section h1{
+.questionText h1{
   color: darkgreen;
   margin: 20px 0px 10px;
 }

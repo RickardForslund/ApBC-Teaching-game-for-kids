@@ -4,7 +4,7 @@
       <ul id="head-menu" class="nav">
         <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
       <li id="logo" class="logo">
-        <img alt="ApBC" :src="require('@/assets/' + logoUrl)" />
+        <router-link to="/Home"><img alt="ApBC" :src="require('@/assets/' + logoUrl)" /></router-link>
         </li>
       <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
       </ul>
@@ -368,7 +368,10 @@ section{
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
       background-color: #003e0d;
     }
-
-
+  .logo:hover {
+    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+  }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="difficulty">
-        <img alt="ApBC" src="../assets/apbcb.png" />
+        <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
         <difficultyPage></difficultyPage>
     </div>
 </template>
@@ -17,5 +17,11 @@
 </script>
 
 <style scoped>
+
+    .button:hover {
+        transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+    }
 
 </style>

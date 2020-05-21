@@ -15,39 +15,20 @@
     @media only screen and (max-width: 870px) {
         .gameScreen {
             display: grid;
-            grid-template-areas:
-                'main'
-                'down';
+            grid-template-areas: 'main' 'down';
             grid-gap: 10px;
             text-align: center;
-        }
-
-        p {
-            font-family: 'Patua One';
-            font-size: 40px;
-            color: darkgreen;
-            padding: 10px;
-            text-align: center;
-        }
-
-        a {
-            color: #b97992;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 40px;
         }
 
         .img_intro {
             grid-area: main;
         }
+
         .intro {
             width: 50%;
             height: auto;
             display: block;
             margin: 0 auto;
-        }
-
-        .img_intro:hover {
-            background-color: white;
         }
 
         .button {
@@ -59,7 +40,12 @@
             font-size: 20px;
             color: darkgreen;
             padding: 10px;
-            text-align: center;
+        }
+
+        .button:hover {
+            transform: scale(1.1, 1.1);
+            -webkit-transform: scale(1.1, 1.1);
+            -moz-transform: scale(1.1, 1.1);
         }
     }
 </style>

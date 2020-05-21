@@ -19,9 +19,9 @@
 <style scoped>
 
     .button:hover {
-        transform: scale(1.1, 1.1);
-        -webkit-transform: scale(1.1, 1.1);
-        -moz-transform: scale(1.1, 1.1);
+        transform: scale(0.9, 0.9);
+        -webkit-transform: scale(0.9,0.9);
+        -moz-transform: scale(0.9, 0.9);
     }
 
 </style>

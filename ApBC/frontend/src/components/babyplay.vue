@@ -1,21 +1,34 @@
 <template>
     <div class="start">
+
+        <!--
         <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
             <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
             <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
         </div>
+        -->
 
         <div class="outsideDiv">
+            
         <div class="grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-            <div class="grid-item">6</div>
-            <div class="grid-item">7</div>
-            <div class="grid-item">8</div>
-            <div class="grid-item">9</div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+            <div class="grid-item">
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
         </div>
     </div>
     </div>
@@ -30,6 +43,8 @@
         },
         data: function () {
             return {
+                map: "baby",
+                url: "orange.png",
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
@@ -37,11 +52,21 @@
         },
 
         created() {
+         document.body.style.overflowX = "hidden";
+         document.body.style.overflowY = "hidden";
+
         },
         mounted() {
         },
 
         methods: {
+            pop: function () {
+                console.log("pop");
+                this.map = "animals"
+                this.url = "anka.png"
+                
+                
+            },
             openNav: function () {
                 console.log("openNav");
                 document.getElementById('settingsPanel').style.right = "0px"
@@ -85,9 +110,13 @@
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
-        grid-gap: 1px;
+        grid-gap: 0px;
         width: 100vw;
         height: 100vh;
+        background-image: url("../assets/baby/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 70px 300px 70px 300px;
     }
 
     .grid-item {
@@ -97,7 +126,14 @@
         font-family: Arial;
         font-size: 3rem;
         font-weight: bold;
-        background: forestgreen;
+
+
+
+    }
+
+    .grid-item > #ballong {
+        max-height: 100%;
+        opacity: 0.9;
     }
     .settingsPanel{
         position: absolute;

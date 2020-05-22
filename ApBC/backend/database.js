@@ -1,5 +1,4 @@
 var sqlite3 = require('sqlite3').verbose()
-
 const DBSOURCE = "Database.db"
 var columns = 3;
 var lines = 0;
@@ -21,7 +20,6 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             )`,(err) => {
         if (err) {
             console.log("Table already created");
-            
             // Table already created
         }else{
             // Table just created, creating some rows

@@ -1,6 +1,12 @@
 <template>
+<!--
     <div class="baby">
         <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
+        <babyplay></babyplay>
+    </div>
+    -->
+    <div class="baby">
+       
         <babyplay></babyplay>
     </div>
 </template>

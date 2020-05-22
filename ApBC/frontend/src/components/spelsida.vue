@@ -1,14 +1,5 @@
 <template>
   <div class="start">
-    <menu>
-      <ul id="head-menu" class="nav">
-        <!--<li id="home" class="home"><img alt="Home" src="../assets/home.png" /></li>-->
-      <li id="logo" class="logo">
-        <router-link to="/Home"><img alt="ApBC" :src="require('@/assets/' + logoUrl)" /></router-link>
-        </li>
-      <!--<li id="sound" class="sound"><img alt="Music" src="../assets/music.png" /></li>-->
-      </ul>
-    </menu>
 
           <div class="game-screen">
             <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
@@ -16,8 +7,6 @@
               <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
             </div>
 
-                 <ul id="apbc"></ul>
-                <h1 id="apbc"></h1>
             <div class="questionText">
               <h1>{{question123}}</h1>
             </div>
@@ -268,16 +257,6 @@ section{
   font-size: 20px;
 }
 
-menu{
-  margin-bottom: 0px;
-  padding-left: 0px;
-}
-
-.nav{
-  padding-left: 0px;
-}
-
-
   .game-screen{
 
     background-color: rgba(255, 255, 255, 0.8);
@@ -368,10 +347,5 @@ section{
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
       background-color: #003e0d;
     }
-  .logo:hover {
-    transform: scale(0.9, 0.9);
-    -webkit-transform: scale(0.9,0.9);
-    -moz-transform: scale(0.9, 0.9);
-  }
 
 </style>

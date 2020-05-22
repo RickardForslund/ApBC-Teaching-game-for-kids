@@ -1,11 +1,7 @@
 <template>
   <div class="spel">
-<!-- header stuff here -->
-    <spelsida 
-    imageUrl = "valp2.jpg"
-    logoUrl = "apbcb.png"
-    />
-
+      <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
+      <spelsida></spelsida>
   </div>
 </template>
 
@@ -20,3 +16,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+    .button:hover {
+        transform: scale(0.9, 0.9);
+        -webkit-transform: scale(0.9,0.9);
+        -moz-transform: scale(0.9, 0.9);
+    }
+
+</style>

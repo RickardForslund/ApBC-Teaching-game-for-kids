@@ -37,7 +37,6 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            font-size: 20px;
             color: darkgreen;
             padding: 10px;
         }
@@ -47,5 +46,13 @@
             -webkit-transform: scale(1.1, 1.1);
             -moz-transform: scale(1.1, 1.1);
         }
+    }
+    .button {
+        padding: 20px;
+    }
+    .button:hover {
+        transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
     }
 </style>

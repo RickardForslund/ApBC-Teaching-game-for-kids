@@ -36,26 +36,27 @@
 </script>
 
 <style scoped>
+
     .logo:hover {
         transform: scale(0.9, 0.9);
         -webkit-transform: scale(0.9,0.9);
         -moz-transform: scale(0.9, 0.9);
     }
 
-    .outsideDiv{
-        margin-left: auto;
-        margin-right: auto;
-
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
-
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(3, 200px);
-        grid-template-rows: repeat(3, 200px);
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
         grid-gap: 1px;
-
-
+        width: 100vw;
+        height: 100vh;
     }
+
     .grid-item {
         justify-content: center;
         align-items: center;

@@ -237,7 +237,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
 section{
   display: grid;

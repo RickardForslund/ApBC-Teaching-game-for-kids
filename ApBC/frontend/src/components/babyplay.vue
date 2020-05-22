@@ -9,6 +9,19 @@
 
             </ul>
         </menu>
+        <div class="outsideDiv">
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -27,5 +40,33 @@
         transform: scale(0.9, 0.9);
         -webkit-transform: scale(0.9,0.9);
         -moz-transform: scale(0.9, 0.9);
+    }
+
+    .outsideDiv{
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 200px);
+        grid-gap: 1px;
+
+
+    }
+    .grid-item {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: Arial;
+        font-size: 3rem;
+        font-weight: bold;
+        background: forestgreen;
+    }
+
+    ul{
+        list-style: none;
     }
 </style>

@@ -22,10 +22,10 @@
             <div class="outer">
                 <div class="grid-container">
 
-                    <div class="grid-item-1"><img alt="anka" src="../assets/animals/anka.png" class="button" /></div>
-                    <div class="grid-item-2"><img alt="katt" src="../assets/animals/katt.png" class="button"/></div>
-                    <div class="grid-item-3"><img alt="gris" src="../assets/animals/gris.png" class="button"/></div>
-                    <div class="grid-item-4"><img alt="panda" src="../assets/animals/panda.png" class="button"/></div>
+                    <div class="grid-item-1" id="grid-1"><img alt="panda" :src="require('@/assets/' + map + '/' + url1)" @click="show();" id="one" class="button" /></div>
+                    <div class="grid-item-2"><img alt="katt" :src="require('@/assets/' + map + '/' + url2)" @click="show();" id="two" class="button"/></div>
+                    <div class="grid-item-3"><img alt="hund" :src="require('@/assets/' + map + '/' + url3)" @click="show();" id="three" class="button"/></div>
+                    <div class="grid-item-4"><img alt="anka" :src="require('@/assets/' + map + '/' + url4)" @click="show();" id="four" class="button"/></div>
                 </div>
             </div>
             <!--<div class="wrapper">
@@ -42,11 +42,17 @@
         props: {
             imageUrl: String,
             logoUrl: String,
+
         },
 
 
         data: function () {
             return {
+                map: "animals",
+                url1: "panda.png",
+                url2: "katt.png",
+                url3: "hund.png",
+                url4: "anka.png",
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
@@ -55,7 +61,8 @@
         },
 
         created() {
-
+            document.body.style.overflowX = "hidden";
+            document.body.style.overflowY = "hidden";
         },
         mounted (){
 
@@ -63,12 +70,23 @@
 
         methods: {
 
+            show: function () {
+                console.log("show");
+                this.map = "about"
 
-            /*var img1 = 'anka.png',
-                img2 = 'gris.png';
-            var imgEl = document.getElementById('out');
-            imgEl.src = (imgEl.src === img1)? img2:img1;*/
-        },
+                this.url1 = "RF1.png"
+                this.url2 = "EI2.png"
+                this.url3 = "HA3.png"
+                this.url4 = "ET4.png"
+
+            /*setTimeout(() => {
+                    this.resetSettings();
+                }, 1000);
+    },
+            resetSettings: function () {
+                document.getElementById("one").style.transition = "0.5s ease-in-out 0s";
+                document.getElementById("grid-1").style.background = "rgba(168, 200, 102, 0.8)";*/
+            },
 
         openNav: function () {
             console.log("openNav");
@@ -91,34 +109,16 @@
 
             }
         }
-    }
-
-
+    },}
 
 </script>
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
-    .grid-item-1 {
-        position:relative;
-    }
-    .grid-item-1 .first {
-        position:absolute;
-        top:0px;
-        left:0px;
-        width:100%;
-        height:100%;
-        z-index:-1;
-    }
-    .preview .second {
-        position:absolute;
-        top:0px;
-        left:0px;
-        width:100%;
-        height:100%;
-        visibility:hidden;
-        z-index:1;
+    .grid-item-1> #one {
+        max-height: 100%;
+        opacity: 0.9;
     }
 
     span.padd{padding-left:10px;}

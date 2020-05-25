@@ -1,15 +1,15 @@
 <template>
     <div class="start">
 
-        <!--
-        <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
-            <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
+
+        <div class="settingsPanel" id="settingsPanel"  >
+            <router-link to="/home"> <img id="homeIcon" :src="require('@/assets/' + home_url)" /></router-link>
             <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
         </div>
-        -->
+
 
         <div class="outsideDiv">
-            
+
         <div class="grid-container">
             <div class="grid-item">
                 <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
@@ -43,6 +43,7 @@
         },
         data: function () {
             return {
+                home_url:"home.png",
                 urla: "a.png",
                 urlg: "g.png",
                 urlh: "h.png",
@@ -91,7 +92,7 @@
                         setTimeout(() => {
                             this.timeout = false
                         }, 5000);
-                
+
             },
 
             pop: function (input) {
@@ -144,7 +145,7 @@
                     break;
                 default:
                     console.log("default value");
-                    
+
                     break;
             }
 
@@ -154,7 +155,7 @@
   numberGenerator: function (antal) {
                 Math.floor(Math.random() * (antal - 1));
                 console.log("random number is " + antal);
-                
+
             },
 
 
@@ -230,20 +231,22 @@
     }
     .settingsPanel{
         position: absolute;
-        right: -170px;
+        left: 30px;
         transition: 0.5s;
         padding: 15px;
         display: flex;
         opacity: 1;
     }
-    #settings{
-        height: 100px;
+    #homeIcon{
+        height: 75px;
         margin-top: 10px;
+        padding-right: 15px;
     }
 
     #music_logo{
-        margin: 39.5px 0 0 0;
-        height: 41px;
+        /*margin: 39.5px 0 0 0;*/
+        margin-top: 20px;
+        height: 60px;
         background-color: #3a8bb1;
     }
 

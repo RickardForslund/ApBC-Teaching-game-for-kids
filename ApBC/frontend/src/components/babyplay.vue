@@ -12,23 +12,23 @@
             
         <div class="grid-container">
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urla)" /></div>
+                <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlg)" /></div>
+                <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map2 + '/' + urlg)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlh)" /></div>
+                <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map3 + '/' + urlh)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlk)" /></div>
+                <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map4 + '/' + urlk)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urll)" /></div>
+                <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map5 + '/' + urll)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlo)" /></div>
+                <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map6 + '/' + urlo)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlp)" /></div>
+                <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map7 + '/' + urlp)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlt)" /></div>
+                <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map8 + '/' + urlt)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlz)" /></div>
+                <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map9 + '/' + urlz)" /></div>
         </div>
     </div>
     </div>
@@ -43,7 +43,6 @@
         },
         data: function () {
             return {
-                map: "baby",
                 urla: "a.png",
                 urlg: "g.png",
                 urlh: "h.png",
@@ -53,11 +52,21 @@
                 urlp: "p.png",
                 urlt: "t.png",
                 urlz: "z.png",
+                map1: "baby",
+                map2: "baby",
+                map3: "baby",
+                map4: "baby",
+                map5: "baby",
+                map6: "baby",
+                map7: "baby",
+                map8: "baby",
+                map9: "baby",
 
 
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
+                timeout: false,
             }
         },
 
@@ -70,21 +79,83 @@
         },
 
         methods: {
-            pop: function () {
-                console.log("pop");
-                this.map = "animals"
-                this.urla = "anka.png"
-                this.urlg = "groda.png"
-                this.urlh= "hund.png"
-                this.urlk = "katt.png"
-                this.urll = "lamm.png"
-                this.urlo = "orm.png"
-                this.urlp = "panda.png"
-                this.urlt = "tiger.png"
-                this.urlz = "zebra.png"
+
+            playSound: function (name) {
+
+                if (this.musicMuted == false && this.timeout == false ) {
+                    const sound = ( new Audio( require('@/assets/sounds/' + name)));
+                sound.play();
+                }
+                            this.timeout = true
+
+                        setTimeout(() => {
+                            this.timeout = false
+                        }, 5000);
+                
+            },
+
+            pop: function (input) {
+
+            switch (input) {
+                case 1:
+                    this.map1 = "animals";
+                    this.urla = "anka.png"
+                    this.playSound("anka.mp3");
+                    break;
+                case 2:
+                    this.map2 = "animals";
+                    this.urlg = "groda.png"
+                    this.playSound("groda.mp3");
+                    break;
+                case 3:
+                    this.map3 = "animals";
+                    this.urlh = "hund.png"
+                    this.playSound("hund.mp3");
+                    break;
+                case 4:
+                    this.map4 = "animals";
+                    this.urlk = "katt.png"
+                    this.playSound("katt.mp3");
+                    break;
+                case 5:
+                    this.map5 = "animals";
+                    this.urll = "lamm.png"
+                    this.playSound("lamm.mp3");
+                    break;
+                case 6:
+                    this.map6 = "animals";
+                    this.urlo = "orm.png"
+               //     this.playSound("cheer.mp3");
+                    break;
+                case 7:
+                    this.map7 = "animals";
+                    this.urlp = "panda.png"
+             //       this.playSound("cheer.mp3");
+                    break;
+                case 8:
+                    this.map8 = "animals";
+                    this.urlt = "tiger.png"
+                    this.playSound("tiger.mp3");
+                    break;
+                case 9:
+                    this.map9 = "animals";
+                    this.urlz = "zebra.png"
+                    this.playSound("zebra.mp3");
+                    break;
+                default:
+                    console.log("default value");
+                    
+                    break;
+            }
+
 
             },
 
+  numberGenerator: function (antal) {
+                Math.floor(Math.random() * (antal - 1));
+                console.log("random number is " + antal);
+                
+            },
 
 
 

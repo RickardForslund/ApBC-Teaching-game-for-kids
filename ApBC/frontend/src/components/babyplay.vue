@@ -12,23 +12,23 @@
             
         <div class="grid-container">
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urla)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlg)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlh)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlk)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urll)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlo)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlp)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlt)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + url)" /></div>
+                <img id="ballong" @click="pop();" :src="require('@/assets/' + map + '/' + urlz)" /></div>
         </div>
     </div>
     </div>
@@ -44,7 +44,17 @@
         data: function () {
             return {
                 map: "baby",
-                url: "orange.png",
+                urla: "a.png",
+                urlg: "g.png",
+                urlh: "h.png",
+                urlk: "k.png",
+                urll: "l.png",
+                urlo: "o.png",
+                urlp: "p.png",
+                urlt: "t.png",
+                urlz: "z.png",
+
+
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
@@ -63,10 +73,22 @@
             pop: function () {
                 console.log("pop");
                 this.map = "animals"
-                this.url = "anka.png"
-                
-                
+                this.urla = "anka.png"
+                this.urlg = "groda.png"
+                this.urlh= "hund.png"
+                this.urlk = "katt.png"
+                this.urll = "lamm.png"
+                this.urlo = "orm.png"
+                this.urlp = "panda.png"
+                this.urlt = "tiger.png"
+                this.urlz = "zebra.png"
+
             },
+
+
+
+
+
             openNav: function () {
                 console.log("openNav");
                 document.getElementById('settingsPanel').style.right = "0px"

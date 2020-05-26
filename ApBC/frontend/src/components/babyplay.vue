@@ -81,12 +81,17 @@
 
 
 
-    
-        for (let i = 1; i <= 9; i++) {
-            this.numberGenerator(7);
-        }
+            console.log("-----Random-----");
+            while (this.numberArray.length < 9) {
+                this.numberGenerator(); 
+            }
+            console.log("Array size is: " + this.numberArray.length);
+            console.log("random numbers is " + this.numberArray);
+            console.log("----End-----");
+            
 
-        console.log("random number is " + this.numberArray);
+
+        
 
         },
         mounted() {
@@ -166,20 +171,15 @@
 
             },
 
-            numberGenerator: function (antal) {
-
+            numberGenerator: function () {
                 
-                
-                do {
-                let value = Math.floor(Math.random() * (antal) + 1);
-                    
-                    for (let i = 0; i < this.numberArray.length; i++) {
-                        while (this.numberArray[i] != value) {
-                            this.numberArray += value;
-                            console.log("added to array nr: " + value);
-                        }
+                var value = Math.floor(Math.random() * (9) + 1);
+                    if (this.numberArray.includes(value)) {
+                        console.log("duplicate");
+                    }else{
+                        this.numberArray += value
                     }
-                } while (this.numberArray.length != 9);
+
             },
 
             openNav: function () {

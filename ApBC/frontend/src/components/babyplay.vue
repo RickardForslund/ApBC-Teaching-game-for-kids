@@ -11,7 +11,8 @@
         <div class="outsideDiv">
 
         <div class="grid-container">
-            
+
+            <gridColumn1 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map + '/' + numberArray[0] + '.png')" />
                 <div class="combination"><h1>{{numberArray[0]}}</h1></div></div>
@@ -23,7 +24,8 @@
             <div class="grid-item">
                 <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map + '/' + numberArray[2] + '.png')" />
                 <div class="combination"><h1>{{numberArray[2]}}</h1></div></div>
-
+            </gridColumn1>
+            <gridColumn2 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map + '/' + numberArray[3] + '.png')" />
                 <div class="combination"><h1>{{numberArray[3]}}</h1></div></div>
@@ -36,6 +38,8 @@
                 <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map + '/' + numberArray[5] + '.png')" />
                 <div class="combination"><h1>{{numberArray[5]}}</h1></div></div>
 
+            </gridColumn2>
+            <gridColumn3 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map + '/' + numberArray[6] + '.png')" />
                 <div class="combination"><h1>{{numberArray[6]}}</h1></div></div>
@@ -47,6 +51,7 @@
             <div class="grid-item">
                 <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map + '/' + numberArray[8] + '.png')" />
                 <div class="combination"><h1>{{numberArray[8]}}</h1></div></div>
+            </gridColumn3>
           </div>
         </div>
         </div>
@@ -234,13 +239,19 @@
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+                "gridColumn1"
+                "gridColumn2"
+                "gridColumn3";
         grid-gap: 0px;
-        width: 100vw;
-        height: 100vh;
+        width:  100vw;
+         height: 100vh;
         background-image: url("../assets/baby/background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 70px 300px 70px 300px;
+
+        padding: 5% 10% 5% 10%;
+
     }
 
     .grid-item {
@@ -251,10 +262,8 @@
         font-family: Arial;
         font-size: 3rem;
         font-weight: bold;
-
-
-        
-
+        width:  30vw;
+        height: 30vh;
 
 
     }

@@ -332,7 +332,7 @@ section{
 
 
   .button1,.button2,.button3,.button4{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 100,0, 0.9);
   border-radius: 15px;
   text-align: center;
   height: 100px;

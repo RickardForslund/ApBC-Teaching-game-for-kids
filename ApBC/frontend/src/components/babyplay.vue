@@ -11,24 +11,30 @@
         <div class="outsideDiv">
 
         <div class="grid-container">
+            <div class ="column" id="column1">
             <div class="grid-item">
                 <img class="ballong" id="ballong1" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong2" @click="pop(2);" :src="require('@/assets/' + map2 + '/' + urlg)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong3" @click="pop(3);" :src="require('@/assets/' + map3 + '/' + urlh)" /></div>
+            </div>
+            <div class ="column" id="column2">
             <div class="grid-item">
                 <img  class="ballong" id="ballong4" @click="pop(4);" :src="require('@/assets/' + map4 + '/' + urlk)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong5" @click="pop(5);" :src="require('@/assets/' + map5 + '/' + urll)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong6" @click="pop(6);" :src="require('@/assets/' + map6 + '/' + urlo)" /></div>
+            </div>
+            <div class ="column" id="column3">
             <div class="grid-item">
                 <img class="ballong" id="ballong7" @click="pop(7);" :src="require('@/assets/' + map7 + '/' + urlp)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong8" @click="pop(8);" :src="require('@/assets/' + map8 + '/' + urlt)" /></div>
             <div class="grid-item">
                 <img class="ballong" id="ballong9" @click="pop(9);" :src="require('@/assets/' + map9 + '/' + urlz)" /></div>
+            </div>
         </div>
     </div>
     </div>
@@ -87,7 +93,7 @@
                     const sound = ( new Audio( require('@/assets/sounds/' + name)));
                 sound.play();
                 }
-                            this.timeout = true
+                            this.timeout = true;
 
                         setTimeout(() => {
                             this.timeout = false

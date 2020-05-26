@@ -38,7 +38,7 @@ var animals = ['anka', 'geting', 'gris' , 'groda', 'hund', 'katt', 'ko', 'lamm',
 for (let i = 0; i < animals.length; i++) {
     images[i] = animals[i] + '.png';
     names[i] = animals[i];
-    sounds[i] = animals[i] + '.waw'
+    sounds[i] = animals[i] + '.mp3'
 }
 
 for (let i = 0; i < names.length; i++) {

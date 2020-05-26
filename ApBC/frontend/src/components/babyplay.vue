@@ -11,27 +11,45 @@
         <div class="outsideDiv">
 
         <div class="grid-container">
+            
             <div class="grid-item">
-                <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
+                <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map + '/' + numberArray[0] + '.png')" />
+                <div class="combination"><h1>{{numberArray[0]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map2 + '/' + urlg)" /></div>
+                <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map + '/' + numberArray[1] + '.png')" />
+                <div class="combination"><h1>{{numberArray[1]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map3 + '/' + urlh)" /></div>
+                <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map + '/' + numberArray[2] + '.png')" />
+                <div class="combination"><h1>{{numberArray[2]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map4 + '/' + urlk)" /></div>
+                <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map + '/' + numberArray[3] + '.png')" />
+                <div class="combination"><h1>{{numberArray[3]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map5 + '/' + urll)" /></div>
+                <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map + '/' + numberArray[4] + '.png')" />
+                <div class="combination"><h1>{{numberArray[4]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map6 + '/' + urlo)" /></div>
+                <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map + '/' + numberArray[5] + '.png')" />
+                <div class="combination"><h1>{{numberArray[5]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map7 + '/' + urlp)" /></div>
+                <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map + '/' + numberArray[6] + '.png')" />
+                <div class="combination"><h1>{{numberArray[6]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map8 + '/' + urlt)" /></div>
+                <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map + '/' + numberArray[7] + '.png')" />
+                <div class="combination"><h1>{{numberArray[7]}}</h1></div></div>
+
             <div class="grid-item">
-                <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map9 + '/' + urlz)" /></div>
+                <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map + '/' + numberArray[8] + '.png')" />
+                <div class="combination"><h1>{{numberArray[8]}}</h1></div></div>
+          </div>
         </div>
-    </div>
-    </div>
+        </div>
 </template>
 
 <script>
@@ -43,25 +61,11 @@
         },
         data: function () {
             return {
+                numberArray: [],
+
                 home_url:"home.png",
-                urla: "a.png",
-                urlg: "g.png",
-                urlh: "h.png",
-                urlk: "k.png",
-                urll: "l.png",
-                urlo: "o.png",
-                urlp: "p.png",
-                urlt: "t.png",
-                urlz: "z.png",
-                map1: "baby",
-                map2: "baby",
-                map3: "baby",
-                map4: "baby",
-                map5: "baby",
-                map6: "baby",
-                map7: "baby",
-                map8: "baby",
-                map9: "baby",
+                map: "baby",
+
 
 
                 settings_url: 'settings.png',
@@ -74,6 +78,15 @@
         created() {
          document.body.style.overflowX = "hidden";
          document.body.style.overflowY = "hidden";
+
+
+
+    
+        for (let i = 1; i <= 9; i++) {
+            this.numberGenerator(7);
+        }
+
+        console.log("random number is " + this.numberArray);
 
         },
         mounted() {
@@ -91,12 +104,13 @@
 
                         setTimeout(() => {
                             this.timeout = false
+                            
                         }, 5000);
 
             },
 
             pop: function (input) {
-
+                
             switch (input) {
                 case 1:
                     this.map1 = "animals";
@@ -152,21 +166,21 @@
 
             },
 
-            // pauseSound: function(name){
-            //     if (this.playSound){
-            //
-            //     }
-            //
-            // },
+            numberGenerator: function (antal) {
 
-  numberGenerator: function (antal) {
-                Math.floor(Math.random() * (antal - 1));
-                console.log("random number is " + antal);
-
+                
+                
+                do {
+                let value = Math.floor(Math.random() * (antal) + 1);
+                    
+                    for (let i = 0; i < this.numberArray.length; i++) {
+                        if (this.numberArray[i] != value) {
+                            this.numberArray += value;
+                            console.log("added to array nr: " + value);
+                        }
+                    }
+                } while (this.numberArray.length != 9);
             },
-
-
-
 
             openNav: function () {
                 console.log("openNav");
@@ -196,6 +210,19 @@
 
 <style scoped>
 
+
+#ballong:hover{
+
+}
+
+
+.combination{
+    position: absolute;
+    color: white;
+    vertical-align: top;
+
+}
+
     .logo:hover {
         transform: scale(0.9, 0.9);
         -webkit-transform: scale(0.9,0.9);
@@ -221,6 +248,7 @@
     }
 
     .grid-item {
+        position: relative;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -229,12 +257,17 @@
         font-weight: bold;
 
 
+        
+
+
 
     }
 
     .grid-item > #ballong {
         max-height: 100%;
         opacity: 0.9;
+
+        
     }
     .settingsPanel{
         position: absolute;

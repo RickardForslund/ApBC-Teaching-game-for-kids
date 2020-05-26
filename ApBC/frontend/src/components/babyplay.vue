@@ -126,12 +126,12 @@
                 case 6:
                     this.map6 = "animals";
                     this.urlo = "orm.png"
-               //     this.playSound("cheer.mp3");
+                    this.playSound("orm.m4a");
                     break;
                 case 7:
                     this.map7 = "animals";
                     this.urlp = "panda.png"
-             //       this.playSound("cheer.mp3");
+                   this.playSound("panda.m4a");
                     break;
                 case 8:
                     this.map8 = "animals";
@@ -151,6 +151,13 @@
 
 
             },
+
+            // pauseSound: function(name){
+            //     if (this.playSound){
+            //
+            //     }
+            //
+            // },
 
   numberGenerator: function (antal) {
                 Math.floor(Math.random() * (antal - 1));

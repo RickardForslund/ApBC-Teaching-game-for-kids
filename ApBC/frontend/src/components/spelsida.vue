@@ -332,12 +332,11 @@ section{
 
 
   .button1,.button2,.button3,.button4{
-  background-color:  darkgreen;
+    background-color: rgba(0, 100,0, 0.9);
   border-radius: 15px;
   text-align: center;
   height: 100px;
   margin: 10px;
-  opacity: 0.9;
     font-size: 50px;
     font-family: 'Patua One';
     line-height: 100px;

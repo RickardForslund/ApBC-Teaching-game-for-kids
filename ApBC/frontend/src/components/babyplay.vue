@@ -174,7 +174,7 @@
                 let value = Math.floor(Math.random() * (antal) + 1);
                     
                     for (let i = 0; i < this.numberArray.length; i++) {
-                        if (this.numberArray[i] != value) {
+                        while (this.numberArray[i] != value) {
                             this.numberArray += value;
                             console.log("added to array nr: " + value);
                         }
@@ -210,10 +210,6 @@
 
 <style scoped>
 
-
-#ballong:hover{
-
-}
 
 
 .combination{

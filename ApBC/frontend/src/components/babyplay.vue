@@ -12,23 +12,23 @@
 
         <div class="grid-container">
             <div class="grid-item">
-                <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
+                <img class="ballong" id="ballong1" @click="pop(1);" :src="require('@/assets/' + map1 + '/' + urla)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map2 + '/' + urlg)" /></div>
+                <img class="ballong" id="ballong2" @click="pop(2);" :src="require('@/assets/' + map2 + '/' + urlg)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map3 + '/' + urlh)" /></div>
+                <img class="ballong" id="ballong3" @click="pop(3);" :src="require('@/assets/' + map3 + '/' + urlh)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map4 + '/' + urlk)" /></div>
+                <img  class="ballong" id="ballong4" @click="pop(4);" :src="require('@/assets/' + map4 + '/' + urlk)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map5 + '/' + urll)" /></div>
+                <img class="ballong" id="ballong5" @click="pop(5);" :src="require('@/assets/' + map5 + '/' + urll)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map6 + '/' + urlo)" /></div>
+                <img class="ballong" id="ballong6" @click="pop(6);" :src="require('@/assets/' + map6 + '/' + urlo)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map7 + '/' + urlp)" /></div>
+                <img class="ballong" id="ballong7" @click="pop(7);" :src="require('@/assets/' + map7 + '/' + urlp)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map8 + '/' + urlt)" /></div>
+                <img class="ballong" id="ballong8" @click="pop(8);" :src="require('@/assets/' + map8 + '/' + urlt)" /></div>
             <div class="grid-item">
-                <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map9 + '/' + urlz)" /></div>
+                <img class="ballong" id="ballong9" @click="pop(9);" :src="require('@/assets/' + map9 + '/' + urlz)" /></div>
         </div>
     </div>
     </div>
@@ -102,46 +102,55 @@
                     this.map1 = "animals";
                     this.urla = "anka.png"
                     this.playSound("anka.mp3");
+                    document.getElementById('ballong1').style.opacity = "1";
                     break;
                 case 2:
                     this.map2 = "animals";
                     this.urlg = "groda.png"
                     this.playSound("groda.mp3");
+                    document.getElementById('ballong2').style.opacity = "1";
                     break;
                 case 3:
                     this.map3 = "animals";
                     this.urlh = "hund.png"
                     this.playSound("hund.mp3");
+                    document.getElementById('ballong3').style.opacity = "1";
                     break;
                 case 4:
                     this.map4 = "animals";
                     this.urlk = "katt.png"
                     this.playSound("katt.mp3");
+                    document.getElementById('ballong4').style.opacity = "1";
                     break;
                 case 5:
                     this.map5 = "animals";
                     this.urll = "lamm.png"
                     this.playSound("lamm.mp3");
+                    document.getElementById('ballong5').style.opacity = "1";
                     break;
                 case 6:
                     this.map6 = "animals";
                     this.urlo = "orm.png"
                     this.playSound("orm.m4a");
+                    document.getElementById('ballong6').style.opacity = "1";
                     break;
                 case 7:
                     this.map7 = "animals";
                     this.urlp = "panda.png"
                    this.playSound("panda.m4a");
+                    document.getElementById('ballong7').style.opacity = "1";
                     break;
                 case 8:
                     this.map8 = "animals";
                     this.urlt = "tiger.png"
                     this.playSound("tiger.mp3");
+                    document.getElementById('ballong8').style.opacity = "1";
                     break;
                 case 9:
                     this.map9 = "animals";
                     this.urlz = "zebra.png"
                     this.playSound("zebra.mp3");
+                    document.getElementById('ballong9').style.opacity = "1";
                     break;
                 default:
                     console.log("default value");
@@ -232,7 +241,7 @@
 
     }
 
-    .grid-item > #ballong {
+    .ballong {
         max-height: 100%;
         opacity: 0.9;
     }

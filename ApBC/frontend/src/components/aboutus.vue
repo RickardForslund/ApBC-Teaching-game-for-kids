@@ -28,12 +28,12 @@
                     <div class="grid-item-4"><img alt="anka" :src="require('@/assets/' + map + '/' + url4)" @click="show();" id="four" class="button"/></div>
                 </div>
             </div>
-            <!--<div class="wrapper">
+            <!--<<div class="wrapper">
                 <div class="sliding-background"></div>
             </div>-->
-        </div>
-        <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
-    </div>
+
+            <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
+        </div></div>
 </template>
 
 <script>
@@ -61,11 +61,10 @@
         },
 
         created() {
-            document.body.style.overflowX = "hidden";
-            document.body.style.overflowY = "hidden";
+            /*document.body.style.overflowX = "hidden";
+            document.body.style.overflowY = "hidden";*/
         },
         mounted (){
-
         },
 
         methods: {
@@ -78,38 +77,88 @@
                 this.url2 = "EI2.png"
                 this.url3 = "HA3.png"
                 this.url4 = "ET4.png"
-
-            /*setTimeout(() => {
-                    this.resetSettings();
-                }, 1000);
-    },
-            resetSettings: function () {
-                document.getElementById("one").style.transition = "0.5s ease-in-out 0s";
-                document.getElementById("grid-1").style.background = "rgba(168, 200, 102, 0.8)";*/
             },
 
-        openNav: function () {
-            console.log("openNav");
-            document.getElementById('settingsPanel').style.right = "0px"
-        },
+ /*           show1: function () {
+                console.log("show1");
+                this.map = "about"
+                this.url1 = "RF1.png"
 
-        closeNav: function () {
-            console.log("closeNav");
-            document.getElementById('settingsPanel').style.right = "-170px";
-        },
+            },
+            show2: function () {
+                console.log("show2");
+                this.map = "about"
+                this.url2 = "EI2.png"
 
-        muteSound: function () {
-            if (this.musicMuted == true) {
-                document.getElementById('music_logo').style.backgroundColor = "#3a8bb1";
-                this.musicMuted = false
+            },
+            show3: function () {
+                console.log("show3");
+                this.map = "about"
+                this.url3 = "HA3.png"
 
-            } else {
-                document.getElementById('music_logo').style.backgroundColor = "red";
-                this.musicMuted = true
+            },
+            show4: function () {
+                console.log("show4");
+                this.map = "about"
+                this.url4 = "ET4.png"
+            },
+            /*            show: function (nr) {
 
+                            switch (nr) {
+                                case 1:
+                                    this.map1 = "about";
+                                    this.url1 = "RF1.png";
+                                    break;
+                                case 2:
+                                    this.map2 = "about";
+                                    this.url2 = "EI2.png";
+                                    break;
+                                case 3:
+                                    this.map3 = "about";
+                                    this.url3 = "HA3.png";
+                                    break;
+                                case 4:
+                                    this.map4 = "about";
+                                    this.url4 = "ET4.png";
+                                    break;
+                                default:
+                                    console.log("default value");
+                                    break;
+                            }
+                        },
+
+
+                        /*setTimeout(() => {
+                                this.resetSettings();
+                            }, 1000);
+                },
+                        resetSettings: function () {
+                            document.getElementById("one").style.transition = "0.5s ease-in-out 0s";
+                            document.getElementById("grid-1").style.background = "rgba(168, 200, 102, 0.8)";*/
+
+
+            openNav: function () {
+                console.log("openNav");
+                document.getElementById('settingsPanel').style.right = "0px"
+            },
+
+            closeNav: function () {
+                console.log("closeNav");
+                document.getElementById('settingsPanel').style.right = "-170px";
+            },
+
+            muteSound: function () {
+                if (this.musicMuted == true) {
+                    document.getElementById('music_logo').style.backgroundColor = "#3a8bb1";
+                    this.musicMuted = false
+
+                } else {
+                    document.getElementById('music_logo').style.backgroundColor = "red";
+                    this.musicMuted = true
+
+                }
             }
-        }
-    },}
+        },}
 
 </script>
 
@@ -124,6 +173,7 @@
     span.padd{padding-left:10px;}
     html {
         height:90%;
+
     }
 
     body {
@@ -131,20 +181,22 @@
         display:flex;
         align-items:center;
         height:90%;
+
     }
     .omoss {
-        padding: 180px;
+        padding: 10px;
         margin:1em auto;
         font-family:"Patua One";
+
     }
     .omoss span {
 
-        font-size:4em;
+        font-size:3em;
         color: chartreuse;
         display: inline-flex;
         /*box-shadow:inset 0 0 5px rgba(0,0,0,0.3), 0 5px 0 #ccc;*/
         padding: 0 8px;
-        line-height: 100px;
+        line-height: 50px;
         animation:jumb 2s infinite;
     }
     @keyframes jumb {
@@ -188,17 +240,12 @@
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, auto);
         grid-gap: 1px;
-        width: 100vw;
-        height: 100vh;
         justify-items: auto;
     }
 
     .button {
         width: 50%;
         height: auto;
-    }
-    .button:hover {
-
     }
 
     .grid-item-1:hover {
@@ -219,24 +266,28 @@
         align-items: center;
         display: flex;
         background: rgba(168, 200, 102, 0.8);
+
     }
     .grid-item-2 {
         justify-content: center;
         align-items: center;
         display: flex;
         background: rgba(168, 200, 102, 0.8);
+
     }
     .grid-item-3 {
         justify-content: center;
         align-items: center;
         display: flex;
         background: rgba(168, 200, 102, 0.8);
+
     }
     .grid-item-4 {
         justify-content: center;
         align-items: center;
         display: flex;
         background: rgba(168, 200, 102, 0.8);
+
     }
 
     aboutus{
@@ -248,6 +299,7 @@
         grid-template-areas:"main";
         grid-gap: 10px;
 
+
     }
     .screen {
         background-image: url("../assets/sceneabout.jpg");
@@ -255,7 +307,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 10px;
-        min-height: 870px;
+        min-height: 700px;
         display: grid;
         grid-template-rows: auto;
         grid-template-areas:"main";
@@ -296,15 +348,15 @@
     }
 
     /*.wrapper {
-        overflow: hidden;
-    }
+       overflow: hidden;
+   }
 
-    .sliding-background {
-        background: url("../assets/sceneabout.jpg") repeat-x;
-        height: 560px;
-        width: 5076px;
-        animation: slide 60s linear infinite;
-    }
+   /*iding-background {
+       background: url("../assets/sceneabout.jpg") repeat-x;
+       height: 560px;
+       width: 5076px;
+       animation: slide 60s linear infinite;
+   }*/
 
     @keyframes slide{
         0%{
@@ -313,7 +365,7 @@
         100%{
             transform: translate3d(-1692px, 0, 0);
         }
-    }*/
+    }
 
     .present {
 
@@ -323,11 +375,11 @@
     }
     .present h3 {
         font-family: "Patua One";
-        font-size: 4em;
+        font-size: 4vw;
         color: crimson;
         position: absolute;
         width: 100%;
-        height: 100%;
+        /*height: 100%;*/
         margin: 0;
         line-height: 50px;
         text-align: center;

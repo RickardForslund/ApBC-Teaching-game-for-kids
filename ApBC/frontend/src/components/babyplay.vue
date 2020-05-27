@@ -70,8 +70,8 @@
             return {
                 numberArray: [],
                 letters:{1:'A', 2:'G', 3:'H', 4:'K', 5:'L', 6:'0', 7:'P', 8:'T', 9:'Z'},
-                animalSounds:{1:"anka.mp3", 2:"gruda.mp3", 3:"hund.mp3",
-                    4:"katt.mp3", 5:"lamm.pm3", 6:"orm.mp3", 7:"panda.mp3", 8:"tiger.mp3", 9:"zebra.mp3"},
+                animalSounds:{1:"anka.mp3", 2:"groda.mp3", 3:"hund.mp3",
+                    4:"katt.mp3", 5:"lamm.mp3", 6:"orm.mp3", 7:"panda.mp3", 8:"tiger.mp3", 9:"zebra.mp3"},
                 home_url:"home.png",
                 map: "baby",
                 settings_url: 'settings.png',

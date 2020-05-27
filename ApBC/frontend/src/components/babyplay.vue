@@ -15,42 +15,42 @@
             <gridColumn1 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map + '/' + numberArray[0] + '.png')" />
-                <div class="combination"><h1>{{numberArray[0]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[0]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map + '/' + numberArray[1] + '.png')" />
-                <div class="combination"><h1>{{numberArray[1]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[1]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map + '/' + numberArray[2] + '.png')" />
-                <div class="combination"><h1>{{numberArray[2]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[2]]}}</h1></div></div>
             </gridColumn1>
             <gridColumn2 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map + '/' + numberArray[3] + '.png')" />
-                <div class="combination"><h1>{{numberArray[3]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map + '/' + numberArray[4] + '.png')" />
-                <div class="combination"><h1>{{numberArray[4]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[4]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map + '/' + numberArray[5] + '.png')" />
-                <div class="combination"><h1>{{numberArray[5]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[5]]}}</h1></div></div>
 
             </gridColumn2>
             <gridColumn3 class="gridColumn">
             <div class="grid-item">
                 <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map + '/' + numberArray[6] + '.png')" />
-                <div class="combination"><h1>{{numberArray[6]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[6]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map + '/' + numberArray[7] + '.png')" />
-                <div class="combination"><h1>{{numberArray[7]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[7]]}}</h1></div></div>
 
             <div class="grid-item">
                 <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map + '/' + numberArray[8] + '.png')" />
-                <div class="combination"><h1>{{numberArray[8]}}</h1></div></div>
+                <div class="combination"><h1>{{letters[numberArray[8]]}}</h1></div></div>
             </gridColumn3>
           </div>
         </div>
@@ -67,12 +67,9 @@
         data: function () {
             return {
                 numberArray: [],
-
+                letters:{1:'A', 2:'G', 3:'H', 4:'K', 5:'L', 6:'L', 7:'O', 8:'P', 9:'Z'},
                 home_url:"home.png",
                 map: "baby",
-
-
-
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,

@@ -14,42 +14,42 @@
 
             <gridColumn1 class="gridColumn">
             <div class="grid-item">
-                <img id="ballong" @click="pop(1);" :src="require('@/assets/' + map + '/' + numberArray[0] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[0]);" :src="require('@/assets/' + map + '/' + numberArray[0] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[0]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(2);" :src="require('@/assets/' + map + '/' + numberArray[1] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[1]);" :src="require('@/assets/' + map + '/' + numberArray[1] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[1]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(3);" :src="require('@/assets/' + map + '/' + numberArray[2] + '.png')" />
-                <div class="combination"><h1>{{letters[numberArray[2]]}}</h1></div></div>
+                <img id="ballong" @click="pop(numberArray[2]);" :src="require('@/assets/' + map + '/' + numberArray[2] + '.png')" />
+                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
             </gridColumn1>
             <gridColumn2 class="gridColumn">
             <div class="grid-item">
-                <img id="ballong" @click="pop(4);" :src="require('@/assets/' + map + '/' + numberArray[3] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[3]);" :src="require('@/assets/' + map + '/' + numberArray[3] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(5);" :src="require('@/assets/' + map + '/' + numberArray[4] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[4]);" :src="require('@/assets/' + map + '/' + numberArray[4] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[4]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(6);" :src="require('@/assets/' + map + '/' + numberArray[5] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[5]);" :src="require('@/assets/' + map + '/' + numberArray[5] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[5]]}}</h1></div></div>
 
             </gridColumn2>
             <gridColumn3 class="gridColumn">
             <div class="grid-item">
-                <img id="ballong" @click="pop(7);" :src="require('@/assets/' + map + '/' + numberArray[6] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[6]);" :src="require('@/assets/' + map + '/' + numberArray[6] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[6]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(8);" :src="require('@/assets/' + map + '/' + numberArray[7] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[7]);" :src="require('@/assets/' + map + '/' + numberArray[7] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[7]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img id="ballong" @click="pop(9);" :src="require('@/assets/' + map + '/' + numberArray[8] + '.png')" />
+                <img id="ballong" @click="pop(numberArray[8]);" :src="require('@/assets/' + map + '/' + numberArray[8] + '.png')" />
                 <div class="combination"><h1>{{letters[numberArray[8]]}}</h1></div></div>
             </gridColumn3>
           </div>
@@ -63,12 +63,14 @@
         props: {
             imageUrl: String,
             logoUrl: String
+            // ,
+            // animalSounds:Object
         },
         data: function () {
             return {
                 numberArray: [],
                 letters:{1:'A', 2:'G', 3:'H', 4:'K', 5:'L', 6:'0', 7:'P', 8:'T', 9:'Z'},
-                sounds:{1:"anka.mp3", 2:"gruda.mp3", 3:"hund.mp3",
+                animalSounds:{1:"anka.mp3", 2:"gruda.mp3", 3:"hund.mp3",
                     4:"katt.mp3", 5:"lamm.pm3", 6:"orm.mp3", 7:"panda.mp3", 8:"tiger.mp3", 9:"zebra.mp3"},
                 home_url:"home.png",
                 map: "baby",
@@ -107,7 +109,7 @@
             playSound: function (name) {
 
                 if (this.musicMuted == false && this.timeout == false ) {
-                    const sound = ( new Audio( require('@/assets/sounds/' + name)));
+                    const sound = ( new Audio( require('@/assets/sounds/' +this.animalSounds[name] )));
                 sound.play();
                 }
                             this.timeout = true
@@ -120,58 +122,59 @@
             },
 
             pop: function (input) {
+                this.playSound(input)
                 
-            switch (input) {
-                case 1:
-                    this.map1 = "animals";
-                    this.urla = "anka.png"
-                    this.playSound("anka.mp3");
-                    break;
-                case 2:
-                    this.map2 = "animals";
-                    this.urlg = "groda.png"
-                    this.playSound("groda.mp3");
-                    break;
-                case 3:
-                    this.map3 = "animals";
-                    this.urlh = "hund.png"
-                    this.playSound("hund.mp3");
-                    break;
-                case 4:
-                    this.map4 = "animals";
-                    this.urlk = "katt.png"
-                    this.playSound("katt.mp3");
-                    break;
-                case 5:
-                    this.map5 = "animals";
-                    this.urll = "lamm.png"
-                    this.playSound("lamm.mp3");
-                    break;
-                case 6:
-                    this.map6 = "animals";
-                    this.urlo = "orm.png"
-                    this.playSound("orm.m4a");
-                    break;
-                case 7:
-                    this.map7 = "animals";
-                    this.urlp = "panda.png"
-                   this.playSound("panda.m4a");
-                    break;
-                case 8:
-                    this.map8 = "animals";
-                    this.urlt = "tiger.png"
-                    this.playSound("tiger.mp3");
-                    break;
-                case 9:
-                    this.map9 = "animals";
-                    this.urlz = "zebra.png"
-                    this.playSound("zebra.mp3");
-                    break;
-                default:
-                    console.log("default value");
-
-                    break;
-            }
+            // switch (input) {
+            //     case 1
+            //         this.map1 = "animals";
+            //         this.urla = "anka.png"
+            //         this.playSound("anka.mp3");
+            //         break;
+            //     case 2:
+            //         this.map2 = "animals";
+            //         this.urlg = "groda.png"
+            //         this.playSound("groda.mp3");
+            //         break;
+            //     case 3:
+            //         this.map3 = "animals";
+            //         this.urlh = "hund.png"
+            //         this.playSound("hund.mp3");
+            //         break;
+            //     case 4:
+            //         this.map4 = "animals";
+            //         this.urlk = "katt.png"
+            //         this.playSound("katt.mp3");
+            //         break;
+            //     case 5:
+            //         this.map5 = "animals";
+            //         this.urll = "lamm.png"
+            //         this.playSound("lamm.mp3");
+            //         break;
+            //     case 6:
+            //         this.map6 = "animals";
+            //         this.urlo = "orm.png"
+            //         this.playSound("orm.m4a");
+            //         break;
+            //     case 7:
+            //         this.map7 = "animals";
+            //         this.urlp = "panda.png"
+            //        this.playSound("panda.m4a");
+            //         break;
+            //     case 8:
+            //         this.map8 = "animals";
+            //         this.urlt = "tiger.png"
+            //         this.playSound("tiger.mp3");
+            //         break;
+            //     case 9:
+            //         this.map9 = "animals";
+            //         this.urlz = "zebra.png"
+            //         this.playSound("zebra.mp3");
+            //         break;
+            //     default:
+            //         console.log("default value");
+            //
+            //         break;
+            // }
 
 
             },

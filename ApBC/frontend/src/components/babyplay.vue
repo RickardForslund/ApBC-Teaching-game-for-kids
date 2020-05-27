@@ -247,10 +247,11 @@
         width:  100vw;
          height: 100vh;
         background-image: url("../assets/baby/background.jpg");
+        border-radius: 30px;
         background-repeat: no-repeat;
         background-size: cover;
 
-        padding: 5% 10% 5% 10%;
+        padding: 0px;
 
     }
 

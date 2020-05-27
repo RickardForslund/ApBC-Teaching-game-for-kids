@@ -3,7 +3,7 @@
         <div class="gameScreen">
 
         <div class="img_intro"><img alt="Hej från Po" src="../assets/intro.png" class="intro"/></div>
-        <div class="button"><router-link to="/difficulty"><img alt="Next" src="../assets/go.png" class="intro"/></router-link></div>
+        <div class="button"><router-link to="/difficulty"><img alt="Next" src="../assets/go.png" class="down"/></router-link></div>
             <router-link to="/about"><div id="info" class="about"><div class="pin-text">
                 <h3>Om Oss</h3>
             </div></div></router-link>
@@ -15,12 +15,14 @@
 </script>
 
 <style scoped>
-    @media only screen and (max-width: 870px) {
+   /* @media only screen and (max-width: 870px) {*/
         .gameScreen {
             display: grid;
             grid-template-areas: 'main' 'down';
             grid-gap: 10px;
             text-align: center;
+            width:  100vw;
+            height: 100vh;
         }
 
         .img_intro {
@@ -30,10 +32,15 @@
         .intro {
             width: 50%;
             height: auto;
+
+        }
+
+        .down {
+            width: 50%;
+            height: auto;
             display: block;
             margin: 0 auto;
         }
-
         .button {
             grid-area: down;
             width: 50%;
@@ -50,7 +57,7 @@
             -moz-transform: scale(1.1, 1.1);
         }
 
-    }
+ /*   }*/
     .button {
         padding: 20px;
     }

@@ -19,6 +19,11 @@
 
 <style scoped>
 
+  .about {
+    width:  100vw;
+    height: 100vh;
+  }
+
   .button:hover {
     transform: scale(0.9, 0.9);
     -webkit-transform: scale(0.9,0.9);

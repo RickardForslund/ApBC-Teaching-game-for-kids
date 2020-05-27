@@ -7,7 +7,7 @@
 
                 <li class="small">LITEN<router-link to="/baby"><img alt="Liten" src="../assets/small.png" class="main_choice"/></router-link></li>
                 <li class="mellan">STOR<router-link to="/spel"><img alt="Stor" src="../assets/medium.png" class="main_choice"/></router-link></li>
-                <li class="stor">RIKTIGT STOR<img alt="Riktigt stor" src="../assets/big.png" class="main_choice"/></li>
+                <li class="stor">RIKTIGT STOR<router-link to="/big"><img alt="Riktigt stor" src="../assets/big.png" class="main_choice"/></router-link></li>
             </ul></div>
     </div>
 </template>

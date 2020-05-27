@@ -25,8 +25,7 @@
             </section>
 
             <div id="buttons" class="buttons">
-                <div id="1" @click="validate(1);" class="button1">{{bt1}}</div>
-                <div id="2" @click="validate(2);" class="button2">{{bt2}}</div>
+                <img alt="abc" src="../assets/big/template.jpg"/>
             </div>
         </div>
     </div>
@@ -37,7 +36,8 @@
         name: "bigplay",
         props: {
             imageUrl: String,
-            logoUrl: String
+            logoUrl: String,
+
         },
 
     data: function () {
@@ -54,7 +54,8 @@
             bt2: '',
             musicMuted: false,
             lastID: null,
-            otherlastID: null
+            otherlastID: null,
+
         }
     },
 

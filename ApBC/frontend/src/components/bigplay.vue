@@ -7,8 +7,8 @@
 <!-------------------- Scorebar --------------------->
             <div class="scorebar">
                  <div class="scoreitems">
-                     <button class="startbutton" id="scorebuttons" @click="mytimer();">Start</button>
-                     <button class="restartbutton" id="scorebuttons" @click="reset();">Restart</button>
+                     <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
+                     <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
                      <div class="scoretime" id="scoreandtimer">time: {{timercount}}</div>
                      <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
                  </div>
@@ -121,23 +121,30 @@
         
     }
 
-        #scorebuttons{
+        .scorebuttons{
         box-shadow: 1px 1px #888888;
-        background-color: rgba(7, 7, 7, 0.596);
+        background-color: rgba(7, 7, 7, 0.6);
         color: white;
         border-radius: 1rem;
         max-width: 90%;
         border: hidden;
+        box-shadow: 0 9px rgba(7, 7, 7, 0.8);
         }
 
-        #scorebuttons:hover{
-        transition: 0.4s;
-        background-color: rgba(7, 7, 7, 0.747);
+        .scorebuttons:hover{
+
+        background-color: rgba(7, 7, 7, 0.7);
     }
 
-        #scorebuttons::backdrop{
+    .scorebuttons:active {
+
+        box-shadow: 0 5px rgba(7, 7, 7, 0.8);
+        transform: translateY(4px);
+    }
+
+        .scorebuttons::backdrop{
         transition: 0.4s;
-        background-color: rgba(7, 7, 7, 0.596);
+        background-color: rgba(7, 7, 7, 0.7);
     }
     
 
@@ -188,11 +195,13 @@
         line-height: 50px;
         color: white;
         position: relative;
+
     }
 
     #gridbuttons:hover{
         background-color: #003e0d;
     }
+
 
     .start{
         background-color: white;

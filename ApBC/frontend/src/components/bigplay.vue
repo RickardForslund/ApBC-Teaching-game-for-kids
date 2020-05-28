@@ -9,8 +9,8 @@
                  <div class="scoreitems">
                      <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
                      <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
-                     <div class="scoretime" id="scoreandtimer">time: {{timercount}}</div>
-                     <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
+                     <div class="scoretime" id="scoreandtimer">Tid: {{timercount}}</div>
+                     <div class="scorescore" id="scoreandtimer">Poäng: {{score}}</div>
                  </div>
             </div>
 <!----------------- Scorebar END --------------------->
@@ -57,8 +57,9 @@
                 </div>
             </section>
 <!-------------------- A-Ö END --------------------->
-
+            <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
         </div>
+
 <!-------------------- Game Screen END --------------------->
     </div>
 </template>
@@ -226,8 +227,8 @@
         margin-left: auto;
         margin-right: auto;
         grid-template-columns: auto;
-        grid-template-rows: auto auto;
-        grid-template-areas:"questions" "buttons";
+        grid-template-rows: auto auto auto;
+        grid-template-areas:"questions" "buttons" "back";
         grid-gap: 10px;
         touch-action: manipulation;
     }
@@ -238,7 +239,7 @@
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 0vh 3vw 10vh 3vw;
+        margin: 0vh 3vw 0vh 3vw;
         padding-top: 2vh;
         padding-bottom: 2vh;
         text-align: center;
@@ -253,11 +254,25 @@
         border-radius: 30px;
         margin: 0px 3vw;
     padding: 0vh 3vw;
-    font-size: 130%;
+    font-size: 70%;
     height: auto;
-
-
 }
+
+    .back {
+
+        background-color:  darkgreen;
+        border-radius:30px;
+        text-align: center;
+        height: 70%;
+        margin: 0px 3vw;
+        opacity: 0.9;
+        font-size: 3vw;
+        font-family: 'Patua One';
+        /*line-height: 100px;*/
+        color: white;
+        display: grid;
+        padding: 0px;
+    }
 
 
 </style>

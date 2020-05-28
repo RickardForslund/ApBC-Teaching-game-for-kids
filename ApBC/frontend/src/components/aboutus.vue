@@ -22,10 +22,10 @@
             <div class="outer">
                 <div class="grid-container">
 
-                    <div class="grid-item-1" id="grid-1"><img alt="panda" :src="require('@/assets/' + map + '/' + url1)" @click="show();" id="one" class="button" /></div>
-                    <div class="grid-item-2"><img alt="katt" :src="require('@/assets/' + map + '/' + url2)" @click="show();" id="two" class="button"/></div>
-                    <div class="grid-item-3"><img alt="hund" :src="require('@/assets/' + map + '/' + url3)" @click="show();" id="three" class="button"/></div>
-                    <div class="grid-item-4"><img alt="anka" :src="require('@/assets/' + map + '/' + url4)" @click="show();" id="four" class="button"/></div>
+                    <div class="grid-item-1" id="grid-1"><img alt="panda" :src="require('@/assets/animals' + '/' + url1)" @click="show(1);" id="one" class="button" /></div>
+                    <div class="grid-item-2"><img alt="katt" :src="require('@/assets/animals' + '/' + url2)" @click="show(2);" id="two" class="button"/></div>
+                    <div class="grid-item-3"><img alt="hund" :src="require('@/assets/animals' + '/' + url3)" @click="show(3);" id="three" class="button"/></div>
+                    <div class="grid-item-4"><img alt="anka" :src="require('@/assets/animals' + '/' + url4)" @click="show(4);" id="four" class="button"/></div>
                 </div>
             </div>
             <!--<<div class="wrapper">
@@ -56,53 +56,50 @@
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
-
             }
         },
 
         created() {
-            /*document.body.style.overflowX = "hidden";
-            document.body.style.overflowY = "hidden";*/
         },
         mounted (){
         },
 
         methods: {
 
-            show: function () {
-                console.log("show");
-                this.map = "about"
+            /*           show: function () {
+                          console.log("show");
+                          this.map = "about"
 
-                this.url1 = "RF1.png"
-                this.url2 = "EI2.png"
-                this.url3 = "HA3.png"
-                this.url4 = "ET4.png"
-            },
+                          this.url1 = "RF1.png"
+                          this.url2 = "EI2.png"
+                          this.url3 = "HA3.png"
+                          this.url4 = "ET4.png"
+                      },
 
- /*           show1: function () {
-                console.log("show1");
-                this.map = "about"
-                this.url1 = "RF1.png"
+                     show1: function () {
+                          console.log("show1");
+                          this.map = "about"
+                          this.url1 = "RF1.png"
 
-            },
-            show2: function () {
-                console.log("show2");
-                this.map = "about"
-                this.url2 = "EI2.png"
+                      },
+                      show2: function () {
+                          console.log("show2");
+                          this.map = "about"
+                          this.url2 = "EI2.png"
 
-            },
-            show3: function () {
-                console.log("show3");
-                this.map = "about"
-                this.url3 = "HA3.png"
+                      },
+                      show3: function () {
+                          console.log("show3");
+                          this.map = "about"
+                          this.url3 = "HA3.png"
 
-            },
-            show4: function () {
-                console.log("show4");
-                this.map = "about"
-                this.url4 = "ET4.png"
-            },
-            /*            show: function (nr) {
+                      },
+                      show4: function () {
+                          console.log("show4");
+                          this.map = "about"
+                          this.url4 = "ET4.png"
+                      },*/
+                        show: function (nr) {
 
                             switch (nr) {
                                 case 1:

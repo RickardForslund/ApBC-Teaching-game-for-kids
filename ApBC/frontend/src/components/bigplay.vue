@@ -25,7 +25,37 @@
             </section>
 
             <div id="buttons" class="buttons">
-                <img alt="abc" src="../assets/big/template.jpg"/>
+                <div class="grid-container">
+                    <div class="grid-item"><button>A</button></div>
+                    <div class="grid-item"><button>B</button></div>
+                    <div class="grid-item"><button>C</button></div>
+                    <div class="grid-item"><button>D</button></div>
+                    <div class="grid-item"><button>E</button></div>
+                    <div class="grid-item"><button>F</button></div>
+                    <div class="grid-item"><button>G</button></div>
+                    <div class="grid-item"><button>H</button></div>
+                    <div class="grid-item"><button>I</button></div>
+                    <div class="grid-item"><button>J</button></div>
+                    <div class="grid-item"><button>K</button></div>
+                    <div class="grid-item"><button>L</button></div>
+                    <div class="grid-item"><button>M</button></div>
+                    <div class="grid-item"><button>N</button></div>
+                    <div class="grid-item"><button>O</button></div>
+                    <div class="grid-item"><button>P</button></div>
+                    <div class="grid-item"><button>Q</button></div>
+                    <div class="grid-item"><button>R</button></div>
+                    <div class="grid-item"><button>S</button></div>
+                    <div class="grid-item"><button>T</button></div>
+                    <div class="grid-item"><button>U</button></div>
+                    <div class="grid-item"><button>V</button></div>
+                    <div class="grid-item"><button>W</button></div>
+                    <div class="grid-item"><button>X</button></div>
+                    <div class="grid-item"><button>Y</button></div>
+                    <div class="grid-item"><button>Z</button></div>
+                    <div class="grid-item"><button>Å</button></div>
+                    <div class="grid-item"><button>Ä</button></div>
+                    <div class="grid-item"><button>Ö</button></div>
+                </div>
             </div>
         </div>
     </div>
@@ -239,6 +269,50 @@
         grid-template-areas:"menu" "questions" "buttons";
         grid-gap: 10px;
 
+    }
+
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 5px;
+        width: auto;
+        height: auto;
+        border-radius: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        padding: 0px;
+    }
+
+    .grid-item {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: Arial;
+        font-size: 3rem;
+        font-weight: bold;
+        width: auto;
+        height: auto;
+        
+    }
+
+    button{
+        background-color: rgba(0, 100,0, 0.9);
+        border-radius: 15px;
+        text-align: center;
+        height: 8vh;
+        width: 10vw;
+        margin: 0.5vh;
+        font-size: 40px;
+        font-family: 'Patua One';
+        line-height: 50px;
+        color: white;
+    }
+
+    button:hover{
+        background-color: #003e0d;
     }
 
     .start{

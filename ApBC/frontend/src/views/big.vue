@@ -1,9 +1,6 @@
 <template>
     <div class="big">
         <bigplay></bigplay>
-        <!--
-        <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
-        -->
     </div>
 </template>
 
@@ -15,6 +12,8 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+    .big{
+        margin: -8px 0 0 -8px;
+    }
 </style>

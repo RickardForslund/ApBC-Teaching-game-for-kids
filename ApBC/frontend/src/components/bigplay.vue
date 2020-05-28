@@ -25,6 +25,7 @@
 <!-------------------- A-Ö --------------------->
             <section id="section">
                     <div class="grid-container">
+                        <div id="gridbutton" class="grid-item"><img alt="ApBC" src="../assets/apbcb.png" /></div>
                         <div id="gridbuttons" class="grid-item"><button>A</button></div>
                         <div id="gridbuttons" class="grid-item"><button>B</button></div>
                         <div id="gridbuttons" class="grid-item"><button>C</button></div>
@@ -196,7 +197,20 @@
         line-height: 50px;
         color: white;
         position: relative;
+    }
 
+    #gridbutton{
+        background-color: white;
+        border-radius: 15px;
+        text-align: center;
+        height: 9vh;
+        width: 16vw;
+        margin: 0.1vh;
+        font-size: 40px;
+        font-family: 'Patua One';
+        line-height: 50px;
+        color: white;
+        position: relative;
     }
 
     #gridbuttons:hover{

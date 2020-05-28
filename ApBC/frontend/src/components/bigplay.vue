@@ -2,30 +2,29 @@
     <div class="start">
 
         <div class="game-screen">
-            <div class="settingsPanel" id="settingsPanel"  @mouseover="openNav();" @mouseleave="closeNav();">
-                <img id="settings" :src="require('@/assets/stuff/' + settings_url)" />
-                <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
-            </div>
 
-            <div class="questionText">
-                <h1>{{question123}}</h1>
+             <div class="scorebar">
+                 <div class="scoreitems">
+                     <button class="startbutton" id="scorebuttons">Start</button>
+                     <button class="restartbutton" id="scorebuttons">Restart</button>
+                     <div class="scoretime" id="scoreandtimer">time: {{timer}} sek</div>
+                     <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
+                 </div>
             </div>
 
             <section id="section">
-                <div class="quest1">
-
-
                     <div class="animalid">
 
-                        <img id="animal_image" :src="require('@/assets/animals/' + url)" />
-
+                       <!-- <img id="animal_image" :src="require('@/assets/animals/' + url)" />  
+                        <img alt="abc" src="../assets/big/template.jpg"/>
+-->
                     </div>
                     <!--<h4>what kind of animal is this?</h4>-->
-                </div>
+
             </section>
 
             <div id="buttons" class="buttons">
-                <img alt="abc" src="../assets/big/template.jpg"/>
+                
             </div>
         </div>
     </div>
@@ -42,6 +41,13 @@
 
     data: function () {
         return {
+            //  scorebar
+            score: 0.0,
+            timer: 60,
+
+            //
+
+
             question123: 'Vilken bokstav börjar djuret på?',
             url: 'anka.png',
             settings_url: 'settings.png',
@@ -61,6 +67,7 @@
 
     created() {
         document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "hidden";
     },
     mounted() {
 
@@ -230,10 +237,42 @@
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
-    section{
+    .scoreitems{
         display: grid;
-        margin-left: auto;
-        margin-right: auto;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0px;
+        
+    }   
+
+    .scorebar {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+        background-color: rgba(255, 228, 196, 0.555);
+        height: 5vh;
+    }
+
+        #scorebuttons{
+        border-radius: 5rem;
+        box-shadow: 1px 1px #888888;
+        border-style: none;
+        max-width: 100px;
+    }
+
+        #scorebuttons:hover{
+        box-shadow: 1px 2px #888888;
+    }
+
+
+    #scoreandtimer{
+        align-content: auto;
+        margin-top: 1vh;
+    }
+
+    .section{
+        display: grid;
+        margin-left: 0px;
+        margin-right: 0px;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
         grid-template-areas:"menu" "questions" "buttons";
@@ -244,24 +283,22 @@
     .start{
         background-color: white;
         color: white;
-        padding: 5px;
+        padding: 0px;
         font-size: 20px;
     }
 
     .game-screen{
 
-        background-color: rgba(255, 255, 255, 0.8);
         font-family: 'Patua One';
-        background-image: url("../assets/background.jpg");
+        background-image: url("../assets/background3.png");
         background-color: #cccccc;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 10px;
+        height: 100vh;
+        width: 100vw;
 
-        min-height: 700px;
-
-
+        margin: 0px;
         display: grid;
         margin-left: auto;
         margin-right: auto;
@@ -272,31 +309,10 @@
 
     }
 
-    .settingsPanel{
-        position: absolute;
-        right: -170px;
-        transition: 0.5s;
-        padding: 15px;
-        display: flex;
-        opacity: 1;
-
-    }
-
-    #settings{
-        height: 100px;
-        margin-top: 10px;
-
-    }
-
-    #music_logo{
-        margin: 39.5px 0 0 0;
-        height: 41px;
-        background-color: #3a8bb1;
-    }
 
     section{
 
-        margin-top: 0%;
+        margin: 0%;
         color: rgb(54, 54, 54);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
@@ -309,32 +325,6 @@
 
     section img{
         border-radius: 0px;
-        width: 60%;
-    }
-
-    .questionText h1{
-        color: darkgreen;
-        margin: 20px 0px 10px;
-    }
-    section{
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-
-
-    .button1,.button2,.button3,.button4{
-        background-color: rgba(0, 100,0, 0.9);
-        border-radius: 15px;
-        text-align: center;
-        height: 100px;
-        margin: 10px;
-        font-size: 50px;
-        font-family: 'Patua One';
-        line-height: 100px;
-        color: white;
-    }
-
-    .button1:hover,.button2:hover,.button3:hover,.button4:hover{
-        background-color: #003e0d;
+        width: 100%;
     }
 </style>

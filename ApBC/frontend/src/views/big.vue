@@ -1,7 +1,9 @@
 <template>
     <div class="big">
-        <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
         <bigplay></bigplay>
+        <!--
+        <router-link to="/Home"><img alt="ApBC" src="../assets/apbcb.png" class="button"/></router-link>
+        -->
     </div>
 </template>
 

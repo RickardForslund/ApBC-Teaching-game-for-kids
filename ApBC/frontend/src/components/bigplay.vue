@@ -25,7 +25,7 @@
 <!-------------------- A-Ö --------------------->
             <section id="section">
                     <div class="grid-container">
-                        <div id="gridbutton" class="grid-item"><img alt="ApBC" src="../assets/apbcb.png" /></div>
+                        <div id="gridbutton" class="grid-item"></div>
                         <div id="gridbuttons" class="grid-item"><button>A</button></div>
                         <div id="gridbuttons" class="grid-item"><button>B</button></div>
                         <div id="gridbuttons" class="grid-item"><button>C</button></div>
@@ -68,7 +68,9 @@
 <script>
     export default {
         name: "bigplay",
-        props: {},
+        props: {
+            imageURL: String
+        },
     data: function () {
         return {
             //  scorebar
@@ -200,9 +202,12 @@
     }
 
     #gridbutton{
+        background-image: url("../assets/apbcb.png");
         background-color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         border-radius: 15px;
-        text-align: center;
         height: 9vh;
         width: 16vw;
         margin: 0.1vh;

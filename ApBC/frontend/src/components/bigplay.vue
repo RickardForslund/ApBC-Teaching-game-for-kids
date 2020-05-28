@@ -1,8 +1,10 @@
 <template>
     <div class="start">
 
+<!-------------------- Game Screen --------------------->
         <div class="game-screen">
 
+<!-------------------- Scorebar --------------------->
              <div class="scorebar">
                  <div class="scoreitems">
                      <button class="startbutton" id="scorebuttons">Start</button>
@@ -11,22 +13,47 @@
                      <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
                  </div>
             </div>
+<!----------------- Scorebar END --------------------->
 
+
+<!-------------------- A-Ö --------------------->
             <section id="section">
-                    <div class="animalid">
-
-                       <!-- <img id="animal_image" :src="require('@/assets/animals/' + url)" />  
-                        <img alt="abc" src="../assets/big/template.jpg"/>
--->
-                    </div>
-                    <!--<h4>what kind of animal is this?</h4>-->
-
+                    <div class="grid-container">
+                        <div class="grid-item"><button>A</button></div>
+                        <div class="grid-item"><button>B</button></div>
+                        <div class="grid-item"><button>C</button></div>
+                        <div class="grid-item"><button>D</button></div>
+                        <div class="grid-item"><button>E</button></div>
+                        <div class="grid-item"><button>F</button></div>
+                        <div class="grid-item"><button>G</button></div>
+                        <div class="grid-item"><button>H</button></div>
+                        <div class="grid-item"><button>I</button></div>
+                        <div class="grid-item"><button>J</button></div>
+                        <div class="grid-item"><button>K</button></div>
+                        <div class="grid-item"><button>L</button></div>
+                        <div class="grid-item"><button>M</button></div>
+                        <div class="grid-item"><button>N</button></div>
+                        <div class="grid-item"><button>O</button></div>
+                        <div class="grid-item"><button>P</button></div>
+                        <div class="grid-item"><button>Q</button></div>
+                        <div class="grid-item"><button>R</button></div>
+                        <div class="grid-item"><button>S</button></div>
+                        <div class="grid-item"><button>T</button></div>
+                        <div class="grid-item"><button>U</button></div>
+                        <div class="grid-item"><button>V</button></div>
+                        <div class="grid-item"><button>W</button></div>
+                        <div class="grid-item"><button>X</button></div>
+                        <div class="grid-item"><button>Y</button></div>
+                        <div class="grid-item"><button>Z</button></div>
+                        <div class="grid-item"><button>Å</button></div>
+                        <div class="grid-item"><button>Ä</button></div>
+                        <div class="grid-item"><button>Ö</button></div>
+                </div>
             </section>
+<!-------------------- A-Ö END --------------------->
 
-            <div id="buttons" class="buttons">
-                
-            </div>
         </div>
+<!-------------------- Game Screen END --------------------->
     </div>
 </template>
 
@@ -241,31 +268,40 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding: 0px;
-        
+
     }   
 
     .scorebar {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        padding: 20px;
+        padding: 1%;
         background-color: rgba(255, 228, 196, 0.555);
         height: 5vh;
+        
     }
 
         #scorebuttons{
-        border-radius: 5rem;
         box-shadow: 1px 1px #888888;
         border-style: none;
-        max-width: 100px;
+        font-size: 1.5rem;
+        margin: 5%;
+
+
+        /* FUNKAR INTE */
+        min-width: 90%;
+        max-height: 40%;
+
+
     }
 
         #scorebuttons:hover{
         box-shadow: 1px 2px #888888;
+        
     }
 
 
     #scoreandtimer{
-        align-content: auto;
+
         margin-top: 1vh;
     }
 
@@ -278,6 +314,50 @@
         grid-template-areas:"menu" "questions" "buttons";
         grid-gap: 10px;
 
+    }
+
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 5px;
+        width: auto;
+        height: auto;
+        border-radius: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        padding: 0px;
+    }
+
+    .grid-item {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: Arial;
+        font-size: 3rem;
+        font-weight: bold;
+        width: auto;
+        height: auto;
+        
+    }
+
+    button{
+        background-color: rgba(0, 100,0, 0.9);
+        border-radius: 15px;
+        text-align: center;
+        height: 8vh;
+        width: 10vw;
+        margin: 0.5vh;
+        font-size: 40px;
+        font-family: 'Patua One';
+        line-height: 50px;
+        color: white;
+    }
+
+    button:hover{
+        background-color: #003e0d;
     }
 
     .start{
@@ -311,20 +391,13 @@
 
 
     section{
-
-        margin: 0%;
         color: rgb(54, 54, 54);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding: 5% 5% 2%;
+        margin: 0vh 5% 10vh 5%;
+        padding: 5%;
 
     }
 
-    section img{
-        border-radius: 0px;
-        width: 100%;
-    }
 </style>

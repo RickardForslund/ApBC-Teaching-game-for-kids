@@ -16,8 +16,8 @@
 <!----------------- Scorebar END --------------------->
 
 <!-------------------- Questionbox --------------------->
-            <div id="quest-box">
-                <h1>A</h1>
+            <div class="alfabetsBox">
+                <h1>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö</h1>
                 
             </div>
 <!-------------------- Questionbox END --------------------->
@@ -158,8 +158,8 @@
         width: auto;
         height: auto;
         border-radius: 30px;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: auto;
+        margin-right: auto;
         padding: 0px;
     }
 
@@ -173,16 +173,16 @@
         font-weight: bold;
         width: auto;
         height: auto;
-        
+
     }
 
     #gridbuttons{
         background-color: rgba(0, 100,0, 0.9);
         border-radius: 15px;
         text-align: center;
-        height: 8vh;
-        width: 10vw;
-        margin: 0.5vh;
+        height: 9vh;
+        width: 16vw;
+        margin: 0.1vh;
         font-size: 40px;
         font-family: 'Patua One';
         line-height: 50px;
@@ -229,19 +229,26 @@
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 0vh 5% 10vh 5%;
-        padding: 5%;
+        margin: 0vh 3vw 10vh 3vw;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
         text-align: center;
 
     }
 
 
-#quest-box{
+.alfabetsBox{
         color: rgb(54, 54, 54);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 0px 40vw;
-        max-height: 100px;
+        margin: 0px 3vw;
+    padding: 0vh 3vw;
+    font-size: 130%;
+    height: auto;
+
+
 }
+
+
 </style>

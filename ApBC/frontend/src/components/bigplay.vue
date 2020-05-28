@@ -5,7 +5,7 @@
         <div class="game-screen">
 
 <!-------------------- Scorebar --------------------->
-             <div class="scorebar">
+            <div class="scorebar">
                  <div class="scoreitems">
                      <button class="startbutton" id="scorebuttons">Start</button>
                      <button class="restartbutton" id="scorebuttons">Restart</button>
@@ -15,6 +15,12 @@
             </div>
 <!----------------- Scorebar END --------------------->
 
+<!-------------------- Questionbox --------------------->
+            <div id="quest-box">
+                <h1>A</h1>
+                
+            </div>
+<!-------------------- Questionbox END --------------------->
 
 <!-------------------- A-Ö --------------------->
             <section id="section">
@@ -305,16 +311,7 @@
         margin-top: 1vh;
     }
 
-    .section{
-        display: grid;
-        margin-left: 0px;
-        margin-right: 0px;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:"menu" "questions" "buttons";
-        grid-gap: 10px;
 
-    }
 
     .grid-container {
         display: inline-grid;
@@ -397,7 +394,17 @@
         border-radius: 30px;
         margin: 0vh 5% 10vh 5%;
         padding: 5%;
+        text-align: center;
 
     }
 
+
+#quest-box{
+        color: rgb(54, 54, 54);
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        border-radius: 30px;
+        margin: 0px 40vw;
+        max-height: 100px;
+}
 </style>

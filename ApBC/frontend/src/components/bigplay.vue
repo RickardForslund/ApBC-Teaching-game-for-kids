@@ -191,10 +191,11 @@
 
 
         reset: function () {
-            this.timercount = 0;
+            /*this.timercount = 0;
             this.firstPage = false
             this.score = 0;
-            this.failcount = 0;
+            this.failcount = 0;*/
+            window.location.reload();
         }
     }
     }

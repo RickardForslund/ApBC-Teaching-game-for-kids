@@ -2,7 +2,7 @@
     <div class="start">
 
 
-        <div class="scorebar">
+        <div class="settingsPanel">
 
                 <router-link to="/home"> <img id="homeIcon" :src="require('@/assets/' + home_url)" /></router-link>
                 <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
@@ -232,7 +232,7 @@
 
 <style scoped>
 
-<<<<<<< HEAD
+
 .start{
     display: grid;
     grid-template-columns: auto;
@@ -245,14 +245,6 @@
     vertical-align: top;
 
 }
-=======
-    .combination {
-        position: absolute;
-        color: white;
-        vertical-align: top;
-
-    }
->>>>>>> dd2920b63f1b938d2fba1f4864835f0d136e319a
 
     .logo:hover {
         transform: scale(0.9, 0.9);
@@ -270,10 +262,6 @@
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
-<<<<<<< HEAD
-=======
-        grid-template-areas: "gridColumn1" "gridColumn2" "gridColumn3";
->>>>>>> dd2920b63f1b938d2fba1f4864835f0d136e319a
         grid-gap: 0px;
         width: 100vw;
         height: 100vh;
@@ -306,14 +294,9 @@
 
 
     }
-<<<<<<< HEAD
-    .scorebar{
-=======
+
 
     .settingsPanel {
-        position: absolute;
-        left: 30px;
->>>>>>> dd2920b63f1b938d2fba1f4864835f0d136e319a
         transition: 0.5s;
         padding: 15px;
         opacity: 1;

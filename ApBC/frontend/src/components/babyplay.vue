@@ -248,7 +248,6 @@
 
 <style scoped>
 
-
     .combination {
         position: absolute;
         color: white;

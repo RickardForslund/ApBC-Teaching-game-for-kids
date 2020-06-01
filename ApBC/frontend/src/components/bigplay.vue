@@ -17,8 +17,12 @@
 
 <!-------------------- Questionbox --------------------->
             <div class="alfabetsBox">
-                <h1>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö</h1>
-                
+                <ul id="completedul">
+                <li id="completedli" v-for="item in completed" :key="item.value">
+                    {{ item.value }}
+                </li>
+                </ul>
+
             </div>
 <!-------------------- Questionbox END --------------------->
 
@@ -26,7 +30,7 @@
             <section id="section">
                     <div class="grid-container">
                         <div id="gridbutton" class="grid-item"></div>
-                        <div id="gridbuttons" class="grid-item"><button>A</button></div>
+                        <div id="gridbuttons" class="grid-item">A</div>
                         <div id="gridbuttons" class="grid-item"><button>B</button></div>
                         <div id="gridbuttons" class="grid-item"><button>C</button></div>
                         <div id="gridbuttons" class="grid-item"><button>D</button></div>
@@ -76,6 +80,44 @@
             //  scorebar
             score: 0,
             timercount: 0,
+            completed: [
+                {value: 'A'},
+                {value: 'B'},
+                {value: 'C'},
+                {value: 'D'},
+                {value: 'E'},
+                {value: 'F'},
+                {value: 'G'},
+                {value: 'H'},
+                {value: 'I'},
+                {value: 'J'},
+                {value: 'K'},
+                {value: 'L'},
+                {value: 'M'},
+                {value: 'N'},
+                {value: 'O'},
+                {value: 'P'},
+                {value: 'Q'},
+                {value: 'R'},
+                {value: 'S'},
+                {value: 'T'},
+                {value: 'U'},
+                {value: 'V'},
+                {value: 'W'},
+                {value: 'X'},
+                {value: 'Y'},
+                {value: 'Z'},
+                {value: 'Å'},
+                {value: 'Ä'},
+                {value: 'Ö'}
+                ],
+
+            timer: [
+                {
+                    value: null,
+                    active: false
+                }
+            ],
 
             //
 
@@ -93,13 +135,26 @@
 
     methods: {
         mytimer: function () {
-            setInterval(() => {
-                this.timercount += 1;
-            }, 1000);
-            
+            if (this.timer[0].active == false) {
+                this.timer[0].value = setInterval(() => {
+                     this.timercount += 1;
+                 }, 1000);   
+                 this.timer[0].active = true;
+            }else{
+                console.log("Timer already active, reset first.");
+                
+
+                
+            }
         },
         reset: function () {
             this.timercount = 0;
+            clearInterval(this.timer[0].value);
+            this.timer[0].active = false;
+        },
+        displayCompleted: function () {
+
+            
         }
     }
     }
@@ -108,6 +163,8 @@
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
 
     .scoreitems{
         display: grid;
@@ -132,7 +189,7 @@
         border-radius: 1rem;
         max-width: 90%;
         border: hidden;
-        box-shadow: 0 9px rgba(7, 7, 7, 0.8);
+        box-shadow: 0 7px rgba(7, 7, 7, 0.705);
         }
 
         .scorebuttons:hover{
@@ -266,19 +323,32 @@
     }
 
 
-.alfabetsBox{
+    .alfabetsBox{
         color: rgb(54, 54, 54);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
         margin: 0px 3vw;
-    padding: 0vh 3vw;
-    font-size: 70%;
-    height: auto;
+        padding: 0vh 3vw;
+        font-size: 70%;
+        height: auto;
 }
 
-    .back {
+    #completedul{
+        list-style-type: none;
+        display: flex;
+        margin: 0 -10px;
 
+    }
+
+    #completedli{
+        margin: 0.5vh 10px;
+        margin: 1vw ;
+        padding: 0.5vh;
+
+    }
+
+    .back {
         background-color:  darkgreen;
         border-radius:30px;
         text-align: center;

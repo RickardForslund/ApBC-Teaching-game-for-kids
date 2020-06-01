@@ -245,6 +245,7 @@
         .scorebuttons:hover{
 
         background-color: rgba(7, 7, 7, 0.7);
+            cursor: pointer;
     }
 
     .scorebuttons:active {
@@ -324,6 +325,7 @@
 
     #gridbuttons:hover{
         background-color: #003e0d;
+        cursor: pointer;
     }
 
 
@@ -397,6 +399,12 @@
     display: grid;
     padding: 0px;
     }
+
+.back:hover {
+    cursor: pointer;
+    background-color: #003e0d;
+
+}
 
 ul{
     display: flex;

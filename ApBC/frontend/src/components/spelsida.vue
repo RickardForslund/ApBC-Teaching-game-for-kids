@@ -345,6 +345,7 @@ section{
 
     .button1:hover,.button2:hover,.button3:hover,.button4:hover{
       background-color: #003e0d;
+      cursor: pointer;
     }
 
 </style>

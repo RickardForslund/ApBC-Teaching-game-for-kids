@@ -1,56 +1,57 @@
 <template>
     <div class="start">
 
-        <div class="scorebar">
 
-                <router-link to="/home"> <img id="homeIcon" :src="require('@/assets/' + home_url)" /></router-link>
-                <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
-
+        <div class="settingsPanel" id="settingsPanel"  >
+            <router-link to="/home"> <img id="homeIcon" :src="require('@/assets/' + home_url)" /></router-link>
+            <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
         </div>
-
-
 
 
         <div class="outsideDiv">
 
         <div class="grid-container">
 
+            <gridColumn1 class="gridColumn">
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[0]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[0]])" />
+                <img id="ballong" @click="pop(numberArray[0]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[0]])" />
                 <div class="combination"><h1>{{letters[numberArray[0]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[1]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[1]])" />
+                <img id="ballong" @click="pop(numberArray[1]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[1]])" />
                 <div class="combination"><h1>{{letters[numberArray[1]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[2]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[2]])" />
+                <img id="ballong" @click="pop(numberArray[2]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[2]])" />
+                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
+            </gridColumn1>
+            <gridColumn2 class="gridColumn">
+            <div class="grid-item">
+                <img id="ballong" @click="pop(numberArray[3]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[3]])" />
                 <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[3]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[3]])" />
-                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
-
-            <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[4]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[4]])" />
+                <img id="ballong" @click="pop(numberArray[4]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[4]])" />
                 <div class="combination"><h1>{{letters[numberArray[4]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[5]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[5]])" />
+                <img id="ballong" @click="pop(numberArray[5]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[5]])" />
                 <div class="combination"><h1>{{letters[numberArray[5]]}}</h1></div></div>
 
+            </gridColumn2>
+            <gridColumn3 class="gridColumn">
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[6]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[6]])" />
+                <img id="ballong" @click="pop(numberArray[6]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[6]])" />
                 <div class="combination"><h1>{{letters[numberArray[6]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[7]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[7]])" />
+                <img id="ballong" @click="pop(numberArray[7]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[7]])" />
                 <div class="combination"><h1>{{letters[numberArray[7]]}}</h1></div></div>
 
             <div class="grid-item">
-                <img class="ballong" @click="pop(numberArray[8]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[8]])" />
+                <img id="ballong" @click="pop(numberArray[8]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[8]])" />
                 <div class="combination"><h1>{{letters[numberArray[8]]}}</h1></div></div>
-
+            </gridColumn3>
           </div>
         </div>
         </div>
@@ -227,11 +228,7 @@
 
 <style scoped>
 
-.start{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, auto);
-}
+
 
 .combination{
     position: absolute;
@@ -255,6 +252,10 @@
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+                "gridColumn1"
+                "gridColumn2"
+                "gridColumn3";
         grid-gap: 0px;
         width:  100vw;
          height: 100vh;
@@ -281,15 +282,18 @@
 
     }
 
-    .grid-item > .ballong {
-        max-height: 75%;
+    .grid-item > #ballong {
+        max-height: 100%;
         opacity: 0.9;
 
         
     }
-    .scorebar{
+    .settingsPanel{
+        position: absolute;
+        left: 30px;
         transition: 0.5s;
         padding: 15px;
+        display: flex;
         opacity: 1;
     }
     #homeIcon{

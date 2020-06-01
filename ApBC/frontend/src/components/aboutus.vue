@@ -22,10 +22,10 @@
             <div class="outer">
                 <div class="grid-container">
 
-                    <div class="grid-item-1" id="grid-1"><img alt="panda" :src="require('@/assets/' + map1 + '/' + url1)" @click="show();" id="one" class="button" /></div>
-                    <div class="grid-item-2"><img alt="katt" :src="require('@/assets/' + map2 + '/' + url2)" @click="show();" id="two" class="button"/></div>
-                    <div class="grid-item-3"><img alt="hund" :src="require('@/assets/' + map3 + '/' + url3)" @click="show();" id="three" class="button"/></div>
-                    <div class="grid-item-4"><img alt="anka" :src="require('@/assets/' + map4 + '/' + url4)" @click="show();" id="four" class="button"/></div>
+                    <div class="grid-item-1" id="grid-1"><img alt="panda" :src="require('@/assets/' + map + '/' + url1)" @click="show();" id="one" class="button" /></div>
+                    <div class="grid-item-2"><img alt="katt" :src="require('@/assets/' + map + '/' + url2)" @click="show();" id="two" class="button"/></div>
+                    <div class="grid-item-3"><img alt="hund" :src="require('@/assets/' + map + '/' + url3)" @click="show();" id="three" class="button"/></div>
+                    <div class="grid-item-4"><img alt="anka" :src="require('@/assets/' + map + '/' + url4)" @click="show();" id="four" class="button"/></div>
                 </div>
             </div>
             <!--<<div class="wrapper">
@@ -48,10 +48,7 @@
 
         data: function () {
             return {
-                map1: "animals",
-                map2: "animals",
-                map3: "animals",
-                map4: "animals",
+                map: "animals",
                 url1: "panda.png",
                 url2: "katt.png",
                 url3: "hund.png",
@@ -71,7 +68,7 @@
         },
 
         methods: {
-/*
+
             show: function () {
                 console.log("show");
                 this.map = "about"
@@ -80,32 +77,32 @@
                 this.url2 = "EI2.png"
                 this.url3 = "HA3.png"
                 this.url4 = "ET4.png"
-            },*/
+            },
 
-            show1: function () {
+ /*           show1: function () {
                 console.log("show1");
-                this.map1 = "about"
+                this.map = "about"
                 this.url1 = "RF1.png"
 
             },
             show2: function () {
                 console.log("show2");
-                this.map2 = "about"
+                this.map = "about"
                 this.url2 = "EI2.png"
 
             },
             show3: function () {
                 console.log("show3");
-                this.map3 = "about"
+                this.map = "about"
                 this.url3 = "HA3.png"
 
             },
             show4: function () {
                 console.log("show4");
-                this.map4 = "about"
+                this.map = "about"
                 this.url4 = "ET4.png"
             },
-                        show: function (nr) {
+            /*            show: function (nr) {
 
                             switch (nr) {
                                 case 1:

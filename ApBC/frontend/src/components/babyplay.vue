@@ -1,60 +1,78 @@
 <template>
     <div class="start">
 
+        <div class="settingsPanel" id="settingsPanel">
+            <router-link to="/home"><img id="homeIcon" :src="require('@/assets/' + home_url)"/></router-link>
 
-        <div class="settingsPanel" id="settingsPanel"  >
-            <router-link to="/home"> <img id="homeIcon" :src="require('@/assets/' + home_url)" /></router-link>
-            <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();" />
+            <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();"/>
         </div>
 
 
         <div class="outsideDiv">
 
-        <div class="grid-container">
+            <div class="grid-container">
 
-            <gridColumn1 class="gridColumn">
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[0]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[0]])" />
-                <div class="combination"><h1>{{letters[numberArray[0]]}}</h1></div></div>
+<!--                <gridColumn1 class="gridColumn">-->
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[0]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[0]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[0]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[1]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[1]])" />
-                <div class="combination"><h1>{{letters[numberArray[1]]}}</h1></div></div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[1]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[1]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[1]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[2]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[2]])" />
-                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
-            </gridColumn1>
-            <gridColumn2 class="gridColumn">
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[3]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[3]])" />
-                <div class="combination"><h1>{{letters[numberArray[3]]}}</h1></div></div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[2]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[2]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[2]]}}</h1></div>
+                    </div>
+<!--                </gridColumn1>-->
+<!--                <gridColumn2 class="gridColumn">-->
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[3]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[3]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[3]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[4]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[4]])" />
-                <div class="combination"><h1>{{letters[numberArray[4]]}}</h1></div></div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[4]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[4]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[4]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[5]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[5]])" />
-                <div class="combination"><h1>{{letters[numberArray[5]]}}</h1></div></div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[5]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[5]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[5]]}}</h1></div>
+                    </div>
 
-            </gridColumn2>
-            <gridColumn3 class="gridColumn">
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[6]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[6]])" />
-                <div class="combination"><h1>{{letters[numberArray[6]]}}</h1></div></div>
+<!--                </gridColumn2>-->
+<!--                <gridColumn3 class="gridColumn">-->
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[6]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[6]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[6]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[7]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[7]])" />
-                <div class="combination"><h1>{{letters[numberArray[7]]}}</h1></div></div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[7]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[7]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[7]]}}</h1></div>
+                    </div>
 
-            <div class="grid-item">
-                <img id="ballong" @click="pop(numberArray[8]);" :src="require('@/assets/' + map + '/' + baloons[numberArray[8]])" />
-                <div class="combination"><h1>{{letters[numberArray[8]]}}</h1></div></div>
-            </gridColumn3>
-          </div>
+                    <div class="grid-item">
+                        <img id="ballong" @click="pop(num[8]);"
+                             :src="require('@/assets/' + map + '/' + animalObject.baloons[num[8]])"/>
+                        <div class="combination"><h1>{{animalObject.letters[num[8]]}}</h1></div>
+                    </div>
+<!--                </gridColumn3>-->
+            </div>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -63,47 +81,103 @@
         props: {
             imageUrl: String,
             logoUrl: String
-            // ,
-            // animalSounds:Object
+
         },
         data: function () {
             return {
-                numberArray: [],
-                letters:{1:'A', 2:'G', 3:'H', 4:'K', 5:'L', 6:'0', 7:'P', 8:'T', 9:'Z'},
-                animalSounds:{1:"anka.mp3", 2:"groda.mp3", 3:"hund.mp3",
-                    4:"katt.mp3", 5:"lamm.mp3", 6:"orm.mp3", 7:"panda.mp3", 8:"tiger.mp3", 9:"zebra.mp3"},
-                home_url:"home.png",
+                animalObject: {
+                    letters: {1: 'A', 2: 'G', 3: 'H', 4: 'K', 5: 'L', 6: '0', 7: 'P', 8: 'T', 9: 'Z'},
+                    animalSounds: {
+                        1: "anka.mp3", 2: "groda.mp3", 3: "hund.mp3",
+                        4: "katt.mp3", 5: "lamm.mp3", 6: "orm.mp3", 7: "panda.mp3", 8: "tiger.mp3", 9: "zebra.mp3"
+                    }
+
+                    // animalSounds: [      {
+                    //     id: '1',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '2',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '3',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '4',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '5',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '6',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },
+                    //     {
+                    //     id: '7',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },
+                    //     {
+                    //     id: '8',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // }
+                    // ]
+                    ,
+                    baloons: {
+                        1: "1.png", 2: "2.png", 3: "3.png",
+                        4: "4.png", 5: "5.png", 6: "6.png", 7: "7.png", 8: "8.png", 9: "9.png"
+                    },
+                    pictures: {
+                        1: "b/anka.png",
+                        2: "b/groda.png",
+                        3: "b/hund.png",
+                        4: "b/katt.png",
+                        5: "b/lamm.png",
+                        6: "b/orm.png",
+                        7: "b/panda.png",
+                        8: "b/tiger.png",
+                        9: "b/zebra.png"
+                    },
+                    timesClicked:0
+
+                },
+                num: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                home_url: "home.png",
                 map: "baby",
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
-                timeout: false,
-                baloons:{1:"1.png", 2:"2.png", 3:"3.png",
-                    4:"4.png", 5:"5.png", 6:"6.png", 7:"7.png", 8:"8.png", 9:"9.png"},
-
-                pictures:{1:"b/anka.png", 2:"b/groda.png", 3:"b/hund.png",
-                    4:"b/katt.png", 5:"b/lamm.png", 6:"b/orm.png", 7:"b/panda.png", 8:"b/tiger.png", 9:"b/zebra.png"}
+                timeout: false
 
             }
         },
 
         created() {
-         document.body.style.overflowX = "hidden";
-         document.body.style.overflowY = "hidden";
-
+            document.body.style.overflowX = "hidden";
+            document.body.style.overflowY = "hidden";
 
 
             console.log("-----Random-----");
-            while (this.numberArray.length <9) {
-                this.numberGenerator(); 
-            }
-            console.log("Array size is: " + this.numberArray.length);
-            console.log("random numbers is " + this.numberArray);
+
+            this.numberGenerator();
+
+            console.log("Array size is: " + this.num.length);
+            console.log("random numbers is " + this.num);
             console.log("----End-----");
-            
-
-
-        
 
         },
         mounted() {
@@ -113,90 +187,36 @@
 
             pop: function (name) {
 
-                if (this.musicMuted == false && this.timeout == false ) {
-                    const sound = ( new Audio( require('@/assets/sounds/' +this.animalSounds[name] )));
-                    console.log(this.numberArray[name])
-                    this.letters[this.numberArray[name]]="";
-                    this.baloons[this.numberArray[name]]=this.pictures[this.numberArray[name]]
-                sound.play();
+                if (this.musicMuted == false && this.timeout == false) {
+                    const sound = (new Audio(require('@/assets/sounds/' + this.animalObject.animalSounds[name])));
+                    console.log(this.num[name])
+
+                    this.animalObject.letters[name] = "";
+                    this.animalObject.baloons[name] = this.animalObject.pictures[name]
+
+                    sound.play();
+
 
                 }
-                            this.timeout = true
+                this.timeout = true
 
-                        setTimeout(() => {
-                            this.timeout = false
-                            
-                        }, 5000);
+                setTimeout(() => {
+                    this.timeout = false
+
+                }, 5000);
 
             },
 
-            //
-            // pop: function (input) {
-            //     this.playSound(input)
-            //
-            // // switch (input) {
-            // //     case 1
-            // //         this.map1 = "animals";
-            // //         this.urla = "anka.png"
-            // //         this.playSound("anka.mp3");
-            // //         break;
-            // //     case 2:
-            // //         this.map2 = "animals";
-            // //         this.urlg = "groda.png"
-            // //         this.playSound("groda.mp3");
-            // //         break;
-            // //     case 3:
-            // //         this.map3 = "animals";
-            // //         this.urlh = "hund.png"
-            // //         this.playSound("hund.mp3");
-            // //         break;
-            // //     case 4:
-            // //         this.map4 = "animals";
-            // //         this.urlk = "katt.png"
-            // //         this.playSound("katt.mp3");
-            // //         break;
-            // //     case 5:
-            // //         this.map5 = "animals";
-            // //         this.urll = "lamm.png"
-            // //         this.playSound("lamm.mp3");
-            // //         break;
-            // //     case 6:
-            // //         this.map6 = "animals";
-            // //         this.urlo = "orm.png"
-            // //         this.playSound("orm.m4a");
-            // //         break;
-            // //     case 7:
-            // //         this.map7 = "animals";
-            // //         this.urlp = "panda.png"
-            // //        this.playSound("panda.m4a");
-            // //         break;
-            // //     case 8:
-            // //         this.map8 = "animals";
-            // //         this.urlt = "tiger.png"
-            // //         this.playSound("tiger.mp3");
-            // //         break;
-            // //     case 9:
-            // //         this.map9 = "animals";
-            // //         this.urlz = "zebra.png"
-            // //         this.playSound("zebra.mp3");
-            // //         break;
-            // //     default:
-            // //         console.log("default value");
-            // //
-            // //         break;
-            // // }
-
-
-            // },
+            // pauseAudio: function
 
             numberGenerator: function () {
-                
-                var value = Math.floor(Math.random() * (9) + 1);
-                    if (this.numberArray.includes(value)) {
-                        console.log("duplicate");
-                    }else{
-                        this.numberArray += value
-                    }
+
+                for (let i = this.num.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * i)
+                    const temp = this.num[i]
+                    this.num[i] = this.num[j]
+                    this.num[j] = temp
+                }
 
             },
 
@@ -228,37 +248,33 @@
 
 <style scoped>
 
+    .combination {
+        position: absolute;
+        color: white;
+        vertical-align: top;
 
-
-.combination{
-    position: absolute;
-    color: white;
-    vertical-align: top;
-
-}
+    }
 
     .logo:hover {
         transform: scale(0.9, 0.9);
-        -webkit-transform: scale(0.9,0.9);
+        -webkit-transform: scale(0.9, 0.9);
         -moz-transform: scale(0.9, 0.9);
     }
 
-    *{
+    * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
     }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
-        grid-template-areas:
-                "gridColumn1"
-                "gridColumn2"
-                "gridColumn3";
+        grid-template-areas: "gridColumn1" "gridColumn2" "gridColumn3";
         grid-gap: 0px;
-        width:  100vw;
-         height: 100vh;
+        width: 100vw;
+        height: 100vh;
         background-image: url("../assets/baby/background.jpg");
         border-radius: 30px;
         background-repeat: no-repeat;
@@ -276,34 +292,38 @@
         font-family: Arial;
         font-size: 3rem;
         font-weight: bold;
-        width:  30vw;
+        width: 30vw;
         height: 30vh;
 
 
     }
 
     .grid-item > #ballong {
-        max-height: 75%;
+        max-height: 100%;
         opacity: 0.9;
 
-        
+
     }
-    .settingsPanel{
+
+    .settingsPanel {
+        position: absolute;
+        left: 30px;
         transition: 0.5s;
         padding: 15px;
+        display: flex;
         opacity: 1;
     }
-    #homeIcon{
+
+    #homeIcon {
         height: 75px;
         margin-top: 10px;
         padding-right: 15px;
     }
 
-    #music_logo{
+    #music_logo {
         /*margin: 39.5px 0 0 0;*/
         margin-top: 20px;
         height: 60px;
         background-color: #3a8bb1;
     }
-
 </style>

@@ -9,15 +9,21 @@
                  <div class="scoreitems">
                      <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
                      <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
-                     <div class="scoretime" id="scoreandtimer">Guess: {{this.correct}}</div>
-                     <div class="scoretime" id="scoreandtimer">time: {{timercount}}</div>
-                     <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
+                     <div v-if="firstPage" class="scoretime" id="scoreandtimer">Guess: {{this.correct}}</div>
+                     <div v-if="firstPage" class="scoretime" id="scoreandtimer">Fails: {{failcount}}</div>
+                     <div v-if="firstPage" class="scorescore" id="scoreandtimer">score: {{score}}</div>
                  </div>
             </div>
 <!----------------- Scorebar END --------------------->
 
+<!--
+<h1 v-if="awesome">Vue is awesome!</h1>
+<h1 v-else>Oh no 😢</h1>
+
+-->
+
 <!-------------------- Questionbox --------------------->
-            <div class="alfabetsBox">
+            <div class="alfabetsBox" v-if="firstPage">
                 <ul id="example-1">
                 <li v-for="item in completed" :key="item">
                     {{ item }}
@@ -27,42 +33,45 @@
 <!-------------------- Questionbox END --------------------->
 
 <!-------------------- A-Ö --------------------->
-            <section id="section">
+            <section id="section" v-if="firstPage">
                     <div class="grid-container">
                         <div id="gridbutton" class="grid-item"></div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[0].value)">{{RandomizedValues[0].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[1].value)">{{RandomizedValues[1].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[2].value)">{{RandomizedValues[2].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[3].value)">{{RandomizedValues[3].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[4].value)">{{RandomizedValues[4].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[5].value)">{{RandomizedValues[5].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[6].value)">{{RandomizedValues[6].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[7].value)">{{RandomizedValues[7].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[8].value)">{{RandomizedValues[8].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[9].value)">{{RandomizedValues[9].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[10].value)">{{RandomizedValues[10].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[11].value)">{{RandomizedValues[11].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[12].value)">{{RandomizedValues[12].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[13].value)">{{RandomizedValues[13].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[14].value)">{{RandomizedValues[14].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[15].value)">{{RandomizedValues[15].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[16].value)">{{RandomizedValues[16].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[17].value)">{{RandomizedValues[17].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[18].value)">{{RandomizedValues[18].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[19].value)">{{RandomizedValues[19].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[20].value)">{{RandomizedValues[20].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[21].value)">{{RandomizedValues[21].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[22].value)">{{RandomizedValues[22].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[23].value)">{{RandomizedValues[23].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[24].value)">{{RandomizedValues[24].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[25].value)">{{RandomizedValues[25].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[26].value)">{{RandomizedValues[26].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[27].value)">{{RandomizedValues[27].value}}</div>
-                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[28].value)">{{RandomizedValues[28].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[0].clicked"  @click="clickmethod(RandomizedValues[0].value,0)">{{RandomizedValues[0].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[1].clicked"  @click="clickmethod(RandomizedValues[1].value,1)">{{RandomizedValues[1].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[2].clicked"  @click="clickmethod(RandomizedValues[2].value,2)">{{RandomizedValues[2].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[3].clicked"  @click="clickmethod(RandomizedValues[3].value,3)">{{RandomizedValues[3].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[4].clicked"  @click="clickmethod(RandomizedValues[4].value,4)">{{RandomizedValues[4].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[5].clicked"  @click="clickmethod(RandomizedValues[5].value,5)">{{RandomizedValues[5].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[6].clicked"  @click="clickmethod(RandomizedValues[6].value,6)">{{RandomizedValues[6].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[7].clicked"  @click="clickmethod(RandomizedValues[7].value,7)">{{RandomizedValues[7].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[8].clicked"  @click="clickmethod(RandomizedValues[8].value,8)">{{RandomizedValues[8].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[9].clicked"  @click="clickmethod(RandomizedValues[9].value,9)">{{RandomizedValues[9].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[10].clicked" @click="clickmethod(RandomizedValues[10].value,10)">{{RandomizedValues[10].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[11].clicked" @click="clickmethod(RandomizedValues[11].value,11)">{{RandomizedValues[11].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[12].clicked" @click="clickmethod(RandomizedValues[12].value,12)">{{RandomizedValues[12].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[13].clicked" @click="clickmethod(RandomizedValues[13].value,13)">{{RandomizedValues[13].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[14].clicked" @click="clickmethod(RandomizedValues[14].value,14)">{{RandomizedValues[14].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[15].clicked" @click="clickmethod(RandomizedValues[15].value,15)">{{RandomizedValues[15].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[16].clicked" @click="clickmethod(RandomizedValues[16].value,16)">{{RandomizedValues[16].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[17].clicked" @click="clickmethod(RandomizedValues[17].value,17)">{{RandomizedValues[17].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[18].clicked" @click="clickmethod(RandomizedValues[18].value,18)">{{RandomizedValues[18].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[19].clicked" @click="clickmethod(RandomizedValues[19].value,19)">{{RandomizedValues[19].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[20].clicked" @click="clickmethod(RandomizedValues[20].value,20)">{{RandomizedValues[20].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[21].clicked" @click="clickmethod(RandomizedValues[21].value,21)">{{RandomizedValues[21].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[22].clicked" @click="clickmethod(RandomizedValues[22].value,22)">{{RandomizedValues[22].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[23].clicked" @click="clickmethod(RandomizedValues[23].value,23)">{{RandomizedValues[23].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[24].clicked" @click="clickmethod(RandomizedValues[24].value,24)">{{RandomizedValues[24].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[25].clicked" @click="clickmethod(RandomizedValues[25].value,25)">{{RandomizedValues[25].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[26].clicked" @click="clickmethod(RandomizedValues[26].value,26)">{{RandomizedValues[26].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[27].clicked" @click="clickmethod(RandomizedValues[27].value,27)">{{RandomizedValues[27].value}}</div>
+                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[28].clicked" @click="clickmethod(RandomizedValues[28].value,28)">{{RandomizedValues[28].value}}</div>
                 </div>
             </section>
+            <div class="startText" v-else>
+               <h1>Press the Start Button</h1>
+            </div>
 <!-------------------- A-Ö END --------------------->
-            <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
+            <input v-if="firstPage" type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
         </div>
 <!-------------------- Game Screen END --------------------->
     </div>
@@ -81,36 +90,38 @@
             score: 0,
             timercount: 0,
             completed: [],
+            firstPage: false,
+            failcount: 0,
             RandomizedValues: [
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''},
-                {value: ''}
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true},
+                {value: '', clicked: true}
                 ],
 
             timer: [
@@ -137,24 +148,34 @@
     },
 
     methods: {
-        clickmethod: function (input) {
+        clickmethod: function (input,nr) {
+                console.log(nr);
+                
             if (input === this.correct) {
                 this.completed += input;
                 this.correct = this.answers[this.add]
                 this.add++;
+                this.scorecalc(100,0);
+                this.RandomizedValues[nr].clicked = false
 
             }else{
                 console.log("Wrong letter, try again");
-                console.log("correct answer is:" + this.correct);
+                this.failcount += 1
+                this.scorecalc(0 , -100);
 
             }
+        },
+
+        scorecalc: function (value1 , value2) {
+            this.score += (value1 + value2);
+            
         },
 
         mytimer: function () {
             setInterval(() => {
                 this.timercount += 1;
             }, 1000);
-            
+            this.firstPage = true
         },
         randomizeLetters: function () {
             for (let i = 0; i < this.RandomizedValues.length; i++) {
@@ -171,6 +192,9 @@
 
         reset: function () {
             this.timercount = 0;
+            this.firstPage = false
+            this.score = 0;
+            this.failcount = 0;
         }
     }
     }
@@ -179,6 +203,18 @@
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+
+    .startText{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, rgb(207, 255, 34)), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+    font-size: 3rem;
+
+    }
 
     .scoreitems{
         display: grid;

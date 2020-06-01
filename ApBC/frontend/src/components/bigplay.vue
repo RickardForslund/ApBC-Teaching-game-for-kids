@@ -9,6 +9,7 @@
                  <div class="scoreitems">
                      <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
                      <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
+                     <div class="scoretime" id="scoreandtimer">Guess: {{this.correct}}</div>
                      <div class="scoretime" id="scoreandtimer">time: {{timercount}}</div>
                      <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
                  </div>
@@ -17,45 +18,47 @@
 
 <!-------------------- Questionbox --------------------->
             <div class="alfabetsBox">
-                <h1>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö</h1>
-                
-            </div>
+                <ul id="example-1">
+                <li v-for="item in completed" :key="item">
+                    {{ item }}
+                </li>
+                </ul>
+                </div>
 <!-------------------- Questionbox END --------------------->
 
 <!-------------------- A-Ö --------------------->
             <section id="section">
                     <div class="grid-container">
-                        <div id="gridbutton" class="grid-item"></div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[0].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[1].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[2].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[3].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[4].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[5].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[6].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[7].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[8].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[9].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[10].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[11].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[12].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[13].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[14].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[15].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[16].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[17].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[18].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[19].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[20].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[21].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[22].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[23].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[24].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[25].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[26].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[27].value}}</div>
-                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[28].value}}</div>
-
+                        <div id="gridbutton" class="grid-item">logo</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[0].value)">{{RandomizedValues[0].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[1].value)">{{RandomizedValues[1].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[2].value)">{{RandomizedValues[2].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[3].value)">{{RandomizedValues[3].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[4].value)">{{RandomizedValues[4].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[5].value)">{{RandomizedValues[5].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[6].value)">{{RandomizedValues[6].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[7].value)">{{RandomizedValues[7].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[8].value)">{{RandomizedValues[8].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[9].value)">{{RandomizedValues[9].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[10].value)">{{RandomizedValues[10].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[11].value)">{{RandomizedValues[11].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[12].value)">{{RandomizedValues[12].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[13].value)">{{RandomizedValues[13].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[14].value)">{{RandomizedValues[14].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[15].value)">{{RandomizedValues[15].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[16].value)">{{RandomizedValues[16].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[17].value)">{{RandomizedValues[17].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[18].value)">{{RandomizedValues[18].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[19].value)">{{RandomizedValues[19].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[20].value)">{{RandomizedValues[20].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[21].value)">{{RandomizedValues[21].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[22].value)">{{RandomizedValues[22].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[23].value)">{{RandomizedValues[23].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[24].value)">{{RandomizedValues[24].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[25].value)">{{RandomizedValues[25].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[26].value)">{{RandomizedValues[26].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[27].value)">{{RandomizedValues[27].value}}</div>
+                        <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[28].value)">{{RandomizedValues[28].value}}</div>
                 </div>
             </section>
 <!-------------------- A-Ö END --------------------->
@@ -71,9 +74,13 @@
         props: {},
     data: function () {
         return {
-            //  scorebar
+            letters: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö'],
+            answers: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö'],
+            add: 1,
+            correct: 'A',
             score: 0,
             timercount: 0,
+            completed: [],
             RandomizedValues: [
                 {value: ''},
                 {value: ''},
@@ -106,38 +113,6 @@
                 {value: ''}
                 ],
 
-                completed: [
-                {value: 'A'},
-                {value: 'B'},
-                {value: 'C'},
-                {value: 'D'},
-                {value: 'E'},
-                {value: 'F'},
-                {value: 'G'},
-                {value: 'H'},
-                {value: 'I'},
-                {value: 'J'},
-                {value: 'K'},
-                {value: 'L'},
-                {value: 'M'},
-                {value: 'N'},
-                {value: 'O'},
-                {value: 'P'},
-                {value: 'Q'},
-                {value: 'R'},
-                {value: 'S'},
-                {value: 'T'},
-                {value: 'U'},
-                {value: 'V'},
-                {value: 'W'},
-                {value: 'X'},
-                {value: 'Y'},
-                {value: 'Z'},
-                {value: 'Å'},
-                {value: 'Ä'},
-                {value: 'Ö'}
-                ],
-
             timer: [
                 {
                     value: null,
@@ -151,6 +126,8 @@
         document.body.style.overflowX = "hidden";
         document.body.style.overflowY = "hidden";
         this.randomizeLetters();
+        console.log("correct answer is:" + this.correct);
+        
 
         
     },
@@ -160,6 +137,19 @@
     },
 
     methods: {
+        clickmethod: function (input) {
+            if (input === this.correct) {
+                this.completed += input;
+                this.correct = this.answers[this.add]
+                this.add++;
+
+            }else{
+                console.log("Wrong letter, try again");
+                console.log("correct answer is:" + this.correct);
+
+            }
+        },
+
         mytimer: function () {
             setInterval(() => {
                 this.timercount += 1;
@@ -167,13 +157,10 @@
             
         },
         randomizeLetters: function () {
-
-            var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö']
-
             for (let i = 0; i < this.RandomizedValues.length; i++) {
-                let randvalue = Math.floor((Math.random() * letters.length))
-                this.RandomizedValues[i].value = letters[randvalue];
-                letters.splice(randvalue,1)
+                let randvalue = Math.floor((Math.random() * this.letters.length))
+                this.RandomizedValues[i].value = this.letters[randvalue];
+                this.letters.splice(randvalue,1)
  }
 
 
@@ -195,7 +182,7 @@
 
     .scoreitems{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         padding: 0px;
 
     }   
@@ -347,5 +334,10 @@
 
 }
 
+
+ul{
+    display: flex;
+    list-style: none;
+}
 
 </style>

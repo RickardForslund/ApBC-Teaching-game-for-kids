@@ -3,6 +3,7 @@
 
         <div class="settingsPanel" id="settingsPanel">
             <router-link to="/home"><img id="homeIcon" :src="require('@/assets/' + home_url)"/></router-link>
+            
             <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();"/>
         </div>
 
@@ -11,7 +12,7 @@
 
             <div class="grid-container">
 
-                <gridColumn1 class="gridColumn">
+<!--                <gridColumn1 class="gridColumn">-->
                     <div class="grid-item">
                         <img id="ballong" @click="pop(num[0]);"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[0]])"/>
@@ -29,8 +30,8 @@
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[2]])"/>
                         <div class="combination"><h1>{{animalObject.letters[num[2]]}}</h1></div>
                     </div>
-                </gridColumn1>
-                <gridColumn2 class="gridColumn">
+<!--                </gridColumn1>-->
+<!--                <gridColumn2 class="gridColumn">-->
                     <div class="grid-item">
                         <img id="ballong" @click="pop(num[3]);"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[3]])"/>
@@ -49,8 +50,8 @@
                         <div class="combination"><h1>{{animalObject.letters[num[5]]}}</h1></div>
                     </div>
 
-                </gridColumn2>
-                <gridColumn3 class="gridColumn">
+<!--                </gridColumn2>-->
+<!--                <gridColumn3 class="gridColumn">-->
                     <div class="grid-item">
                         <img id="ballong" @click="pop(num[6]);"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[6]])"/>
@@ -68,7 +69,7 @@
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[8]])"/>
                         <div class="combination"><h1>{{animalObject.letters[num[8]]}}</h1></div>
                     </div>
-                </gridColumn3>
+<!--                </gridColumn3>-->
             </div>
         </div>
     </div>
@@ -89,7 +90,53 @@
                     animalSounds: {
                         1: "anka.mp3", 2: "groda.mp3", 3: "hund.mp3",
                         4: "katt.mp3", 5: "lamm.mp3", 6: "orm.mp3", 7: "panda.mp3", 8: "tiger.mp3", 9: "zebra.mp3"
-                    },
+                    }
+
+                    // animalSounds: [      {
+                    //     id: '1',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '2',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '3',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '4',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '5',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },{
+                    //     id: '6',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },
+                    //     {
+                    //     id: '7',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // },
+                    //     {
+                    //     id: '8',
+                    //     name: 'anka',
+                    //     file: new Audio('@/assets/sounds/anka.mp3)'),
+                    //     isPlaying: false
+                    // }
+                    // ]
+                    ,
                     baloons: {
                         1: "1.png", 2: "2.png", 3: "3.png",
                         4: "4.png", 5: "5.png", 6: "6.png", 7: "7.png", 8: "8.png", 9: "9.png"
@@ -104,7 +151,8 @@
                         7: "b/panda.png",
                         8: "b/tiger.png",
                         9: "b/zebra.png"
-                    }
+                    },
+                    timesClicked:0
 
                 },
                 num: [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -113,9 +161,7 @@
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,
-                timeout: false,
-                timesClicked:0
-
+                timeout: false
 
             }
         },
@@ -147,6 +193,7 @@
 
                     this.animalObject.letters[name] = "";
                     this.animalObject.baloons[name] = this.animalObject.pictures[name]
+
                     sound.play();
 
 
@@ -159,6 +206,8 @@
                 }, 5000);
 
             },
+
+            // pauseAudio: function
 
             numberGenerator: function () {
 

@@ -29,7 +29,7 @@
 <!-------------------- A-Ö --------------------->
             <section id="section">
                     <div class="grid-container">
-                        <div id="gridbutton" class="grid-item">logo</div>
+                        <div id="gridbutton" class="grid-item"></div>
                         <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[0].value)">{{RandomizedValues[0].value}}</div>
                         <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[1].value)">{{RandomizedValues[1].value}}</div>
                         <div id="gridbuttons" class="grid-item" @click="clickmethod(RandomizedValues[2].value)">{{RandomizedValues[2].value}}</div>
@@ -62,7 +62,7 @@
                 </div>
             </section>
 <!-------------------- A-Ö END --------------------->
-
+            <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
         </div>
 <!-------------------- Game Screen END --------------------->
     </div>
@@ -258,6 +258,19 @@
 
     }
 
+    #gridbutton {
+        background-image: url("../assets/apbcb.png");
+        background-color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 15px;
+        text-align: center;
+        height: 9vh;
+        width: 16vw;
+        margin: 0.1vh;
+    }
+
     #gridbuttons{
         background-color: rgba(0, 100,0, 0.9);
         border-radius: 15px;
@@ -313,7 +326,7 @@
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 0vh 3vw 10vh 3vw;
+        margin: 0vh 3vw 0vh 3vw;
         padding-top: 2vh;
         padding-bottom: 2vh;
         text-align: center;
@@ -334,6 +347,20 @@
 
 }
 
+.back {
+    background-color:  darkgreen;
+    border-radius:30px;
+    text-align: center;
+    height: 70%;
+    margin: 0px 3vw;
+    opacity: 0.9;
+    font-size: 3vw;
+    font-family: 'Patua One';
+    /*line-height: 100px;*/
+    color: white;
+    display: grid;
+    padding: 0px;
+    }
 
 ul{
     display: flex;

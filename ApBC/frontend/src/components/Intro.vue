@@ -15,11 +15,6 @@
 </script>
 
 <style scoped>
-
-body{
-    overflow: visible;
-}
-
    /* @media only screen and (max-width: 870px) {*/
         .gameScreen {
             display: grid;

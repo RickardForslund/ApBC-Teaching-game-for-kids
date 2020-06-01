@@ -283,17 +283,14 @@
     }
 
     .grid-item > #ballong {
-        max-height: 100%;
+        max-height: 75%;
         opacity: 0.9;
 
         
     }
     .settingsPanel{
-        position: absolute;
-        left: 30px;
         transition: 0.5s;
         padding: 15px;
-        display: flex;
         opacity: 1;
     }
     #homeIcon{

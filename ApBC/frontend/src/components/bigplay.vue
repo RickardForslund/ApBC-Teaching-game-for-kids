@@ -30,35 +30,35 @@
             <section id="section">
                     <div class="grid-container">
                         <div id="gridbutton" class="grid-item"></div>
-                        <div id="gridbuttons" class="grid-item">A</div>
-                        <div id="gridbuttons" class="grid-item"><button>B</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>C</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>D</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>E</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>F</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>G</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>H</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>I</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>J</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>K</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>L</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>M</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>N</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>O</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>P</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Q</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>R</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>S</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>T</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>U</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>V</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>W</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>X</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Y</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Z</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Å</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Ä</button></div>
-                        <div id="gridbuttons" class="grid-item"><button>Ö</button></div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[0].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[1].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[2].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[3].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[4].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[5].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[6].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[7].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[8].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[9].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[10].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[11].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[12].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[13].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[14].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[15].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[16].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[17].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[18].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[19].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[20].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[21].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[22].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[23].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[24].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[25].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[26].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[27].value}}</div>
+                        <div id="gridbuttons" class="grid-item">{{RandomizedValues[28].value}}</div>
                 </div>
             </section>
 <!-------------------- A-Ö END --------------------->
@@ -80,7 +80,39 @@
             //  scorebar
             score: 0,
             timercount: 0,
-            completed: [
+            RandomizedValues: [
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''},
+                {value: ''}
+                ],
+
+                completed: [
                 {value: 'A'},
                 {value: 'B'},
                 {value: 'C'},
@@ -127,6 +159,9 @@
     created() {
         document.body.style.overflowX = "hidden";
         document.body.style.overflowY = "hidden";
+        this.randomizeLetters();
+
+        
     },
     mounted() {
 
@@ -147,6 +182,22 @@
                 
             }
         },
+        randomizeLetters: function () {
+
+            var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö']
+
+            for (let i = 0; i < this.RandomizedValues.length; i++) {
+                let randvalue = Math.floor((Math.random() * letters.length))
+                this.RandomizedValues[i].value = letters[randvalue];
+                letters.splice(randvalue,1)
+ }
+
+
+      this.currentID = Math.floor((Math.random() * 10) + 1);
+            
+        },
+
+
         reset: function () {
             this.timercount = 0;
             clearInterval(this.timer[0].value);

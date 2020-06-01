@@ -9,28 +9,23 @@
                  <div class="scoreitems">
                      <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
                      <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
-                     <div class="scoretime" id="scoreandtimer">Tid: {{timercount}}</div>
-                     <div class="scorescore" id="scoreandtimer">Poäng: {{score}}</div>
+                     <div class="scoretime" id="scoreandtimer">time: {{timercount}}</div>
+                     <div class="scorescore" id="scoreandtimer">score: {{score}}</div>
                  </div>
             </div>
 <!----------------- Scorebar END --------------------->
 
 <!-------------------- Questionbox --------------------->
             <div class="alfabetsBox">
-                <ul id="completedul">
-                <li id="completedli" v-for="item in completed" :key="item.value">
-                    {{ item.value }}
-                </li>
-                </ul>
-
+                <h1>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö</h1>
+                
             </div>
 <!-------------------- Questionbox END --------------------->
 
 <!-------------------- A-Ö --------------------->
             <section id="section">
                     <div class="grid-container">
-                        <div id="gridbutton" class="grid-item"></div>
-                        <div id="gridbuttons" class="grid-item">A</div>
+                        <div id="gridbuttons" class="grid-item"><button>A</button></div>
                         <div id="gridbuttons" class="grid-item"><button>B</button></div>
                         <div id="gridbuttons" class="grid-item"><button>C</button></div>
                         <div id="gridbuttons" class="grid-item"><button>D</button></div>
@@ -62,9 +57,8 @@
                 </div>
             </section>
 <!-------------------- A-Ö END --------------------->
-            <input type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
-        </div>
 
+        </div>
 <!-------------------- Game Screen END --------------------->
     </div>
 </template>
@@ -72,52 +66,12 @@
 <script>
     export default {
         name: "bigplay",
-        props: {
-            imageURL: String
-        },
+        props: {},
     data: function () {
         return {
             //  scorebar
             score: 0,
             timercount: 0,
-            completed: [
-                {value: 'A'},
-                {value: 'B'},
-                {value: 'C'},
-                {value: 'D'},
-                {value: 'E'},
-                {value: 'F'},
-                {value: 'G'},
-                {value: 'H'},
-                {value: 'I'},
-                {value: 'J'},
-                {value: 'K'},
-                {value: 'L'},
-                {value: 'M'},
-                {value: 'N'},
-                {value: 'O'},
-                {value: 'P'},
-                {value: 'Q'},
-                {value: 'R'},
-                {value: 'S'},
-                {value: 'T'},
-                {value: 'U'},
-                {value: 'V'},
-                {value: 'W'},
-                {value: 'X'},
-                {value: 'Y'},
-                {value: 'Z'},
-                {value: 'Å'},
-                {value: 'Ä'},
-                {value: 'Ö'}
-                ],
-
-            timer: [
-                {
-                    value: null,
-                    active: false
-                }
-            ],
 
             //
 
@@ -135,26 +89,13 @@
 
     methods: {
         mytimer: function () {
-            if (this.timer[0].active == false) {
-                this.timer[0].value = setInterval(() => {
-                     this.timercount += 1;
-                 }, 1000);   
-                 this.timer[0].active = true;
-            }else{
-                console.log("Timer already active, reset first.");
-                
-
-                
-            }
+            setInterval(() => {
+                this.timercount += 1;
+            }, 1000);
+            
         },
         reset: function () {
             this.timercount = 0;
-            clearInterval(this.timer[0].value);
-            this.timer[0].active = false;
-        },
-        displayCompleted: function () {
-
-            
         }
     }
     }
@@ -163,8 +104,6 @@
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-
-
 
     .scoreitems{
         display: grid;
@@ -189,7 +128,7 @@
         border-radius: 1rem;
         max-width: 90%;
         border: hidden;
-        box-shadow: 0 7px rgba(7, 7, 7, 0.705);
+        box-shadow: 0 9px rgba(7, 7, 7, 0.8);
         }
 
         .scorebuttons:hover{
@@ -256,23 +195,7 @@
         line-height: 50px;
         color: white;
         position: relative;
-    }
 
-    #gridbutton{
-        background-image: url("../assets/apbcb.png");
-        background-color: white;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-radius: 15px;
-        height: 9vh;
-        width: 16vw;
-        margin: 0.1vh;
-        font-size: 40px;
-        font-family: 'Patua One';
-        line-height: 50px;
-        color: white;
-        position: relative;
     }
 
     #gridbuttons:hover{
@@ -303,8 +226,8 @@
         margin-left: auto;
         margin-right: auto;
         grid-template-columns: auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:"questions" "buttons" "back";
+        grid-template-rows: auto auto;
+        grid-template-areas:"questions" "buttons";
         grid-gap: 10px;
         touch-action: manipulation;
     }
@@ -315,7 +238,7 @@
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 0vh 3vw 0vh 3vw;
+        margin: 0vh 3vw 10vh 3vw;
         padding-top: 2vh;
         padding-bottom: 2vh;
         text-align: center;
@@ -323,45 +246,18 @@
     }
 
 
-    .alfabetsBox{
+.alfabetsBox{
         color: rgb(54, 54, 54);
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
         margin: 0px 3vw;
-        padding: 0vh 3vw;
-        font-size: 70%;
-        height: auto;
+    padding: 0vh 3vw;
+    font-size: 130%;
+    height: auto;
+
+
 }
-
-    #completedul{
-        list-style-type: none;
-        display: flex;
-        margin: 0 -10px;
-
-    }
-
-    #completedli{
-        margin: 0.5vh 10px;
-        margin: 1vw ;
-        padding: 0.5vh;
-
-    }
-
-    .back {
-        background-color:  darkgreen;
-        border-radius:30px;
-        text-align: center;
-        height: 70%;
-        margin: 0px 3vw;
-        opacity: 0.9;
-        font-size: 3vw;
-        font-family: 'Patua One';
-        /*line-height: 100px;*/
-        color: white;
-        display: grid;
-        padding: 0px;
-    }
 
 
 </style>

@@ -7,11 +7,10 @@
 <!-------------------- Scorebar --------------------->
             <div class="scorebar">
                  <div class="scoreitems">
-                     <button class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
-                     <button class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
-                     <div v-if="firstPage" class="scoretime" id="scoreandtimer">Guess: {{this.correct}}</div>
-                     <div v-if="firstPage" class="scoretime" id="scoreandtimer">Fails: {{failcount}}</div>
-                     <div v-if="firstPage" class="scorescore" id="scoreandtimer">score: {{score}}</div>
+                     <button v-if="buttons" class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
+                     <button v-else class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
+
+                     <div v-if="firstPage" class="scorescore" id="scoreandtimer">Poäng: {{score}}</div>
                  </div>
             </div>
 <!----------------- Scorebar END --------------------->
@@ -85,6 +84,7 @@
             timercount: 0,
             completed: [],
             firstPage: false,
+            buttons: true,
             failcount: 0,
             RandomizedValues: [
                 {value: '', clicked: true},
@@ -171,6 +171,7 @@
                 this.timercount += 1;
             }, 1000);
             this.firstPage = true
+            this.buttons = false
         },
         randomizeLetters: function () {
             for (let i = 0; i < this.RandomizedValues.length; i++) {
@@ -202,7 +203,7 @@
 
 
 ul{
-    font-size: 5vh;
+    font-size: 4vh;
     padding: 1vw 1vh;
 }
 

@@ -52,7 +52,7 @@
 
 <!--                </gridColumn2>-->
 <!--                <gridColumn3 class="gridColumn">-->
-                    <div class="grid-item" @click="pop(num[6]);">
+                    <div class="grid-item" @click="pop(num[6])">
                         <img id="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[6]])"/>
                         <h1 class="combination">{{animalObject.letters[num[6]]}}</h1>

@@ -65,7 +65,7 @@
                <h1>Press the Start Button</h1>
             </div>
 <!-------------------- A-Ö END --------------------->
-            <input v-if="firstPage" type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
+            <input id="tillbakaKnapp" v-if="firstPage" type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
         </div>
 <!-------------------- Game Screen END --------------------->
     </div>
@@ -276,6 +276,9 @@ margin-bottom: 90%;
     }
     
 
+#tillbakaKnapp{
+    background-color: rgb(54, 54, 54);
+}
 
 
     #scoreandtimer{

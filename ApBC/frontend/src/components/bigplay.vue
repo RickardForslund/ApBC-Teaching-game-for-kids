@@ -61,7 +61,7 @@
                 </div>
             </section>
             <div class="startText" v-else>
-               <h1>Press the Start Button</h1>
+               <h1>Nu kör vi!</h1>
             </div>
 <!-------------------- A-Ö END --------------------->
         </div>
@@ -205,12 +205,20 @@
 
 
 ul{
+    display: inline-flex;
+    list-style: none;
     font-size: 4vh;
     padding: 1vw 1vh;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center !important;
+
 }
 
 li{
-    padding: 0px;
+
+    padding: 3px;
 }
 
 .alfabetsBox{
@@ -218,9 +226,11 @@ li{
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
         border-radius: 30px;
-        margin: 1vh 3vw;
-        
-    height: auto;
+        max-width: 95vw;
+        height: 20vh;
+        margin: 0vh 3vw 0vh 3vw;
+
+
 }
 
 
@@ -238,7 +248,7 @@ margin-bottom: 90%;
     .scoreitems{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        padding: 0px;
+
 
     }   
 
@@ -248,29 +258,30 @@ margin-bottom: 90%;
         padding: 1%;
         background-color: rgba(255, 228, 196, 0.555);
         height: 5vh;
-        
+
     }
 
         .scorebuttons{
+        font-family: "Patua One";
         box-shadow: 1px 1px #888888;
-        background-color: rgba(7, 7, 7, 0.6);
+        background-color: #ff22ff;
         color: white;
         border-radius: 1rem;
         max-width: 90%;
         border: hidden;
-        box-shadow: 0 9px rgba(7, 7, 7, 0.8);
+        box-shadow: 0 5px rgba(135, 185, 185, 0.8);
         }
 
         .scorebuttons:hover{
 
-        background-color: rgba(7, 7, 7, 0.7);
+        background-color: springgreen;
             cursor: pointer;
     }
 
     .scorebuttons:active {
 
         box-shadow: 0 5px rgba(7, 7, 7, 0.8);
-        transform: translateY(4px);
+        transform: translateY(2px);
     }
 
         .scorebuttons::backdrop{
@@ -332,8 +343,8 @@ margin-bottom: 90%;
         margin: 0.1vh;
          */
 
-         
-        background-color: rgb(43, 43, 43);
+        font-family: "Patua One";
+        background-color: mediumblue;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -342,7 +353,7 @@ margin-bottom: 90%;
         height: 9vh;
         width: 16vw;
         margin: 0.1vh;
-        color: rgb(255, 142, 67);
+        color: yellow;
         font-size: 5rem;
     }
 
@@ -382,7 +393,7 @@ margin-bottom: 90%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
+        height: 99vh;
         width: 100vw;
 
         margin: 0px;
@@ -394,6 +405,7 @@ margin-bottom: 90%;
         grid-template-areas:"questions" "buttons";
         grid-gap: 10px;
         touch-action: manipulation;
+        margin-bottom: 0px;
 
 
     }
@@ -408,35 +420,10 @@ margin-bottom: 90%;
         padding-top: 2vh;
         padding-bottom: 2vh;
         text-align: center;
+        height: 65vh;
     }
 
 
 
-
-.back {
-    background-color:  darkgreen;
-    border-radius:30px;
-    text-align: center;
-    height: 70%;
-    margin: 0px 3vw;
-    opacity: 0.9;
-    font-size: 3vw;
-    font-family: 'Patua One';
-    /*line-height: 100px;*/
-    color: white;
-    display: grid;
-    padding: 0px;
-    }
-
-.back:hover {
-    cursor: pointer;
-    background-color: #003e0d;
-
-}
-
-ul{
-    display: flex;
-    list-style: none;
-}
 
 </style>

@@ -14,38 +14,38 @@
 
 <!--                <gridColumn1 class="gridColumn">-->
                     <div class="grid-item" @click="pop(num[0]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[0]])"/>
                         <h1 class="combination">{{animalObject.letters[num[0]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[1]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[1]])"/>
                         <h1 class="combination">{{animalObject.letters[num[1]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[2]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[2]])"/>
                         <h1 class="combination">{{animalObject.letters[num[2]]}}</h1>
                     </div>
 <!--                </gridColumn1>-->
 <!--                <gridColumn2 class="gridColumn">-->
                     <div class="grid-item" @click="pop(num[3]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[3]])"/>
                         <h1 class="combination">{{animalObject.letters[num[3]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[4]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[4]])"/>
                         <h1 class="combination">{{animalObject.letters[num[4]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[5]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[5]])"/>
                         <h1 class="combination">{{animalObject.letters[num[5]]}}</h1>
                     </div>
@@ -53,19 +53,19 @@
 <!--                </gridColumn2>-->
 <!--                <gridColumn3 class="gridColumn">-->
                     <div class="grid-item" @click="pop(num[6])">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[6]])"/>
                         <h1 class="combination">{{animalObject.letters[num[6]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[7]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[7]])"/>
                         <h1 class="combination">{{animalObject.letters[num[7]]}}</h1>
                     </div>
 
                     <div class="grid-item" @click="pop(num[8]);">
-                        <img id="ballong"
+                        <img class="ballong"
                              :src="require('@/assets/' + map + '/' + animalObject.baloons[num[8]])"/>
                         <h1 class="combination">{{animalObject.letters[num[8]]}}</h1>
                     </div>
@@ -247,6 +247,7 @@
 </script>
 
 <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
     .combination {
         position: absolute;
@@ -300,7 +301,7 @@
         cursor: pointer;
     }
 
-    .grid-item > #ballong {
+    .grid-item > .ballong {
         max-height: 70%;
         opacity: 0.9;
 

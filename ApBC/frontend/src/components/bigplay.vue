@@ -162,6 +162,9 @@
 
         scorecalc: function (value1 , value2) {
             this.score += (value1 + value2);
+            if (this.score < 0) {
+                this.score = 0
+                }
             
         },
 

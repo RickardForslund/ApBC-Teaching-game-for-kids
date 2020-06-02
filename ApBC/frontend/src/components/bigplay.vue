@@ -16,16 +16,10 @@
             </div>
 <!----------------- Scorebar END --------------------->
 
-<!--
-<h1 v-if="awesome">Vue is awesome!</h1>
-<h1 v-else>Oh no 😢</h1>
-
--->
-
 <!-------------------- Questionbox --------------------->
             <div class="alfabetsBox" v-if="firstPage">
-                <ul id="example-1">
-                <li v-for="item in completed" :key="item">
+                <ul id="ul">
+                <li id="li" v-for="item in completed" :key="item">
                     {{ item }}
                 </li>
                 </ul>
@@ -35,7 +29,7 @@
 <!-------------------- A-Ö --------------------->
             <section id="section" v-if="firstPage">
                     <div class="grid-container">
-                        <div id="gridbutton" class="grid-item"></div>
+                        <div id="correctgrid" class="grid-item">{{this.correct}}</div>
                         <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[0].clicked"  @click="clickmethod(RandomizedValues[0].value,0)">{{RandomizedValues[0].value}}</div>
                         <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[1].clicked"  @click="clickmethod(RandomizedValues[1].value,1)">{{RandomizedValues[1].value}}</div>
                         <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[2].clicked"  @click="clickmethod(RandomizedValues[2].value,2)">{{RandomizedValues[2].value}}</div>
@@ -163,6 +157,7 @@
                 this.failcount += 1
                 this.scorecalc(0 , -100);
 
+
             }
         },
 
@@ -205,6 +200,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
 
+ul{
+    font-size: 5vh;
+    padding: 1vw 1vh;
+}
+
+li{
+    padding: 0px;
+}
+
+.alfabetsBox{
+        color: rgb(54, 54, 54);
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        border-radius: 30px;
+        margin: 1vh 3vw;
+        
+    height: auto;
+}
+
 
     .startText{
   background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, rgb(207, 255, 34)), color-stop(0.9, #ff2), color-stop(1, #f22) );
@@ -214,6 +228,7 @@
   background-clip: text;
     font-size: 3rem;
 
+margin-bottom: 90%;
     }
 
     .scoreitems{
@@ -295,7 +310,9 @@
 
     }
 
-    #gridbutton {
+    #correctgrid {
+        /*
+        
         background-image: url("../assets/apbcb.png");
         background-color: white;
         background-position: center;
@@ -306,6 +323,20 @@
         height: 9vh;
         width: 16vw;
         margin: 0.1vh;
+         */
+
+         
+        background-color: rgb(43, 43, 43);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 15px;
+        text-align: center;
+        height: 9vh;
+        width: 16vw;
+        margin: 0.1vh;
+        color: rgb(255, 142, 67);
+        font-size: 5rem;
     }
 
     #gridbuttons{
@@ -356,6 +387,8 @@
         grid-template-areas:"questions" "buttons";
         grid-gap: 10px;
         touch-action: manipulation;
+
+
     }
 
 
@@ -368,22 +401,10 @@
         padding-top: 2vh;
         padding-bottom: 2vh;
         text-align: center;
-
     }
 
 
-.alfabetsBox{
-        color: rgb(54, 54, 54);
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        border-radius: 30px;
-        margin: 0px 3vw;
-    padding: 0vh 3vw;
-    font-size: 130%;
-    height: auto;
 
-
-}
 
 .back {
     background-color:  darkgreen;

@@ -151,6 +151,16 @@
                 this.completed += input;
                 console.log(this.completed);
 
+                const sound = (new Audio(require('@/assets/letters/' + this.sounds[this.add-1])));
+                console.log("playing "+ this.sounds[this.add-1])
+                sound.play();
+
+
+
+
+
+
+
                 this.correct = this.answers[this.add]
                 this.add++;
                 this.scorecalc(100,0);

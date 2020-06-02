@@ -273,8 +273,8 @@
         grid-template-rows: repeat(3, auto);
         grid-template-areas: "gridColumn1" "gridColumn2" "gridColumn3";
         grid-gap: 0px;
-        width: 100vw;
-        height: 100vh;
+        width: 99vw;
+        height: 87vh;
         background-image: url("../assets/baby/background.jpg");
         border-radius: 30px;
         background-repeat: no-repeat;

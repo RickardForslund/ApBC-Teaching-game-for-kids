@@ -80,6 +80,7 @@
             sounds:[ "a.mp3", "b.mp3", "c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "h.mp3", "i.mp3", "j.mp3",
                      "k.mp3", "l.mp3", "m.mp3", "n.mp3", "o.mp3", "p.mp3", "q.mp3", "r.mp3", "s.mp3", "t.mp3",
                      "u.mp3","v.mp3","w.mp3","x.mp3", "y.mp3","z.mp3","å.mp3","ä.mp3","ö.mp3"],
+            warning:["fel1.p3","fel2.mp3","fel3.mp3","fel4.mp3","fel5.mp3"],
             add: 1,
             correct: 'A',
             score: 0,
@@ -155,12 +156,6 @@
                 console.log("playing "+ this.sounds[this.add-1])
                 sound.play();
 
-
-
-
-
-
-
                 this.correct = this.answers[this.add]
                 this.add++;
                 this.scorecalc(100,0);
@@ -168,6 +163,8 @@
 
             }else{
                 console.log("Wrong letter, try again");
+                const sound = (new Audio(require('@/assets/warning/' + this.warning [Math.floor((Math.random()*5))])));
+                sound.play();
                 this.failcount += 1
                 this.scorecalc(0 , -100);
 

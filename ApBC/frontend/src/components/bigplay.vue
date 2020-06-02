@@ -9,7 +9,7 @@
                  <div class="scoreitems">
                      <button v-if="buttons" class="scorebuttons" id="startbutton" @click="mytimer();">Start</button>
                      <button v-else class="scorebuttons" id="restartbutton" @click="reset();">Restart</button>
-
+                     <button v-if="!buttons" class="scorebuttons" id="restartbutton" onclick="history.back(-1)">Tillbaka</button>
                      <div v-if="firstPage" class="scorescore" id="scoreandtimer">Poäng: {{score}}</div>
                  </div>
             </div>
@@ -64,7 +64,6 @@
                <h1>Press the Start Button</h1>
             </div>
 <!-------------------- A-Ö END --------------------->
-            <input id="tillbakaKnapp" v-if="firstPage" type="button" value="TILLBAKA" onclick="history.back(-1)" class="back" />
         </div>
 <!-------------------- Game Screen END --------------------->
     </div>
@@ -163,6 +162,9 @@
 
         scorecalc: function (value1 , value2) {
             this.score += (value1 + value2);
+            if (this.score < 0) {
+                this.score = 0
+                }
             
         },
 
@@ -235,7 +237,7 @@ margin-bottom: 90%;
 
     .scoreitems{
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         padding: 0px;
 
     }   

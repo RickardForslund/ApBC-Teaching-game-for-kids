@@ -2,9 +2,12 @@
     <div class="start">
 
         <div class="settingsPanel" id="settingsPanel">
-            <router-link to="/home"><img id="homeIcon" :src="require('@/assets/' + home_url)"/></router-link>
+            <img class= "icons" id="restart" :src="require('@/assets/' + restart_url)" @click="restart();"/>
+            <router-link to="/home"><img class= "icons" id="homeIcon" :src="require('@/assets/' + home_url)"/></router-link>
+            <img class= "icons" id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();"/>
 
-            <img id="music_logo" :src="require('@/assets/stuff/' + music_url)" @click="muteSound();"/>
+
+
         </div>
 
 
@@ -157,6 +160,7 @@
                 },
                 num: [1, 2, 3, 4, 5, 6, 7, 8, 9],
                 home_url: "home.png",
+                restart_url:"restart.png",
                 map: "baby",
                 settings_url: 'settings.png',
                 music_url: 'music.png',
@@ -240,6 +244,10 @@
                     this.musicMuted = true
 
                 }
+            },
+
+            restart: function(){
+                location.reload();
             }
         }
     }
@@ -320,10 +328,21 @@
         padding-right: 15px;
     }
 
+    #restart {
+        height: 75px;
+        margin-top: 10px;
+        padding-right: 15px;
+    }
+
     #music_logo {
         /*margin: 39.5px 0 0 0;*/
         margin-top: 20px;
         height: 60px;
         background-color: #3a8bb1;
+    }
+
+    .icons {
+
+        cursor: pointer;
     }
 </style>

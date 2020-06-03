@@ -18,7 +18,7 @@
 <!-------------------- Questionbox --------------------->
             <div class="alfabetsBox" v-if="firstPage">
                 <ul id="ul">
-                <li id="li" v-for="item in completed" :key="item">
+                <li id="li" class="alfabet" v-for="item in completed" :key="item">
                     {{ item }}
                 </li>
                 </ul>
@@ -85,7 +85,7 @@
             correct: 'A',
             score: 0,
             timercount: 0,
-            completed: [],
+            completed: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö'],
             firstPage: false,
             buttons: true,
             failcount: 0,
@@ -135,12 +135,13 @@
         document.body.style.overflowY = "hidden";
         this.randomizeLetters();
         console.log("correct answer is:" + this.correct);
+
+        
         
 
         
     },
     mounted() {
-
 
     },
 
@@ -149,8 +150,14 @@
                 console.log(nr);
                 
             if (input === this.correct) {
-                this.completed += input;
+               // this.completed += input;
+               document.getElementsByClassName('alfabet')[nr].style.color = "#0ef761";
+               document.getElementsByClassName('alfabet')[nr].style.opacity = "1";
                 console.log(this.completed);
+
+      //            var elem = document.getElementById(nr);
+       //             elem.style.color = 'red';
+                
 
                 const sound = (new Audio(require('@/assets/letters/' + this.sounds[this.add-1])));
                 console.log("playing "+ this.sounds[this.add-1])
@@ -229,7 +236,7 @@ ul{
 }
 
 li{
-
+    opacity: 0.3;
     padding: 3px;
 }
 

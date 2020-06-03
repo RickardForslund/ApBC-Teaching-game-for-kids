@@ -28,36 +28,36 @@
 <!-------------------- A-Ö --------------------->
             <section id="section" v-if="firstPage">
                     <div class="grid-container">
-                        <div id="correctgrid" class="grid-item">{{this.correct}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[0].clicked"  @click="clickmethod(RandomizedValues[0].value,0)">{{RandomizedValues[0].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[1].clicked"  @click="clickmethod(RandomizedValues[1].value,1)">{{RandomizedValues[1].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[2].clicked"  @click="clickmethod(RandomizedValues[2].value,2)">{{RandomizedValues[2].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[3].clicked"  @click="clickmethod(RandomizedValues[3].value,3)">{{RandomizedValues[3].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[4].clicked"  @click="clickmethod(RandomizedValues[4].value,4)">{{RandomizedValues[4].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[5].clicked"  @click="clickmethod(RandomizedValues[5].value,5)">{{RandomizedValues[5].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[6].clicked"  @click="clickmethod(RandomizedValues[6].value,6)">{{RandomizedValues[6].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[7].clicked"  @click="clickmethod(RandomizedValues[7].value,7)">{{RandomizedValues[7].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[8].clicked"  @click="clickmethod(RandomizedValues[8].value,8)">{{RandomizedValues[8].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[9].clicked"  @click="clickmethod(RandomizedValues[9].value,9)">{{RandomizedValues[9].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[10].clicked" @click="clickmethod(RandomizedValues[10].value,10)">{{RandomizedValues[10].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[11].clicked" @click="clickmethod(RandomizedValues[11].value,11)">{{RandomizedValues[11].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[12].clicked" @click="clickmethod(RandomizedValues[12].value,12)">{{RandomizedValues[12].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[13].clicked" @click="clickmethod(RandomizedValues[13].value,13)">{{RandomizedValues[13].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[14].clicked" @click="clickmethod(RandomizedValues[14].value,14)">{{RandomizedValues[14].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[15].clicked" @click="clickmethod(RandomizedValues[15].value,15)">{{RandomizedValues[15].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[16].clicked" @click="clickmethod(RandomizedValues[16].value,16)">{{RandomizedValues[16].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[17].clicked" @click="clickmethod(RandomizedValues[17].value,17)">{{RandomizedValues[17].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[18].clicked" @click="clickmethod(RandomizedValues[18].value,18)">{{RandomizedValues[18].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[19].clicked" @click="clickmethod(RandomizedValues[19].value,19)">{{RandomizedValues[19].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[20].clicked" @click="clickmethod(RandomizedValues[20].value,20)">{{RandomizedValues[20].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[21].clicked" @click="clickmethod(RandomizedValues[21].value,21)">{{RandomizedValues[21].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[22].clicked" @click="clickmethod(RandomizedValues[22].value,22)">{{RandomizedValues[22].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[23].clicked" @click="clickmethod(RandomizedValues[23].value,23)">{{RandomizedValues[23].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[24].clicked" @click="clickmethod(RandomizedValues[24].value,24)">{{RandomizedValues[24].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[25].clicked" @click="clickmethod(RandomizedValues[25].value,25)">{{RandomizedValues[25].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[26].clicked" @click="clickmethod(RandomizedValues[26].value,26)">{{RandomizedValues[26].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[27].clicked" @click="clickmethod(RandomizedValues[27].value,27)">{{RandomizedValues[27].value}}</div>
-                        <div id="gridbuttons" class="grid-item" v-if="RandomizedValues[28].clicked" @click="clickmethod(RandomizedValues[28].value,28)">{{RandomizedValues[28].value}}</div>
+                        <div id="correctgrid">{{this.correct}}</div>
+                        <div id="0" class="grid-item" v-if="RandomizedValues[0].clicked"  @click="clickmethod(RandomizedValues[0].value,0)">{{RandomizedValues[0].value}}</div>
+                        <div id="1" class="grid-item" v-if="RandomizedValues[1].clicked"  @click="clickmethod(RandomizedValues[1].value,1)">{{RandomizedValues[1].value}}</div>
+                        <div id="2" class="grid-item" v-if="RandomizedValues[2].clicked"  @click="clickmethod(RandomizedValues[2].value,2)">{{RandomizedValues[2].value}}</div>
+                        <div id="3" class="grid-item" v-if="RandomizedValues[3].clicked"  @click="clickmethod(RandomizedValues[3].value,3)">{{RandomizedValues[3].value}}</div>
+                        <div id="4" class="grid-item" v-if="RandomizedValues[4].clicked"  @click="clickmethod(RandomizedValues[4].value,4)">{{RandomizedValues[4].value}}</div>
+                        <div id="5" class="grid-item" v-if="RandomizedValues[5].clicked"  @click="clickmethod(RandomizedValues[5].value,5)">{{RandomizedValues[5].value}}</div>
+                        <div id="6" class="grid-item" v-if="RandomizedValues[6].clicked"  @click="clickmethod(RandomizedValues[6].value,6)">{{RandomizedValues[6].value}}</div>
+                        <div id="7" class="grid-item" v-if="RandomizedValues[7].clicked"  @click="clickmethod(RandomizedValues[7].value,7)">{{RandomizedValues[7].value}}</div>
+                        <div id="8" class="grid-item" v-if="RandomizedValues[8].clicked"  @click="clickmethod(RandomizedValues[8].value,8)">{{RandomizedValues[8].value}}</div>
+                        <div id="9" class="grid-item" v-if="RandomizedValues[9].clicked"  @click="clickmethod(RandomizedValues[9].value,9)">{{RandomizedValues[9].value}}</div>
+                        <div id="10" class="grid-item" v-if="RandomizedValues[10].clicked" @click="clickmethod(RandomizedValues[10].value,10)">{{RandomizedValues[10].value}}</div>
+                        <div id="11" class="grid-item" v-if="RandomizedValues[11].clicked" @click="clickmethod(RandomizedValues[11].value,11)">{{RandomizedValues[11].value}}</div>
+                        <div id="12" class="grid-item" v-if="RandomizedValues[12].clicked" @click="clickmethod(RandomizedValues[12].value,12)">{{RandomizedValues[12].value}}</div>
+                        <div id="13" class="grid-item" v-if="RandomizedValues[13].clicked" @click="clickmethod(RandomizedValues[13].value,13)">{{RandomizedValues[13].value}}</div>
+                        <div id="14" class="grid-item" v-if="RandomizedValues[14].clicked" @click="clickmethod(RandomizedValues[14].value,14)">{{RandomizedValues[14].value}}</div>
+                        <div id="15" class="grid-item" v-if="RandomizedValues[15].clicked" @click="clickmethod(RandomizedValues[15].value,15)">{{RandomizedValues[15].value}}</div>
+                        <div id="16" class="grid-item" v-if="RandomizedValues[16].clicked" @click="clickmethod(RandomizedValues[16].value,16)">{{RandomizedValues[16].value}}</div>
+                        <div id="17" class="grid-item" v-if="RandomizedValues[17].clicked" @click="clickmethod(RandomizedValues[17].value,17)">{{RandomizedValues[17].value}}</div>
+                        <div id="18" class="grid-item" v-if="RandomizedValues[18].clicked" @click="clickmethod(RandomizedValues[18].value,18)">{{RandomizedValues[18].value}}</div>
+                        <div id="19" class="grid-item" v-if="RandomizedValues[19].clicked" @click="clickmethod(RandomizedValues[19].value,19)">{{RandomizedValues[19].value}}</div>
+                        <div id="20" class="grid-item" v-if="RandomizedValues[20].clicked" @click="clickmethod(RandomizedValues[20].value,20)">{{RandomizedValues[20].value}}</div>
+                        <div id="21" class="grid-item" v-if="RandomizedValues[21].clicked" @click="clickmethod(RandomizedValues[21].value,21)">{{RandomizedValues[21].value}}</div>
+                        <div id="22" class="grid-item" v-if="RandomizedValues[22].clicked" @click="clickmethod(RandomizedValues[22].value,22)">{{RandomizedValues[22].value}}</div>
+                        <div id="23" class="grid-item" v-if="RandomizedValues[23].clicked" @click="clickmethod(RandomizedValues[23].value,23)">{{RandomizedValues[23].value}}</div>
+                        <div id="24" class="grid-item" v-if="RandomizedValues[24].clicked" @click="clickmethod(RandomizedValues[24].value,24)">{{RandomizedValues[24].value}}</div>
+                        <div id="25" class="grid-item" v-if="RandomizedValues[25].clicked" @click="clickmethod(RandomizedValues[25].value,25)">{{RandomizedValues[25].value}}</div>
+                        <div id="26" class="grid-item" v-if="RandomizedValues[26].clicked" @click="clickmethod(RandomizedValues[26].value,26)">{{RandomizedValues[26].value}}</div>
+                        <div id="27" class="grid-item" v-if="RandomizedValues[27].clicked" @click="clickmethod(RandomizedValues[27].value,27)">{{RandomizedValues[27].value}}</div>
+                        <div id="28" class="grid-item" v-if="RandomizedValues[28].clicked" @click="clickmethod(RandomizedValues[28].value,28)">{{RandomizedValues[28].value}}</div>
                 </div>
             </section>
             <div class="startText" v-else>
@@ -84,7 +84,8 @@
             add: 1,
             correct: 'A',
             score: 0,
-            timercount: 0,
+            count: 0,
+            countnumbers: 0,
             completed: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Å','Ä','Ö'],
             firstPage: false,
             buttons: true,
@@ -148,16 +149,12 @@
     methods: {
         clickmethod: function (input,nr) {
                 console.log(nr);
-                
-            if (input === this.correct) {
-               // this.completed += input;
-               document.getElementsByClassName('alfabet')[nr].style.color = "#0ef761";
-               document.getElementsByClassName('alfabet')[nr].style.opacity = "1";
-                console.log(this.completed);
 
-      //            var elem = document.getElementById(nr);
-       //             elem.style.color = 'red';
-                
+            if (input === this.correct) {
+
+               document.getElementsByClassName('alfabet')[this.count].style.color = "#0ef761";
+               document.getElementsByClassName('alfabet')[this.count].style.opacity = "1";
+
 
                 const sound = (new Audio(require('@/assets/letters/' + this.sounds[this.add-1])));
                 console.log("playing "+ this.sounds[this.add-1])
@@ -167,16 +164,33 @@
                 this.add++;
                 this.scorecalc(100,0);
                 this.RandomizedValues[nr].clicked = false
-
+                this.count += 1
+                this.countnumbers -= 1
             }else{
                 console.log("Wrong letter, try again");
                 const sound = (new Audio(require('@/assets/warning/' + this.warning [Math.floor((Math.random()*5))])));
                 sound.play();
                 this.failcount += 1
                 this.scorecalc(0 , -100);
-
+                this.flashred(nr);
+                console.log('input : ' + input);
+                
+                
+                
 
             }
+        },
+
+        flashred: function (nr) {
+            
+            let myobj = document.getElementById(nr)
+         myobj.style.transition = '0.4s'
+         myobj.style.backgroundColor = "rgba(255,0,0,0.8";
+
+         setTimeout(function(){
+             myobj.style.transition = '0.6s'
+             myobj.style.backgroundColor = "rgba(0, 100,0, 0.9)";
+         }, 1000);
         },
 
         scorecalc: function (value1 , value2) {
@@ -208,10 +222,6 @@
 
 
         reset: function () {
-            /*this.timercount = 0;
-            this.firstPage = false
-            this.score = 0;
-            this.failcount = 0;*/
             window.location.reload();
         }
     }
@@ -292,7 +302,7 @@ margin-bottom: 90%;
         }
 
         .scorebuttons:hover{
-
+            transition: 0.3s;
         background-color: springgreen;
             cursor: pointer;
     }
@@ -344,24 +354,21 @@ margin-bottom: 90%;
         font-weight: bold;
         width: auto;
         height: auto;
-
-    }
-
-    #correctgrid {
-        /*
-        
-        background-image: url("../assets/apbcb.png");
-        background-color: white;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
+                background-color: rgba(0, 100,0, 0.9);
         border-radius: 15px;
         text-align: center;
         height: 9vh;
         width: 16vw;
         margin: 0.1vh;
-         */
+        font-size: 40px;
+        font-family: 'Patua One';
+        line-height: 50px;
+        color: white;
+        position: relative;
 
+    }
+
+    #correctgrid {
         font-family: "Patua One";
         background-color: mediumblue;
         background-position: center;
@@ -377,6 +384,7 @@ margin-bottom: 90%;
     }
 
     #gridbuttons{
+/*
         background-color: rgba(0, 100,0, 0.9);
         border-radius: 15px;
         text-align: center;
@@ -388,6 +396,7 @@ margin-bottom: 90%;
         line-height: 50px;
         color: white;
         position: relative;
+*/
 
     }
 

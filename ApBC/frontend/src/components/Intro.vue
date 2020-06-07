@@ -21,17 +21,20 @@
             grid-template-areas: 'main' 'down';
             grid-gap: 10px;
             text-align: center;
-            width:  100vw;
-            height: 100vh;
+            width:  80vw;
+            height: 80vh;
+            margin-right: auto;
+            margin-left: auto;
         }
 
         .img_intro {
             grid-area: main;
+
         }
 
         .intro {
-            width: 50%;
-            height: auto;
+            width: auto;
+            height: 60vh;
 
         }
 
@@ -43,9 +46,7 @@
         }
         .button {
             grid-area: down;
-            width: 50%;
-            height: auto;
-            display: block;
+            height: 30vh;
             margin: 0 auto;
             color: darkgreen;
             padding: 10px;
@@ -76,8 +77,8 @@
     }
 
     .about {
-        width:15%;
-        height:15%;
+        width:20vh;
+        height:20vh;
         background-image:   url("../assets/flyinfo.png");
         background-position: top center;
         background-repeat: no-repeat;

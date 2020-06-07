@@ -17,3 +17,11 @@ export default {
   }
 };
 </script>
+<style>
+  img {
+    height: 15vh;
+  }
+  .home{
+    height: auto;
+  }
+</style>

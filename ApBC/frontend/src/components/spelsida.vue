@@ -48,7 +48,7 @@ export default {
   data: function () {
     return {
       question123: 'Vad heter djuret?',
-      url: 'anka.png',
+      url: 'Anka.png',
       settings_url: 'settings.png',
       music_url: 'music.png',
       animalName: '',
@@ -69,9 +69,9 @@ export default {
   mounted() {
     
     this.currentID = 1;
-    this.animalName = 'anka';
-    this.bt1 = 'anka';
-    this.bt2 = 'fisk';
+    this.animalName = 'Anka';
+    this.bt1 = 'Anka';
+    this.bt2 = 'Fisk';
     
   },
 

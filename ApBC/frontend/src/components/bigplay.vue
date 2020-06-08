@@ -80,7 +80,8 @@
             sounds:[ "a.mp3", "b.mp3", "c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "h.mp3", "i.mp3", "j.mp3",
                      "k.mp3", "l.mp3", "m.mp3", "n.mp3", "o.mp3", "p.mp3", "q.mp3", "r.mp3", "s.mp3", "t.mp3",
                      "u.mp3","v.mp3","w.mp3","x.mp3", "y.mp3","z.mp3","å.mp3","ä.mp3","ö.mp3"],
-            warning:["fel1.p3","fel2.mp3","fel3.mp3","fel4.mp3","fel5.mp3"],
+            warning:["fel1.mp3","fel2.mp3","fel3.mp3","fel4.mp3","fel5.mp3","fel6.mp3"],
+            success:["bra.mp3", "bra.mp3", "bravo.mp3", "perfect.mp3", "super.mp3", "super.mp3","otroligt.mp3",  "bravo.mp3"],
             add: 1,
             correct: 'A',
             score: 0,
@@ -166,9 +167,16 @@
                 this.RandomizedValues[nr].clicked = false
                 this.count += 1
                 this.countnumbers -= 1
+
+                var delayInMilliseconds = 2000;
+                setTimeout(function() {
+                }, delayInMilliseconds);
+                const sound2 = (new Audio(require('@/assets/congratulation/' + this.success [Math.floor((Math.random()*8))])));
+                sound2.play();
+
             }else{
                 console.log("Wrong letter, try again");
-                const sound = (new Audio(require('@/assets/warning/' + this.warning [Math.floor((Math.random()*5))])));
+                const sound = (new Audio(require('@/assets/warning/' + this.warning [Math.floor((Math.random()*6))])));
                 sound.play();
                 this.failcount += 1
                 this.scorecalc(0 , -100);

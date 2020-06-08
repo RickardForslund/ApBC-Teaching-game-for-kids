@@ -388,7 +388,7 @@ margin-bottom: 90%;
         width: 16vw;
         margin: 0.1vh;
         color: yellow;
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     #gridbuttons{

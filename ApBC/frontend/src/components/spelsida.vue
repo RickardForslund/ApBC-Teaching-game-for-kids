@@ -59,7 +59,8 @@ export default {
       bt2: '',
       musicMuted: false,
       lastID: null,
-      otherlastID: null
+      otherlastID: null,
+      warning:["fel1.mp3","fel2.mp3","fel3.mp3","fel4.mp3","fel5.mp3","fel6.mp3"],
     }
   },
 
@@ -141,11 +142,10 @@ export default {
       console.log("grattis");
 
 
-    if (this.musicMuted == false) {
-          const sound = ( new Audio( require('@/assets/sounds/cheer2.mp3')));
-    sound.play();
-    }
-
+      if (this.musicMuted == false) {
+        const sound = (new Audio(require('@/assets/sounds/cheer2.mp3')));
+        sound.play();
+      }
 
     this.url = 'Grattis.gif'
      this.question123 = 'Grattis!'   
@@ -155,6 +155,14 @@ export default {
 
 
     },
+
+
+  wrongChoice: function () {
+    console.log("Wrong letter, try again");
+    const sound = (new Audio(require('@/assets/warning/' + this.warning [Math.floor((Math.random() * 6))])));
+    sound.play();
+    console.log("input : wrong");
+  },
 
     validate: function (nr) {
       if (nr == 1 & this.animalName == this.bt1) {
@@ -183,6 +191,7 @@ export default {
       } else {
         console.log("wrong answer, try again!");
         document.getElementById(nr).style.backgroundColor = "red";
+        this.wrongChoice();
         
       }
     },

@@ -299,7 +299,7 @@
         align-items: center;
         display: flex;
         font-family: "Patua One";
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
         width: 30vw;
         height: 30vh;

@@ -49,10 +49,10 @@
         data: function () {
             return {
                 map: "animals",
-                url1: "panda.png",
-                url2: "katt.png",
-                url3: "hund.png",
-                url4: "anka.png",
+                url1: "Panda.png",
+                url2: "Katt.png",
+                url3: "Hund.png",
+                url4: "Anka.png",
                 settings_url: 'settings.png',
                 music_url: 'music.png',
                 musicMuted: false,

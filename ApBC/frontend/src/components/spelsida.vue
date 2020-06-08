@@ -147,7 +147,7 @@ export default {
     }
 
 
-    this.url = 'grattis.gif'
+    this.url = 'Grattis.gif'
      this.question123 = 'Grattis!'   
      this.bt1 = ''
      this.bt2 = ''
@@ -158,11 +158,7 @@ export default {
 
     validate: function (nr) {
       if (nr == 1 & this.animalName == this.bt1) {
-        //COMMENTED OUT FOR TESTING PURPOSES. Replace below code with commented out code for proper build
-        this.resetSettings();
-        this.getNewRandomNumber();
-        this.getNewobject();
-        /*
+
         this.greeting();
         setTimeout(() => {
           this.resetSettings();
@@ -171,14 +167,10 @@ export default {
 
         }, 5000);
 
-         */
+
 
       } else if (nr == 2 & this.animalName == this.bt2) {
-        //COMMENTED OUT FOR TESTING PURPOSES. Replace below code with commented out code for proper build
-        this.resetSettings();
-        this.getNewRandomNumber();
-        this.getNewobject();
-        /*
+
         this.greeting();
         setTimeout(() => {
           this.resetSettings();
@@ -187,7 +179,7 @@ export default {
 
         }, 5000);
 
-         */
+
       } else {
         console.log("wrong answer, try again!");
         document.getElementById(nr).style.backgroundColor = "red";

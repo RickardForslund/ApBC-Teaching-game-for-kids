@@ -145,15 +145,15 @@
                         4: "4.png", 5: "5.png", 6: "6.png", 7: "7.png", 8: "8.png", 9: "9.png"
                     },
                     pictures: {
-                        1: "b/anka.png",
-                        2: "b/groda.png",
-                        3: "b/hund.png",
-                        4: "b/katt.png",
-                        5: "b/lamm.png",
-                        6: "b/orm.png",
-                        7: "b/panda.png",
-                        8: "b/tiger.png",
-                        9: "b/zebra.png"
+                        1: "b/Anka.png",
+                        2: "b/Groda.png",
+                        3: "b/Hund.png",
+                        4: "b/Katt.png",
+                        5: "b/Lamm.png",
+                        6: "b/Orm.png",
+                        7: "b/Panda.png",
+                        8: "b/Tiger.png",
+                        9: "b/Zebra.png"
                     },
                     timesClicked:0
 

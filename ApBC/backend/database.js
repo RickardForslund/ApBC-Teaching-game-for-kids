@@ -34,7 +34,7 @@ var sounds = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ]
 
 
 // save animals
-var animals = ['Anka', 'Geting', 'Gris' , 'groda', 'Hund', 'Katt', 'Ko', 'Lamm', 'Orm', 'Panda', 'Tiger', 'Zebra']
+var animals = ['Anka', 'Geting', 'Gris' , 'Groda', 'Hund', 'Katt', 'Ko', 'Lamm', 'Orm', 'Panda', 'Tiger', 'Zebra']
 for (let i = 0; i < animals.length; i++) {
     images[i] = animals[i] + '.png';
     names[i] = animals[i];

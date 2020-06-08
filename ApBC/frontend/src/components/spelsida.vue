@@ -310,7 +310,8 @@ section{
 
 section img{
   border-radius: 0px;
-  width: 60%;
+  width: auto;
+  height: 30vh;
 }
 
 .questionText h1{
